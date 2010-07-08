@@ -7,7 +7,7 @@ class XisbnWebService:
     def __init__(self, opener):
         self.opener = opener
 
-    def find_synonyms(self, isbn):
+    def get_editions(self, isbn):
         response = self.opener(methodUrl('getEditions', isbn)).content
         return response.split()
 

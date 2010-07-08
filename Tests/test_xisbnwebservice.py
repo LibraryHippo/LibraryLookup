@@ -3,20 +3,20 @@
 from fakes import MyOpener
 import xisbnwebservice
 
-def test_find_synonyms__10digits__makes_good_request():
+def test_get_editions__10digits__makes_good_request():
     opener = MyOpener('')
     x = xisbnwebservice.XisbnWebService(opener)
-    x.find_synonyms('0812550706')
+    x.get_editions('0812550706')
 
     assert 'http://xisbn.worldcat.org/webservices/xid/isbn/0812550706?method=getEditions&format=csv' == opener.last_request['url']
 
-def test_find_synonyms__10digits__returns_list_of_synonyms():
+def test_get_editions__10digits__returns_list_of_editions():
     opener = MyOpener('''0812550706
 1593974744
 0808586165''')
     x = xisbnwebservice.XisbnWebService(opener)
-    synonyms = x.find_synonyms('0812550706')
-    assert ['0812550706', '1593974744', '0808586165'] == synonyms
+    editions = x.get_editions('0812550706')
+    assert ['0812550706', '1593974744', '0808586165'] == editions
 
     
 def test_to13__10digits__makes_good_request():

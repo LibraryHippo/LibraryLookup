@@ -19,3 +19,21 @@ class MyOpener:
         response = self.responses.pop(0)
         return response
 
+class MyXisbnWebService:
+    def __init__(self):
+        self.edition_map = {}
+        
+    def __setitem__(self, isbn, editions):
+        saved_editions = [isbn] + editions
+        self.edition_map[isbn] = saved_editions
+
+    def get_editions(self, isbn):
+        if isbn in self.edition_map:
+            return self.edition_map[isbn]
+        return [isbn]
+
+    def to13(self, isbn10):
+        return isbn10 + '147'
+
+    def to10(self, isbn13):
+        return isbn13[3:]
