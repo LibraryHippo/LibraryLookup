@@ -1,42 +1,7 @@
 #!/usr/bin/env python
 
+from fakes import MyOpener
 import xisbnwebservice
-
-class MyResponse:
-    def __init__(self, content, status_code=200, headers={}, final_url='http://www.google.ca/'):
-        self.content = content
-        self.content_was_truncated = False
-        self.status_code=200
-        self.headers=headers
-        self.final_url=final_url
-
-class MyOpener:
-    def __init__(self, *responses):
-        self.responses = []
-        for response in responses:
-            if not isinstance(response, MyResponse):
-                response = MyResponse(response)
-            self.responses.append(response)
-
-    def __call__(self, url):
-        self.last_request = { 'url':url }
-        print self.last_request
-
-        response = self.responses.pop(0)
-        print 'response', response        
-        return response
-
-class MyLibrary:
-    def __init__(self):
-        self.type = 'MyPL'
-        self.name = 'My Public Library'
-        
-class MyCard:
-    def __init__(self):
-        self.library = MyLibrary()
-        self.name = 'Name'
-        self.number = 'Number'
-        self.pin = 'pin'
 
 def test_find_synonyms__10digits__makes_good_request():
     opener = MyOpener('')
