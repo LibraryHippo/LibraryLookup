@@ -7,6 +7,9 @@ class Library:
     def __init__(self, opener):
         self.opener = opener
 
-    def has_item(self, isbn):
-        response = self.opener(searchUrl(isbn))
-        return response.content.find('No matches found') == -1
+    def find_item(self, isbn):
+        url = searchUrl(isbn)
+        response = self.opener(url)
+        if response.content.find('No matches found') == -1:
+            return ('Waterloo Public Library', url)
+        return None
