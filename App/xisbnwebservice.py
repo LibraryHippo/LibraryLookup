@@ -18,3 +18,20 @@ class XisbnWebService:
     def to10(self, isbn13):
         response = self.opener(methodUrl('to10', isbn13)).content
         return response
+
+if __name__ == '__main__':
+
+    class Opener:
+        def __call__(self, url):
+            class Result:
+                pass
+            
+            r = Result()
+            r.content = urllib2.urlopen(url).read()
+            return r
+            
+    import urllib2
+    import sys
+    opener = Opener()
+    x = XisbnWebService(opener)
+    print x.get_editions(sys.argv[1])
