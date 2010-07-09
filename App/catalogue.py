@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+import logging
+
 class Catalogue:
     def __init__(self, xisbn):
         self.xisbn = xisbn
@@ -7,6 +9,7 @@ class Catalogue:
     def find_item(self, isbn, libraries):
         items = []
         for library in libraries:
+            logging.debug('looking for ' + isbn)
             item = library.find_item(isbn)
             if item:
                 items.append(item)
@@ -15,6 +18,7 @@ class Catalogue:
             for edition in other_editions:
                 if edition == isbn:
                     continue
+                logging.debug('looking for ' + edition)
                 item = library.find_item(edition)
                 if item:
                     items.append(item)
