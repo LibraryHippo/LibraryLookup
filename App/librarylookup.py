@@ -31,7 +31,7 @@ class FindIsbn(webapp.RequestHandler):
         found = self.catalogue_service.find_item(isbn, libraries)
         self.response.out.write('searching for ' + isbn + '\n')
         for f in found:
-            self.response.out.write('<li><a href="' + f[1] + '">' + f[0] + '</a></li>\n')
+            self.response.out.write('<li><a href="' + str(f.url) + '">' + str(f.library.name) + '</a></li>\n')
         self.response.out.write('</ul></body><html>\n')
         
 

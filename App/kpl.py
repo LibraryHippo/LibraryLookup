@@ -5,11 +5,12 @@ def searchUrl(isbn):
 
 class Library:
     def __init__(self, opener):
+        self.name = 'Kitchencher Public Library'
         self.opener = opener
 
     def find_item(self, isbn):
         url = searchUrl(isbn)
         response = self.opener(url)
         if response.content.find('No matches found') == -1:
-            return ('Kitchencher Public Library', url)
+            return url
         return None
