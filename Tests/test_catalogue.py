@@ -64,6 +64,21 @@ def test_find_item__single_library_other_edition_there__finds_item():
     assert ('MyLibrary', 'http://my.lib/1234516592') in found_items
 
 
+def test_find_item__single_library_two_editions_there__finds_original():
+    x = MyXisbn()
+    x['1234516591'] = ['1234516592']
+
+    l = MyLibrary()
+    l.has('1234516591')
+    l.has('1234516592')    
+
+    c = catalogue.Catalogue(x)
+
+    found_items = c.find_item('1234516592', [l])
+
+    assert [('MyLibrary', 'http://my.lib/1234516592')] == found_items
+
+
 def test_find_item__two_libraries_item_in_both__finds_both():
     x = MyXisbn()
 
