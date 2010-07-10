@@ -20,7 +20,7 @@ def test_find_item__isbn10_in_library__returns_record():
     w = wpl.Library(opener)
 
     record =  w.find_item('1593974744')
-    assert record == ('Waterloo Public Library', 'http://books.kpl.org/search~S3/?searchtype=i&searcharg=1593974744&searchscope=3&searchlimits=')
+    assert record == 'http://books.kpl.org/search~S3/?searchtype=i&searcharg=1593974744&searchscope=3&searchlimits='
 
 def test_find_item__isbn10_not_in_library__returns_false():
     opener = MyOpener(load_file('wpl_has_not_item.html'))

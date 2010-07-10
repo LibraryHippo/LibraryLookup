@@ -12,7 +12,7 @@ class MyLibrary:
 
     def find_item(self, isbn):
         if isbn in self.holdings:
-            return (self.name, 'http://my.lib/' + isbn)
+            return 'http://my.lib/' + isbn
         return None
 
 class MyXisbn:
@@ -37,7 +37,7 @@ def test_find_item__single_library_item_there__finds_item():
 
     found_items = c.find_item('1234516591', [l])
 
-    assert ('MyLibrary', 'http://my.lib/1234516591') in found_items
+    assert catalogue.FindResult(l, 'http://my.ldib/1234516591') in found_items
 
 def test_find_item__single_library_item_not_there__does_not_find_item():
     x = MyXisbn()
@@ -61,7 +61,7 @@ def test_find_item__single_library_other_edition_there__finds_item():
 
     found_items = c.find_item('1234516591', [l])
 
-    assert ('MyLibrary', 'http://my.lib/1234516592') in found_items
+    assert catalogue.FindResult(l, 'http://my.lib/1234516592') in found_items
 
 
 def test_find_item__single_library_two_editions_there__finds_original():
@@ -76,7 +76,7 @@ def test_find_item__single_library_two_editions_there__finds_original():
 
     found_items = c.find_item('1234516592', [l])
 
-    assert [('MyLibrary', 'http://my.lib/1234516592')] == found_items
+    assert [catalogue.FindResult(l, 'http://my.lib/1234516592')] == found_items
 
 
 def test_find_item__two_libraries_item_in_both__finds_both():
@@ -92,7 +92,7 @@ def test_find_item__two_libraries_item_in_both__finds_both():
 
     found_items = c.find_item('1234516591', [l1, l2])
 
-    assert ('MyLibrary1', 'http://my.lib/1234516591') in found_items
-    assert ('MyLibrary2', 'http://my.lib/1234516591') in found_items
+    assert catalogue.FindResult(l1, 'http://my.lib/1234516591') in found_items
+    assert catalogue.FindResult(l2, 'http://my.lib/1234516591') in found_items
 
 
