@@ -9,6 +9,7 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 
 import catalogue
 import wpl
+import kpl
 import xisbn
 import xisbnwebservice
 
@@ -24,9 +25,10 @@ class FindIsbn(webapp.RequestHandler):
         #logging.debug('path = ', self.request.path)
         logging.debug('path = ' + str(dir(self)))
 
-        library = wpl.Library(urlfetch.fetch)
+        libraries = [wpl.Library(urlfetch.fetch),
+                   kpl.Library(urlfetch.fetch)]
         self.response.out.write('<html><body><ul>\n')
-        found = self.catalogue_service.find_item(isbn, [library])
+        found = self.catalogue_service.find_item(isbn, libraries)
         self.response.out.write('searching for ' + isbn + '\n')
         for f in found:
             self.response.out.write('<li><a href="' + f[1] + '">' + f[0] + '</a></li>\n')
