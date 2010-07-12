@@ -37,7 +37,7 @@ def test_find_item__single_library_item_there__finds_item():
 
     found_items = c.find_item('1234516591', [l])
 
-    assert catalogue.FindResult(l, 'http://my.ldib/1234516591') in found_items
+    assert catalogue.FindResult(l, 'http://my.lib/1234516591') in found_items
 
 def test_find_item__single_library_item_not_there__does_not_find_item():
     x = MyXisbn()
