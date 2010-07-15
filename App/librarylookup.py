@@ -35,6 +35,17 @@ def to_xml(find_results):
 
     return doc.toprettyxml(indent="  ")
 
+def to_html(find_results):
+    result = ''.join('<li><a href="' + f.url + '">' + f.library.name + '</a></li>\r\n'
+                     for f in find_results)
+
+    return '''<html>
+<body>
+<ul>
+''' + result  + '''</ul>
+</body>
+</html>'''
+        
 class FindIsbn(webapp.RequestHandler):
     def __init__(self):
         
@@ -48,8 +59,8 @@ class FindIsbn(webapp.RequestHandler):
                    kpl.Library(urlfetch.fetch)]
         found = self.catalogue_service.find_item(isbn, libraries)
 
-        self.response.headers['Content-Type'] = "application/xml"
-        self.response.out.write(to_xml(found))
+        #self.response.headers['Content-Type'] = "application/xml"
+        self.response.out.write(to_html(found))
 
 def main(handlers=[]):
     logging.getLogger().setLevel(logging.DEBUG)
