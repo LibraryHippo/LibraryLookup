@@ -1,0 +1,14 @@
+<html>  
+<body>  
+
+    <script>
+    chrome.tabs.getSelected(null, 
+                            function(tab) 
+                            {
+                               alert('tab.url = ' + tab.url);
+                            }
+       );
+
+    </script>
+</body>
+</html>
