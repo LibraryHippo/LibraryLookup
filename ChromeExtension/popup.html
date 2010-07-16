@@ -1,14 +1,22 @@
 <html>  
 <body>  
 
+    <script src="jquery-1.4.2.min.js"/></script>
     <script>
     chrome.tabs.getSelected(null, 
                             function(tab) 
                             {
-                               alert('tab.url = ' + tab.url);
+                               var findings  = $(chrome.extension.getBackgroundPage().lookupsByPage[tab.url]);
+                               $ul = $("ul");
+                               $ul.append($("li", findings));
+
+                               // open links in new tabs
+                               $("a", $ul).live('click', function() { chrome.tabs.create({url: this.href}); });
                             }
        );
 
     </script>
+<ul>
+</ul>
 </body>
 </html>

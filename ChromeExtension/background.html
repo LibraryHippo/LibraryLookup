@@ -214,6 +214,8 @@
             return null;
          }
       }
+
+      var lookupsByPage = new Array();
   
       // Called when the url of a tab changes.
       function checkForValidUrl(tabId, changeInfo, tab) 
@@ -224,10 +226,18 @@
             isbn = knownPage.getIsbn();
             if ( isbn )
             {
-               
-               chrome.pageAction.show(tabId);
+               var xhr = new XMLHttpRequest();
+               xhr.open("GET", "http://librarylookup.appspot.com/isbn/" + isbn, true);
+               xhr.onreadystatechange = function() 
+               {
+                  if (xhr.readyState == 4) 
+                  {
+                     lookupsByPage[tab.url] =xhr.responseText;
+                     chrome.pageAction.show(tabId);
+                  }
+               };
+               xhr.send();
             }
-            // alert(isbn);
          }
       };
   
