@@ -5,9 +5,8 @@
   "background_page": "background.html", 
   "page_action": 
   {
-    "default_icon": "icon.gif",
-    "default_title": "Library Lookup",
-    "default_popup": "popup.html"
+    "default_icon": "clock_icon.gif",
+    "default_title": "Library Lookup"
   },
   "permissions": [ "tabs", "http://librarylookup.appspot.com/"]
 }
