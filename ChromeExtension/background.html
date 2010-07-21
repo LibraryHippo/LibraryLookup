@@ -2,252 +2,36 @@
   <head>
     <script src="jquery-1.4.2.min.js" />
     <script>
-
-      var isbnREdelimited = /[^\d](\d{9,12}[\dXx])([^\dXx]|$)/;
-
-      function $x(path, context) 
-      {
-         if ( !context ) 
-         {
-            context = document;
-         }
-         var result = [];
-         var xpr = document.evaluate(path, context, null,
-                                     XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
-         for (var i = 0; item = xpr.snapshotItem(i); i++)
-         {
-            result.push(item);
-         }
-         return result;
-      };
-          
-     // Figure out which site the source page comes from.
-      // To add a new one, make a new block like the "chapters"
-      // and "amazon" variables below, and extend the "if...else..."
-      // block at the bottom of this function.
-      function whichSiteIsThis(tab)
-      {
-         var chapters =
-            {
-               getIsbn: function()
-               {
-                  try
-                  {
-                     return tab.url.match(isbnREdelimited)[1];
-                  }
-                  catch ( e ) 
-                  {
-                     return null;
-                  }
-               },
-  
-               getOriginalTitle: function()
-               {
-                  return $x("//h1")[0];
-               }
-            }
-  
-         var allconsuming =
-            {
-               getIsbn: function()
-               {
-                  var isbn = null;
-                  isbnLinkNode = $x("//div[@class='item-header-body']/a[@class='amazon-link']/@href")[0];
-                  if ( isbnLinkNode )
-                  {
-                     isbn = isbnLinkNode.firstChild.nodeValue.match(isbnREdelimited)[1];
-                  }
-                  return isbn;
-               },
-  
-               getOriginalTitle: function()
-               {
-                  return $x("//div[@class='item-header-body']/strong")[0];
-               }
-            }
-  
-         var amazon =
-            {
-               getIsbn: function()
-               {
-                  try
-                  {
-                     return tab.url.match(isbnREdelimited)[1];
-                  }
-                  catch ( e ) 
-                  {
-                     return null;
-                  }
-               },
-  
-               getOriginalTitle: function()
-               {
-                  return $x("//div[@class='buying']/b[@class='sans']|//div[@class='buying']/b[@class='asinTitle']|//div[@class='buying']//span[@id='btAsinTitle']")[0];
-               }
-            }
-  
-         var librarything =
-            {
-               getIsbn: function()
-               {
-                  var isbn = null;
-                  isbnLinkNode = $x("//div[@class='isbn']/a")[0];
-                  if ( isbnLinkNode )
-                  {
-                     isbn = isbnLinkNode.firstChild.nodeValue.substr(5);
-                  }
-                  return isbn;
-               },
-  
-               getOriginalTitle: function()
-               {
-                  return $x("//div[@id='usercover']")[0];
-               }
-            }
-  
-         var powells =
-            {
-               getIsbn: function()
-               {
-                  try
-                  {
-                     return tab.url.match(isbnREdelimited)[1];
-                  }
-                  catch ( e ) 
-                  {
-                     return null;
-                  }
-               },
-  
-               getOriginalTitle: function()
-               {
-                  return $x("//div[@id='seemore']")[0];
-               }
-            }
-  
-         var googleBooks =
-            {
-               getIsbn: function()
-               {
-                  try
-                  {
-                     return tab.url.match(/(\d{9,12}[\dXx])/)[1];
-                  }
-                  catch ( e ) 
-                  {
-                     return null;
-                  }
-               },
-  
-               getOriginalTitle: function()
-               {
-                  return $x("//span[@class='title']")[0];
-               }
-            }
-  
-         var goodReads =
-            {
-               getIsbn: function()
-               {
-                  try
-                  {
-                     var isbnHeaderNodeCandidates = $x("//div[@class='infoBoxRowTitle']");
-                 
-                     for ( var i = 0; i < isbnHeaderNodeCandidates.length; i++ )
-                     {
-                        if ( isbnHeaderNodeCandidates[i].innerHTML.match(/isbn/) )
-                        {
-                           var isbnNode = isbnHeaderNodeCandidates[i].nextSibling;
-                           while ( isbnNode.nodeName != 'DIV' )
-                           {
-                              isbnNode = isbnNode.nextSibling;
-                           }
-                           var isbnText = isbnNode.innerHTML.match(isbnREdelimited)[1];
-                           return isbnText;
-                        }
-                     }
-                  }
-                  catch ( e ) 
-                  {
-                     GM_log('error looking for ISBN: ' + e);
-                  }
-                  return null;
-               },
-  
-               getOriginalTitle: function()
-               {
-                  return $x("//h1[@id='bookPageTitle']")[0];
-               }
-            }
-
-         // figure out what site we're looking at
-         if ( tab.url.match(/chapters/) )
-         {
-            return chapters;
-         }
-         else if ( tab.url.match(/allconsuming/) )
-         {
-            return allconsuming;
-         }
-         else if ( tab.url.match(/powells/) )
-         {
-            return powells;
-         }
-         else if ( tab.url.match(/google/) )
-         {
-            return googleBooks;
-         }
-         else if ( tab.url.match(/goodreads/) )
-         {
-            return goodReads;
-         }
-         else if ( tab.url.match(/librarything/) )
-         {
-            return librarything;
-         }
-         else if ( tab.url.match(/amazon/) )
-         {
-            return amazon;
-         }
-         else
-         {
-            // Amazon's pretty popular - make it the default
-            return null;
-         }
-      }
-
       var lookupsByPage = new Array();
-  
-      // Called when the url of a tab changes.
-      function checkForValidUrl(tabId, changeInfo, tab) 
-      {
-         var knownPage = whichSiteIsThis(tab);
-         if ( knownPage )
-         {
-            isbn = knownPage.getIsbn();
-            if ( isbn )
-            {
-                chrome.pageAction.setTitle({tabId: tabId, title: 'LibraryLookup: searching'});
+
+      // Listen for any changes to the URL of any tab.
+//      chrome.tabs.onUpdated.addListener(checkForValidUrl);
+    chrome.extension.onRequest.addListener(
+       function(request, sender, sendResponse) 
+       {
+          if ( request.msg == 'lookup' )
+          {
+                chrome.pageAction.setTitle({tabId: sender.tab.id, title: 'LibraryLookup: searching'});
                 // chrome.pageAction.onClicked.addListener(function(tab){});
-                chrome.pageAction.show(tabId);
+                chrome.pageAction.show(sender.tab.id);
 
 
                 var xhr = new XMLHttpRequest();
-                xhr.open("GET", "http://librarylookup.appspot.com/isbn/" + isbn, true);
+                xhr.open("GET", "http://librarylookup.appspot.com/isbn/" + request.isbn, true);
                 xhr.onreadystatechange = function() 
                 {
                     if (xhr.readyState == 4) 
                     {
-                        chrome.pageAction.setTitle({tabId: tabId, title: 'LibraryLookup'});
-                        lookupsByPage[tab.url] = xhr.responseText;
+                        chrome.pageAction.setTitle({tabId: sender.tab.id, title: 'LibraryLookup'});
+                        lookupsByPage[sender.tab.url] = xhr.responseText;
                         if ( $("li", $(xhr.responseText)).length )
                         {
-                            chrome.pageAction.setPopup({tabId: tabId, popup: 'popup.html'});
-                            chrome.pageAction.setIcon({tabId: tabId, path: 'icon.gif'});
+                            chrome.pageAction.setPopup({tabId: sender.tab.id, popup: 'popup.html'});
+                            chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'book_found.png'});
                         }
                         else
                         {
-                            chrome.pageAction.setIcon({tabId: tabId, path: 'nobook.gif'});
+                            chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'no_book_found.png'});
                         }
                         
                     }
@@ -255,10 +39,8 @@
                 xhr.send();
             }
          }
-      };
-  
-      // Listen for any changes to the URL of any tab.
-      chrome.tabs.onUpdated.addListener(checkForValidUrl);
+       );
+             
     </script>
   </head>
 </html>
