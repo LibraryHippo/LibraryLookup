@@ -12,8 +12,10 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 import catalogue
 import wpl
 import kpl
+import rwl
 import xisbn
 import xisbnwebservice
+from gael import memcache
 
 def to_xml(find_results):
     doc = Document()
@@ -45,22 +47,26 @@ def to_html(find_results):
 ''' + result  + '''</ul>
 </body>
 </html>'''
-        
-class FindIsbn(webapp.RequestHandler):
-    def __init__(self):
-        
-        xisbn_web_service = xisbnwebservice.XisbnWebService(urlfetch.fetch)
-        xisbn_service = xisbn.Xisbn(xisbn_web_service)
 
-        self.catalogue_service = catalogue.Catalogue(xisbn_service)
+xisbn_web_service = xisbnwebservice.XisbnWebService(urlfetch.fetch)
+xisbn_service = xisbn.Xisbn(xisbn_web_service)
 
-    def get(self, isbn):
-        libraries = [wpl.Library(urlfetch.fetch),
-                   kpl.Library(urlfetch.fetch)]
-        found = self.catalogue_service.find_item(isbn, libraries)
+catalogue_service = catalogue.Catalogue(xisbn_service)
+
+libraries = [wpl.Library(urlfetch.fetch), kpl.Library(urlfetch.fetch), rwl.Library(urlfetch.fetch)]
+
+@memcache.memoize(lambda args, kwargs: args[0], 3600)
+def lookup_isbn_html(isbn):
+        found = catalogue_service.find_item(isbn, libraries)
 
         #self.response.headers['Content-Type'] = "application/xml"
-        self.response.out.write(to_html(found))
+        return(to_html(found))
+    
+    
+
+class FindIsbn(webapp.RequestHandler):
+    def get(self, isbn):
+        self.response.out.write(lookup_isbn_html(isbn))
 
 def main(handlers=[]):
     logging.getLogger().setLevel(logging.DEBUG)
