@@ -68,7 +68,6 @@ function whichSiteIsThis()
          {
             try
             {
-               console.log(location.href);
                return location.href.match(isbnREdelimited)[1];
             }
             catch ( e ) 
@@ -212,7 +211,6 @@ function whichSiteIsThis()
 var knownPage = whichSiteIsThis();
 if ( knownPage )
 {
-   console.log('knownPage');
    var found_isbn = knownPage.getIsbn();
    if ( found_isbn )
    {
