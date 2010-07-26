@@ -86,12 +86,7 @@ function whichSiteIsThis()
       {
          getIsbn: function()
          {
-            var isbn = null;
-            isbnLinkNode = $x("//div[@class='isbn']/a")[0];
-            if ( isbnLinkNode )
-            {
-               isbn = isbnLinkNode.firstChild.nodeValue.substr(5);
-            }
+            var isbn = document.body.innerHTML.match(/bibkeys=ISBN:([0-9X]+)/)[1];
             return isbn;
          },
 
@@ -165,7 +160,7 @@ function whichSiteIsThis()
             }
             catch ( e ) 
             {
-               GM_log('error looking for ISBN: ' + e);
+               log.console('error looking for ISBN: ' + e);
             }
             return null;
          },
