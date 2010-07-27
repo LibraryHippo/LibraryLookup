@@ -86,7 +86,7 @@ function whichSiteIsThis()
       {
          getIsbn: function()
          {
-            var isbn = document.body.innerHTML.match(/bibkeys=ISBN:([0-9X]+)/)[1];
+            var isbn = document.body.innerHTML.match(/ISBN:([0-9X]+)/)[1];
             return isbn;
          },
 

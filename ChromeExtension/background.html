@@ -15,13 +15,25 @@
                 chrome.pageAction.show(sender.tab.id);
 
 
+                var libraries = localStorage["favLibraries"];
+                if ( ! libraries )
+                {
+                   libraries = 'wpl,kpl,rwl';
+                }
+                libraries = libraries.split(',');
+                
+                url = 'http://librarylookup.appspot.com/isbn/' + request.isbn + '?lib=';
+                url = url + libraries.join('&lib=');
+                   
                 var xhr = new XMLHttpRequest();
-                xhr.open("GET", "http://librarylookup.appspot.com/isbn/" + request.isbn, true);
+                xhr.open("GET", url, true);
                 xhr.onreadystatechange = function() 
                 {
                     if (xhr.readyState == 4) 
                     {
-                       if ( xhr.status != 200 )
+                       //  200 = OK
+                       // 204 = No Content - when Google returns cached content
+                       if ( xhr.status != 200 && xhr.status != 204 )
                        {
                             console.log('error: xhr.status = ' + xhr.status);
                             chrome.pageAction.setTitle({tabId: sender.tab.id, title: 'LibraryLookup: Error while searching'});
