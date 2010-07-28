@@ -53,10 +53,14 @@ xisbn_service = xisbn.Xisbn(xisbn_web_service)
 
 catalogue_service = catalogue.Catalogue(xisbn_service)
 
-libraries = [wpl.Library(urlfetch.fetch), kpl.Library(urlfetch.fetch), rwl.Library(urlfetch.fetch)]
+all_libraries = {
+    'wpl': wpl.Library(urlfetch.fetch),
+    'kpl': kpl.Library(urlfetch.fetch),
+    'rwl': rwl.Library(urlfetch.fetch),
+    }
 
-@memcache.memoize(lambda args, kwargs: args[0], 3600)
-def lookup_isbn_html(isbn):
+#@memcache.memoize(lambda args, kwargs: args[0], 3600)
+def lookup_isbn_html(isbn, libraries):
         found = catalogue_service.find_item(isbn, libraries)
 
         #self.response.headers['Content-Type'] = "application/xml"
@@ -66,7 +70,12 @@ def lookup_isbn_html(isbn):
 
 class FindIsbn(webapp.RequestHandler):
     def get(self, isbn):
-        self.response.out.write(lookup_isbn_html(isbn))
+        request_libraries = self.request.get('lib', allow_multiple=True)
+        if not request_libraries:
+            request_libraries = ['wpl', 'kpl', 'rwl']
+        logging.debug(request_libraries)
+        self.response.headers['Cache-Control'] = 'public; max-age=300;'
+        self.response.out.write(lookup_isbn_html(isbn, [all_libraries[l] for l in request_libraries]))
 
 def main(handlers=[]):
     logging.getLogger().setLevel(logging.DEBUG)

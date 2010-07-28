@@ -5,7 +5,6 @@
       var lookupsByPage = new Array();
 
       // Listen for any changes to the URL of any tab.
-//      chrome.tabs.onUpdated.addListener(checkForValidUrl);
     chrome.extension.onRequest.addListener(
        function(request, sender, sendResponse) 
        {
@@ -16,22 +15,43 @@
                 chrome.pageAction.show(sender.tab.id);
 
 
+                var libraries = localStorage["favLibraries"];
+                if ( ! libraries )
+                {
+                   libraries = 'wpl,kpl,rwl';
+                }
+                libraries = libraries.split(',');
+                
+                url = 'http://librarylookup.appspot.com/isbn/' + request.isbn + '?lib=';
+                url = url + libraries.join('&lib=');
+                   
                 var xhr = new XMLHttpRequest();
-                xhr.open("GET", "http://librarylookup.appspot.com/isbn/" + request.isbn, true);
+                xhr.open("GET", url, true);
                 xhr.onreadystatechange = function() 
                 {
                     if (xhr.readyState == 4) 
                     {
-                        chrome.pageAction.setTitle({tabId: sender.tab.id, title: 'LibraryLookup'});
+                       //  200 = OK
+                       // 204 = No Content - when Google returns cached content
+                       if ( xhr.status != 200 && xhr.status != 204 )
+                       {
+                            console.log('error: xhr.status = ' + xhr.status);
+                            chrome.pageAction.setTitle({tabId: sender.tab.id, title: 'LibraryLookup: Error while searching'});
+                            chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'no_book_found_16.png'});
+                            return;
+                       }
+
                         lookupsByPage[sender.tab.url] = xhr.responseText;
                         if ( $("li", $(xhr.responseText)).length )
                         {
+                            chrome.pageAction.setTitle({tabId: sender.tab.id, title: 'LibraryLookup: Found'});
                             chrome.pageAction.setPopup({tabId: sender.tab.id, popup: 'popup.html'});
-                            chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'book_found.png'});
+                            chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'book_found_16.png'});
                         }
                         else
                         {
-                            chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'no_book_found.png'});
+                            chrome.pageAction.setTitle({tabId: sender.tab.id, title: 'LibraryLookup: Not found'});
+                            chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'no_book_found_16.png'});
                         }
                         
                     }
