@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Options for Library Lookup</title>
+<script type="text/javascript">
+function loadOptions() 
+{
+   var libraries = localStorage["favLibraries"];
+   if ( ! libraries )
+   {
+      libraries = 'wpl,kpl,rwl';
+   }
+   libraries = libraries.split(',');
+   
+   var form = document.getElementById("libraries");
+   var checkboxes = form.getElementsByTagName("input");
+   for (var i = 0; i < checkboxes.length; i++) 
+   {
+      var child = checkboxes[i];
+      for ( var l = 0; l < libraries.length; l++ )
+      {
+         if (child.value == libraries[l] ) 
+         {
+            child.checked = "true";
+            break;
+         }
+      }
+   }
+}
+
+function saveOptions() 
+{
+   var libraries = new Array();
+   var form = document.getElementById("libraries");
+   var checkboxes = form.getElementsByTagName("input");
+   for (var i = 0; i < checkboxes.length; i++) 
+   {
+      var child = checkboxes[i];
+      if ( child.checked )
+      {
+         libraries.push(child.value);
+      }
+   }
+   localStorage["favLibraries"] = libraries;
+   loadOptions();
+}
+
+function eraseOptions() 
+{
+   localStorage.removeItem("favLibraries");
+   location.reload();
+}
+</script>
+</head>
+<body onload="loadOptions()">
+<h1>Favorite Libraries</h1>
+<form id="libraries">
+  <fieldset>
+    <p><label> <input type="checkbox" value="wpl">Waterloo Public Library </label></p>
+    <p><label> <input type="checkbox" value="kpl">Kitchener Public Library </label></p>
+    <p><label> <input type="checkbox" value="rwl">Region of Waterloo Library </label></p>
+  </fieldset>
+  <br />
+  <button onclick="saveOptions()">Save</button>
+</form>
+<div id="status"></div>
+</body>
+</html>

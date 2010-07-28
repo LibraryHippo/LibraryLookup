@@ -1,13 +1,14 @@
 {
-  "name": "Library Lookup Extension",
-  "version": "1.0.2010.714",
-  "description": "Use the Library Lookup web app to look for books in local libraries",
+  "name": "Library Lookup",
+  "version": "1.0.2010.726",
+  "description": "Use the Library Lookup web app to look for books in local libraries. Icons by http://dryicons.com",
   "icons": { 
     "16": "book_search_16.png",
     "48": "book_search_48.png",
     "128": "book_search_128.png" 
   },
   "background_page": "background.html", 
+  "options_page": "options.html",
   "page_action": 
   {
     "default_icon": "book_search_16.png",
