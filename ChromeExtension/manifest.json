@@ -11,7 +11,7 @@
   "options_page": "options.html",
   "page_action": 
   {
-    "default_icon": "book_search_16.png",
+    "default_icon": "search_moving_eyes.gif",
     "default_title": "Library Lookup"
   },
   "content_scripts": [

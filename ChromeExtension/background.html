@@ -37,7 +37,7 @@
                        {
                             console.log('error: xhr.status = ' + xhr.status);
                             chrome.pageAction.setTitle({tabId: sender.tab.id, title: 'LibraryLookup: Error while searching'});
-                            chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'no_book_found_16.png'});
+                            chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'my_book_error_19.png'});
                             return;
                        }
 
@@ -46,12 +46,12 @@
                         {
                             chrome.pageAction.setTitle({tabId: sender.tab.id, title: 'LibraryLookup: Found'});
                             chrome.pageAction.setPopup({tabId: sender.tab.id, popup: 'popup.html'});
-                            chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'book_found_16.png'});
+                            chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'my_found_book_19.png'});
                         }
                         else
                         {
                             chrome.pageAction.setTitle({tabId: sender.tab.id, title: 'LibraryLookup: Not found'});
-                            chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'no_book_found_16.png'});
+                            chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'my_book_not_found_19.png'});
                         }
                         
                     }
