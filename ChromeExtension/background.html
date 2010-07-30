@@ -14,7 +14,26 @@
                 // chrome.pageAction.onClicked.addListener(function(tab){});
                 chrome.pageAction.show(sender.tab.id);
 
+                var searching_images = ['searching_eyes_down.png',
+                                        'searching_eyes_right.png',
+                                        'searching_eyes_down.png',
+                                        'searching_eyes_left.png'];
 
+                var image_index = 0;
+                
+                var keep_switching_icon = true;
+                function rotateIcon()
+                {               
+                   if ( keep_switching_icon )
+                   {
+                      console.log('switching icon');
+                      chrome.pageAction.setIcon({tabId: sender.tab.id, path: searching_images[image_index]});
+                      image_index = (image_index + 1) % searching_images.length ;
+                   window.setTimeout(rotateIcon, 300);
+                   }
+                }
+
+                   window.setTimeout(rotateIcon, 300);
                 var libraries = localStorage["favLibraries"];
                 if ( ! libraries )
                 {
@@ -31,6 +50,7 @@
                 {
                     if (xhr.readyState == 4) 
                     {
+                       keep_switching_icon = false;
                        //  200 = OK
                        // 204 = No Content - when Google returns cached content
                        if ( xhr.status != 200 && xhr.status != 204 )
