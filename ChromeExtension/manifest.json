@@ -20,5 +20,5 @@
       "js": ["lookup.js"]
     }
   ],
-  "permissions": [ "tabs", "http://librarylookup.appspot.com/"]
+  "permissions": [ "tabs", "http://librarylookup.appspot.com/", "http://localhost/"]
 }

@@ -11,8 +11,7 @@ function loadOptions()
    }
    libraries = libraries.split(',');
    
-   var form = document.getElementById("libraries");
-   var checkboxes = form.getElementsByTagName("input");
+   var checkboxes = document.getElementsByTagName("input");
    for (var i = 0; i < checkboxes.length; i++) 
    {
       var child = checkboxes[i];
@@ -29,19 +28,32 @@ function loadOptions()
 
 function saveOptions() 
 {
-   var libraries = new Array();
-   var form = document.getElementById("libraries");
-   var checkboxes = form.getElementsByTagName("input");
-   for (var i = 0; i < checkboxes.length; i++) 
-   {
-      var child = checkboxes[i];
-      if ( child.checked )
-      {
-         libraries.push(child.value);
-      }
-   }
-   localStorage["favLibraries"] = libraries;
-   loadOptions();
+    var libraries = new Array();
+    var checkboxes = document.getElementsByTagName("input");
+    for (var i = 0; i < checkboxes.length; i++) 
+    {
+        var child = checkboxes[i];
+        if ( child.checked )
+        {
+            libraries.push(child.value);
+        }
+    }
+    localStorage["favLibraries"] = libraries;
+
+    showSaved();
+}
+
+function clearStatus()
+{
+    var status = document.getElementById("status");
+    status.innerHTML = '';
+}
+
+function showSaved()
+{
+    var status = document.getElementById("status");
+    status.innerHTML = 'saved';
+    window.setTimeout(clearStatus, 1000);
 }
 
 function eraseOptions() 
@@ -53,15 +65,12 @@ function eraseOptions()
 </head>
 <body onload="loadOptions()">
 <h1>Favorite Libraries</h1>
-<form id="libraries">
   <fieldset>
-    <p><label> <input type="checkbox" value="wpl">Waterloo Public Library </label></p>
-    <p><label> <input type="checkbox" value="kpl">Kitchener Public Library </label></p>
-    <p><label> <input type="checkbox" value="rwl">Region of Waterloo Library </label></p>
+    <label> <input type="checkbox" value="wpl">Waterloo Public Library </label><br>
+    <label> <input type="checkbox" value="kpl">Kitchener Public Library </label><br>
+    <label> <input type="checkbox" value="rwl">Region of Waterloo Library </label><br>
   </fieldset>
   <br />
-  <button onclick="saveOptions()">Save</button>
-</form>
-<div id="status"></div>
+  <button onclick="saveOptions()">Save</button><span id="status"></span>
 </body>
 </html>
