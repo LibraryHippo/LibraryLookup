@@ -122,7 +122,7 @@ function whichSiteIsThis()
          {
             try
             {
-               return location.href.match(/(\d{9,12}[\dXx])/)[1];
+               return location.href.match(isbnREdelimited)[1];
             }
             catch ( e ) 
             {
