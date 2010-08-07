@@ -59,7 +59,7 @@ all_libraries = {
     'rwl': rwl.Library(urlfetch.fetch),
     }
 
-#@memcache.memoize(lambda args, kwargs: args[0], 3600)
+@memcache.memoize(lambda args, kwargs: repr(args), 3600)
 def lookup_isbn_html(isbn, libraries):
         found = catalogue_service.find_item(isbn, libraries)
 
