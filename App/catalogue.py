@@ -20,19 +20,24 @@ class Catalogue:
     def find_item(self, isbn, libraries):
         items = []
         for library in libraries:
-            logging.debug('looking for ' + isbn)
+            items_found_so_far = len(items)
+            logging.debug('looking for ' + isbn + ' in ' + library.name)
             url = library.find_item(isbn)
             if url:
+                logging.info('found ' + isbn + ' in ' + library.name)
                 items.append(FindResult(library, url))
             else:
                 other_editions = self.xisbn.get_editions(isbn)
                 for edition in other_editions:
                     if edition == isbn:
                         continue
-                    logging.debug('looking for ' + edition)
+                    logging.debug('looking for ' + edition + ' in ' + library.name)
                     url = library.find_item(edition)
                     if url:
+                        logging.info('found ' + edition + ' in ' + library.name)
                         items.append(FindResult(library, url))
                         break
+            if len(items) == items_found_so_far:
+                logging.info('could not find' + isbn + ' in ' + library.name)
         return items
 
