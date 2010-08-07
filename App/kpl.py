@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 
+import library
+
 def searchUrl(isbn):
     return 'http://books.kpl.org/search~S2/?searchtype=i&searcharg=%(isbn)s&searchlimits=&searchscope=2' % vars()
 
-class Library:
+class Library(library.LibraryBase):
     def __init__(self, opener):
+        self.id = 'kpl'
         self.name = 'Kitchencher Public Library'
         self.opener = opener
 

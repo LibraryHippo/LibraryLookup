@@ -42,6 +42,7 @@
                 libraries = libraries.split(',');
                 
                 url = 'http://librarylookup.appspot.com/isbn/' + request.isbn + '?lib=';
+                #url = 'http://localhost:8080/isbn/' + request.isbn + '?lib=';
                 url = url + libraries.join('&lib=');
                    
                 var xhr = new XMLHttpRequest();
