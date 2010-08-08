@@ -38,6 +38,6 @@ class Catalogue:
                         items.append(FindResult(library, url))
                         break
             if len(items) == items_found_so_far:
-                logging.info('could not find' + isbn + ' in ' + library.name)
+                logging.info('could not find ' + isbn + ' in ' + library.name)
         return items
 
