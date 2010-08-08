@@ -14,10 +14,10 @@
                 // chrome.pageAction.onClicked.addListener(function(tab){});
                 chrome.pageAction.show(sender.tab.id);
 
-                var searching_images = ['searching_eyes_down.png',
-                                        'searching_eyes_right.png',
-                                        'searching_eyes_down.png',
-                                        'searching_eyes_left.png'];
+                var searching_images = ['searching_eye_down_16.png',
+                                        'searching_eye_right_16.png',
+                                        'searching_eye_down_16.png',
+                                        'searching_eye_left_16.png'];
 
                 var image_index = 0;
                 
@@ -33,7 +33,7 @@
                    }
                 }
 
-                //                window.setTimeout(rotateIcon, 300);
+                window.setTimeout(rotateIcon, 300);
                 var libraries = localStorage["favLibraries"];
                 if ( ! libraries )
                 {
@@ -42,7 +42,7 @@
                 libraries = libraries.split(',');
                 
                 url = 'http://librarylookup.appspot.com/isbn/' + request.isbn + '?lib=';
-                #url = 'http://localhost:8080/isbn/' + request.isbn + '?lib=';
+                //url = 'http://localhost:8080/isbn/' + request.isbn + '?lib=';
                 url = url + libraries.join('&lib=');
                    
                 var xhr = new XMLHttpRequest();
