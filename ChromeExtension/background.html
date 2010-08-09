@@ -11,7 +11,6 @@
           if ( request.msg == 'lookup' )
           {
                 chrome.pageAction.setTitle({tabId: sender.tab.id, title: 'LibraryLookup: searching'});
-                // chrome.pageAction.onClicked.addListener(function(tab){});
                 chrome.pageAction.show(sender.tab.id);
 
                 var searching_images = ['searching_eye_down_16.png',
