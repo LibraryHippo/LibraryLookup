@@ -1,0 +1,24 @@
+{
+  "name": "Library Lookup",
+  "version": "1.0.2010.808",
+  "description": "Use the Library Lookup web app to look for books in local libraries. Icons by http://dryicons.com",
+  "icons": { 
+    "16": "searching_eye_left_16.png",
+    "48": "icon_48.png",
+    "128": "icon_128.png" 
+  },
+  "background_page": "background.html", 
+  "options_page": "options.html",
+  "page_action": 
+  {
+    "default_icon": "searching_eye_left_16.png",
+    "default_title": "Library Lookup"
+  },
+  "content_scripts": [
+   {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["lookup.js"]
+    }
+  ],
+  "permissions": [ "tabs", "http://librarylookup.appspot.com/", "http://localhost/"]
+}

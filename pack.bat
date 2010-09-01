@@ -1,0 +1,1 @@
+"%ProgramFiles%\7-Zip\7z.exe" a ChromeExtension.zip ChromeExtension

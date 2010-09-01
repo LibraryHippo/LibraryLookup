@@ -1,0 +1,899 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<title>Kitchener and Waterloo Public Libraries                                    /WPL</title>
+<base target="_self"/>
+<link rel="stylesheet" type="text/css" href="/scripts/ProStyles.css" />
+<link rel="stylesheet" type="text/css" href="/screens/w-stylesheet.css" />
+<link rel="shortcut icon" type="ximage/icon" href="/screens/favicon.ico" />
+<script language="JavaScript" type="text/javascript" src="/scripts/common.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/elcontent.js"></script>
+
+<link rel="icon" href="/screens/favicon.ico"><link rel="shortcut icon" href="/screens/favicon.ico"><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body >
+<script language="JavaScript" type="text/javascript">
+var min=8;
+var max=22;
+function increaseFontSize() {
+   var p = document.getElementsByTagName('*')
+   for(i=0;i<p.length;i++) {
+      if(p[i].style.fontSize) {
+         var s = parseInt(p[i].style.fontSize.replace("px",""));
+      } else {
+         var s = 14;
+      }
+      if(s!=max) {
+         s += 2;
+      }
+      p[i].style.fontSize = s+"px"
+   }
+}
+function decreaseFontSize() {
+   var p = document.getElementsByTagName('*');
+   for(i=0;i<p.length;i++) {  
+      if(p[i].style.fontSize) {
+         var s = parseInt(p[i].style.fontSize.replace("px",""));
+      } else {
+         var s = 14;
+      }
+      if(s!=min) {
+         s -= 2;
+      }
+      p[i].style.fontSize = s+"px"
+   }   
+}
+
+</script>
+<script language="JavaScript" type="text/javascript">
+<!-- Hide the JS
+startTimeout(240000, "/search~S3/");
+-->
+</script>
+
+<!-- begin toplogo.html file -->
+<!-- HEADER -->
+<a class="linkskip" href="#content">Skip over navigation</a>
+<div id="container-header">
+<div id="header-main1-background">
+<div id="container-header-content">
+<div id="header-logo"><a href="http://www.wpl.ca"><img src="http://www.wpl.ca/wp-content/themes/WPL/images/template/logo-main1.jpg" alt="Waterloo Public Library"/></a></div>
+<div id="header-sub"><img src="http://www.wpl.ca/wp-content/themes/WPL/images/template/sub-main1.jpg" alt="Waterloo Public Library"/></div>
+<div id="header-main1-utility">
+<div id="header-title" class=title1><a href="/search~S3/">Catalogue</a></div>
+<div id="font-size"><a href="javascript:decreaseFontSize();"><img src="http://www.wpl.ca/wp-content/themes/WPL/images/template/font-smaller.gif" alt="Font Smaller" width="15" height="38"/></a><a href="javascript:increaseFontSize();" ><img src="http://www.wpl.ca/wp-content/themes/WPL/images/template/font-larger.gif" alt="Font Larger" width="19" height="38"/></a></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<!-- NAV -->
+
+<div id="container-nav" align=center>
+<div id="nav">
+<ul><li><a href="http://www.wpl.ca" class="navline">Home</a></li><li><a href="http://books.kpl.org/search~S3/">Catalogue</a></li><li><a href="http://www.wpl.ca/location">Locations & Hours</a></li><li><a href="http://books.wpl.ca/patroninfo~S3/top">My Account</a></li><li><a href="http://www.wpl.ca/downloads">Downloads</a></li><li><a href="http://www.wpl.ca/ebranch">eBranch</a></li><li><a href="http://www.wpl.ca/book-a-computer">Book a Computer</a></li><li><a href="http://www.wpl.ca/blogs-more">Blogs</a></li><li><a href="http://www.wpl.ca/contact">Contact Us</a></li></ul>
+
+</div>
+</div>
+<div align=center>
+<a href="http://books.kpl.org/screens/newitems.html">New Items</a> | <a href="http://www.wpl.ca/about/borrowing/interlibrary-loan-form/">Interlibrary Loan</a>  | <a href="http://www.wpl.ca/ebranch/databases-and-weblinks">Databases and WebLinks</a> | <a href="http://www.wpl.ca/services/ask-us/">Ask Us</a> 
+</div>
+<!--end toplogo.html-->
+<div align="center" class="navigationRow">
+
+<a href="/search~S3"><img src="/screens/b-newsrch.gif" alt="Start Over" border="0" /></a>
+<a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CE/2browse/indexsort=-"><img src="/screens/b-extended.gif" alt="Extended Display" border="0" /></a>
+<a href="/search~S3?/i+0321125215+/i0321125215/1,0,0,B/limit:relimit"><img src="/screens/b-limit.gif" alt="Limit/Sort" border="0" /></a>
+<a href="/search~S3/i"><img src="/screens/b-another.gif" alt="Another Search" border="0" /></a>
+</div>
+
+<!-- BEGIN BROWSE SCREEN TABLE -->
+<table lang="en" class="browseScreen">
+<!-- BEGIN SEARCH WIDGET -->
+<div align="center">
+<tr align="center" valign="middle">
+<td valign="middle" colspan="2">
+<div  class="browseSearchtool"><form target="_self" action="/search~S3/">
+      <label for="searchtype" style="display:none;">Search Type1</label><select name="searchtype" id="searchtype">
+        <option value="X"> KEYWORD</option>
+
+        <option value="t"> TITLE</option>
+        <option value="a"> AUTHOR</option>
+        <option value="s"> SERIES</option>
+        <option value="d"> SUBJECT</option>
+        <option value="c"> CALL NO</option>
+
+        <option value="i" selected="selected"> ISBN/ISSN</option>
+      </select>
+      &nbsp;
+      <label for="searcharg" style="display:none;">Search</label><input type="text" name="searcharg" id="searcharg" size="30" maxlength="75" value=" 0321125215 " />
+      &nbsp;
+      <label for="searchscope" style="display:none;">Search Scope</label><select name="searchscope" id="searchscope">
+        <option value="2">          </option>
+
+        <option value="4">          </option>
+        <option value="6">          </option>
+        <option value="5"> King Digital Collection</option>
+        <option value="1"> Kitchener Public Library</option>
+        <option value="3" selected="selected"> Waterloo Public Library</option>
+
+      </select>
+      &nbsp;
+      <input type="hidden" name="SORT" value="D" /><input type="hidden" name="extended" value="0" /><input type="submit" name="SUBMIT" value="Search" />
+<div>
+      <input type="checkbox" name="availlim" value="1"  /> <span class="limit-to-available">Limit results to available items</span><br/>
+</div>
+<div>
+      <input type="hidden" name="searchlimits" value="" />
+      <input type="hidden" name="searchorigarg" value="i 0321125215 " />
+
+</div>
+</form>
+<div></div></div>
+
+</td>
+</tr>
+</div>
+<!-- END SEARCH WIDGET -->
+
+<tr  class="msg"><td align="center" colspan="3">No matches found; nearby ISBN/ISSN'S are:</td></tr>
+
+<!-- BEGIN BROWSE PAGER -->
+<tr  class="browsePager"><td align="center"  class="browsePager" colspan="3">
+<!-- begin unbounded page widgit -->
+Result page:&nbsp;&nbsp;<a href="/search~S3?/i+0321125215+/i0321125215/-53,0,0,B/browse">Prev</a>
+
+<a href="/search~S3?/i+0321125215+/i0321125215/47,0,0,B/browse">Next</a>
+<!-- end unbounded page widgit -->
+</td>
+</tr>
+<!-- END BROWSE PAGER -->
+
+<!-- BEGIN BROWSE SCREEN LEFT CELL: BROWSELIST/BRIEFCIT AREA -->
+<tr><td>
+<table width="100%" border="3" cellspacing="1" class="browseList">
+<tr  class="browseHeader">
+<td  class="browseHeaderData">
+&nbsp;
+</td>
+<td align="left" valign="bottom" class="browseHeaderYear">
+Year
+</td>
+
+<td align="center" valign="bottom" class="browseHeaderEntries">
+Entries
+</td>
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_-3'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321105621pbk&1%2C1%2C/indexsort=-">0321105621pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2005
+</td>
+<td align="right" class="browseEntryEntries">
+
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_-2'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321106695pbk&1%2C1%2C/indexsort=-">0321106695pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2003
+</td>
+<td align="right" class="browseEntryEntries">
+1
+
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_-1'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321113411pbk&1%2C1%2C/indexsort=-">0321113411pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_0'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321122461pbk&1%2C1%2C/indexsort=-">0321122461pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2005
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="yourEntryWouldBeHere">
+</tr>
+<tr  class="yourEntryWouldBeHere">
+<td align="CENTER" colspan="3" class="yourEntryWouldBeHereData">
+<b>Your entry <font color="red"> 0321125215 </font> would be here</b>
+
+</td>
+</tr>
+<tr  class="browseEntry">
+</tr>
+<tr  class="browseEntry">
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_1'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321125304pbk&1%2C1%2C/indexsort=-">0321125304pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2003
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_2'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321127609pbk&1%2C1%2C/indexsort=-">0321127609pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2005
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+
+<td class="browseEntryData">
+<a name='anchor_3'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321133544pbk&1%2C1%2C/indexsort=-">0321133544pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2006
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+
+<a name='anchor_4'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321150775pbk&1%2C1%2C/indexsort=-">0321150775pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2007
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_5'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321154924pbk&1%2C1%2C/indexsort=-">0321154924pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2003
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_6'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321156374pbk&1%2C1%2C/indexsort=-">0321156374pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_7'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321166469pbk&1%2C1%2C/indexsort=-">0321166469pbk</a> &nbsp;
+
+</td>
+
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_8'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321168917pbk&1%2C1%2C/indexsort=-">0321168917pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+
+c2005
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_9'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321169514pbk&1%2C1%2C/indexsort=-">0321169514pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_10'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321172884pbk&1%2C1%2C/indexsort=-">0321172884pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_11'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321193857pbk&1%2C1%2C/indexsort=-">0321193857pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_12'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321193873pbk&1%2C1%2C/indexsort=-">0321193873pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_13'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321197275pbk&1%2C1%2C/indexsort=-">0321197275pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_14'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321197674pbk&1%2C1%2C/indexsort=-">0321197674pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_15'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321197747pbk&1%2C1%2C/indexsort=-">0321197747pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2003
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_16'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321198670pbk&1%2C1%2C/indexsort=-">0321198670pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2005
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+
+<td class="browseEntryData">
+<a name='anchor_17'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321199545pbk&1%2C1%2C/indexsort=-">0321199545pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+
+<a name='anchor_18'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321199553pbk&1%2C1%2C/indexsort=-">0321199553pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_19'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321199588pbk&1%2C1%2C/indexsort=-">0321199588pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_20'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321199596pbk&1%2C1%2C/indexsort=-">0321199596pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_21'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321200411pbk&1%2C1%2C/indexsort=-">0321200411pbk</a> &nbsp;
+
+</td>
+
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_22'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321202074pbk&1%2C1%2C/indexsort=-">0321202074pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+
+c2005
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_23'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321202171pbk&1%2C1%2C/indexsort=-">0321202171pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_24'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321205464pbk&1%2C1%2C/indexsort=-">0321205464pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_25'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321205480pbk&1%2C1%2C/indexsort=-">0321205480pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_26'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321205499pbk&1%2C1%2C/indexsort=-">0321205499pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2005
+</td>
+<td align="right" class="browseEntryEntries">
+1
+
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_27'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321205634pbk&1%2C1%2C/indexsort=-">0321205634pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2005
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_28'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321213394pbk&1%2C1%2C/indexsort=-">0321213394pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2005
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_29'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321213440pbk&1%2C1%2C/indexsort=-">0321213440pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_30'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321213483pbk&1%2C1%2C/indexsort=-">0321213483pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+
+<td class="browseEntryData">
+<a name='anchor_31'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i032121353xpbk&1%2C1%2C/indexsort=-">032121353xpbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+
+<a name='anchor_32'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321218736pbk&1%2C1%2C/indexsort=-">0321218736pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2005
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_33'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i032121918xpbk&1%2C1%2C/indexsort=-">032121918xpbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_34'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i032121921xpbk&1%2C1%2C/indexsort=-">032121921xpbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_35'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321220528pbk&1%2C1%2C/indexsort=-">0321220528pbk</a> &nbsp;
+
+</td>
+
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_36'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321220544pbk&1%2C1%2C/indexsort=-">0321220544pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+
+c2005
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_37'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321223659pbk&1%2C1%2C/indexsort=-">0321223659pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2005
+
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_38'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321223764pbk&1%2C1%2C/indexsort=-">0321223764pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_39'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321224094pbk&1%2C1%2C/indexsort=-">0321224094pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2005
+</td>
+<td align="right" class="browseEntryEntries">
+
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_40'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321227999&1%2C1%2C/indexsort=-">0321227999</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_41'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321228359pbk&1%2C1%2C/indexsort=-">0321228359pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_42'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321228766pbk&1%2C1%2C/indexsort=-">0321228766pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2005
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_43'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i032123295xpbk&1%2C1%2C/indexsort=-">032123295xpbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+
+<tr  class="browseEntry">
+<td class="browseEntryData">
+<a name='anchor_44'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321240693pbk&1%2C1%2C/indexsort=-">0321240693pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2006
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+
+<td class="browseEntryData">
+<a name='anchor_45'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321241312pbk&1%2C1%2C/indexsort=-">0321241312pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+<tr  class="browseEntry">
+<td class="browseEntryData">
+
+<a name='anchor_46'></a> <a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CB/frameset&FF=i0321241320pbk&1%2C1%2C/indexsort=-">0321241320pbk</a> &nbsp;
+
+</td>
+<td align="left" valign="top" rowspan="1" class="browseEntryYear">
+c2004
+</td>
+<td align="right" class="browseEntryEntries">
+1
+</td>
+
+</tr>
+</table>
+<!-- END BROWSELIST/BRIEFCIT AREA -->
+</td>
+
+<!-- END BROWSE SCREEN LEFT CELL -->
+
+</tr>
+
+<!-- BEGIN BOTTOM BROWSE PAGER -->
+<tr  class="browsePager"><td align="center"  class="browsePager" colspan="3">
+<!-- begin unbounded page widgit -->
+Result page:&nbsp;&nbsp;<a href="/search~S3?/i+0321125215+/i0321125215/-53,0,0,B/browse">Prev</a>
+<a href="/search~S3?/i+0321125215+/i0321125215/47,0,0,B/browse">Next</a>
+<!-- end unbounded page widgit -->
+</td>
+</tr>
+<!-- END BOTTOM BROWSE PAGER -->
+</table>
+
+<!-- END BROWSE SCREEN TABLE -->
+<div align="center" class="navigationRow">
+<a href="/search~S3"><img src="/screens/b-newsrch.gif" alt="Start Over" border="0" /></a>
+<a href="/search~S3?/i+0321125215+/i0321125215/-3%2C0%2C0%2CE/2browse/indexsort=-"><img src="/screens/b-extended.gif" alt="Extended Display" border="0" /></a>
+<a href="/search~S3?/i+0321125215+/i0321125215/1,0,0,B/limit:relimit"><img src="/screens/b-limit.gif" alt="Limit/Sort" border="0" /></a>
+<a href="/search~S3/i"><img src="/screens/b-another.gif" alt="Another Search" border="0" /></a>
+</div>
+
+</div>
+<div class="botlogo">
+<br />
+WPL Catalogue and your library account may not be available
+<br />
+Mon-Thur 10:00-11:30PM and Fri-Sat 6:00-7:30PM for scheduled maintenance.
+<br />
+</div>
+
+</body>
+</html>

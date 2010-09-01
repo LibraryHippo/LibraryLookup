@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<title>Kitchener and Waterloo Public Libraries                                    /WPL</title>
+<base target="_self"/>
+<link rel="stylesheet" type="text/css" href="/scripts/ProStyles.css" />
+<link rel="stylesheet" type="text/css" href="/screens/w-stylesheet.css" />
+<link rel="shortcut icon" type="ximage/icon" href="/screens/favicon.ico" />
+<script language="JavaScript" type="text/javascript" src="/scripts/common.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/elcontent.js"></script>
+
+<link rel="icon" href="/screens/favicon.ico"><link rel="shortcut icon" href="/screens/favicon.ico"><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body >
+<script language="JavaScript" type="text/javascript">
+var min=8;
+var max=22;
+function increaseFontSize() {
+   var p = document.getElementsByTagName('*')
+   for(i=0;i<p.length;i++) {
+      if(p[i].style.fontSize) {
+         var s = parseInt(p[i].style.fontSize.replace("px",""));
+      } else {
+         var s = 14;
+      }
+      if(s!=max) {
+         s += 2;
+      }
+      p[i].style.fontSize = s+"px"
+   }
+}
+function decreaseFontSize() {
+   var p = document.getElementsByTagName('*');
+   for(i=0;i<p.length;i++) {  
+      if(p[i].style.fontSize) {
+         var s = parseInt(p[i].style.fontSize.replace("px",""));
+      } else {
+         var s = 14;
+      }
+      if(s!=min) {
+         s -= 2;
+      }
+      p[i].style.fontSize = s+"px"
+   }   
+}
+
+</script>
+<script language="JavaScript" type="text/javascript">
+<!-- Hide the JS
+startTimeout(240000, "/search~S3/");
+-->
+</script>
+
+<!-- begin toplogo.html file -->
+<!-- HEADER -->
+<a class="linkskip" href="#content">Skip over navigation</a>
+<div id="container-header">
+<div id="header-main1-background">
+<div id="container-header-content">
+<div id="header-logo"><a href="http://www.wpl.ca"><img src="http://www.wpl.ca/wp-content/themes/WPL/images/template/logo-main1.jpg" alt="Waterloo Public Library"/></a></div>
+<div id="header-sub"><img src="http://www.wpl.ca/wp-content/themes/WPL/images/template/sub-main1.jpg" alt="Waterloo Public Library"/></div>
+<div id="header-main1-utility">
+<div id="header-title" class=title1><a href="/search~S3/">Catalogue</a></div>
+<div id="font-size"><a href="javascript:decreaseFontSize();"><img src="http://www.wpl.ca/wp-content/themes/WPL/images/template/font-smaller.gif" alt="Font Smaller" width="15" height="38"/></a><a href="javascript:increaseFontSize();" ><img src="http://www.wpl.ca/wp-content/themes/WPL/images/template/font-larger.gif" alt="Font Larger" width="19" height="38"/></a></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<!-- NAV -->
+
+<div id="container-nav" align=center>
+<div id="nav">
+<ul><li><a href="http://www.wpl.ca" class="navline">Home</a></li><li><a href="http://books.kpl.org/search~S3/">Catalogue</a></li><li><a href="http://www.wpl.ca/location">Locations & Hours</a></li><li><a href="http://books.wpl.ca/patroninfo~S3/top">My Account</a></li><li><a href="http://www.wpl.ca/downloads">Downloads</a></li><li><a href="http://www.wpl.ca/ebranch">eBranch</a></li><li><a href="http://www.wpl.ca/book-a-computer">Book a Computer</a></li><li><a href="http://www.wpl.ca/blogs-more">Blogs</a></li><li><a href="http://www.wpl.ca/contact">Contact Us</a></li></ul>
+
+</div>
+</div>
+<div align=center>
+<a href="http://books.kpl.org/screens/newitems.html">New Items</a> | <a href="http://www.wpl.ca/about/borrowing/interlibrary-loan-form/">Interlibrary Loan</a>  | <a href="http://www.wpl.ca/ebranch/databases-and-weblinks">Databases and WebLinks</a> | <a href="http://www.wpl.ca/services/ask-us/">Ask Us</a> 
+</div>
+<!--end toplogo.html-->
+<a name="content" id="content"></a>
+
+<table>
+<tr>
+<td align="center">
+<div>
+<a href="/search~S3"><img src="/screens/b-newsrch.gif" alt="Start Over" border="0" /></a>
+<a href="/search~S3?/i1593974744/i1593974744/1%2C1%2C1%2CB/request&FF=i1593974744&1%2C1%2C"><img src="/screens/b-request.gif" alt="I want to place a reservation on this item" border="0"></a>
+<a href="/search~S3?/i1593974744/i1593974744/1,1,1,B/limit:relimit"><img src="/screens/b-limit.gif" alt="Limit/Sort" border="0" /></a>
+<a href="/search~S3/i"><img src="/screens/b-another.gif" alt="Another Search" border="0" /></a>
+</div>
+<div id="bibDisplayContent">
+<div class="bibSearch">
+<form target="_self" action="/search~S3/">
+      <label for="searchtype" style="display:none;">Search Type1</label><select name="searchtype" id="searchtype">
+        <option value="X"> KEYWORD</option>
+
+        <option value="t"> TITLE</option>
+        <option value="a"> AUTHOR</option>
+        <option value="s"> SERIES</option>
+        <option value="d"> SUBJECT</option>
+        <option value="c"> CALL NO</option>
+
+        <option value="i" selected="selected"> ISBN/ISSN</option>
+      </select>
+      &nbsp;
+      <label for="searcharg" style="display:none;">Search</label><input type="text" name="searcharg" id="searcharg" size="30" maxlength="75" value="1593974744" />
+      &nbsp;
+      <label for="searchscope" style="display:none;">Search Scope</label><select name="searchscope" id="searchscope">
+        <option value="2">          </option>
+
+        <option value="4">          </option>
+        <option value="6">          </option>
+        <option value="5"> King Digital Collection</option>
+        <option value="1"> Kitchener Public Library</option>
+        <option value="3" selected="selected"> Waterloo Public Library</option>
+
+      </select>
+      &nbsp;
+      <input type="hidden" name="SORT" value="D" /><input type="hidden" name="extended" value="0" /><input type="submit" name="SUBMIT" value="Search" />
+<div>
+      <input type="checkbox" name="availlim" value="1"  /> <span class="limit-to-available">Limit results to available items</span><br/>
+</div>
+<div>
+      <input type="hidden" name="searchlimits" value="" />
+      <input type="hidden" name="searchorigarg" value="i1593974744" />
+
+</div>
+</form>
+</div>
+<!-- close tool -->
+<br />
+</div>
+<div class="bibPager">
+
+Record: &nbsp
+<a href="/search~S3?/i1593974744/i1593974744/1%2C1%2C1%2CB/frameset&FF=i1593974426&1%2C1%2C">Prev</a>
+<a href="/search~S3?/i1593974744/i1593974744/1%2C1%2C1%2CB/frameset&FF=i1593974760&1%2C1%2C">Next</a>
+</div>
+<div class="bibClear">
+</div>
+
+</td>
+</tr>
+</table>
+<div class="bibDisplayContentMain">
+<table cellpadding="5" cellspacing="0" width="100%" colspan="2">
+<tr>
+<td width="5%">
+</td>
+<td width="10%">
+<img src="http://www.syndetics.com/hw7.pl?isbn=9781593974749/SC.GIF&client=kitcp" border="0" alt="book jacket"></td>
+<td width="70%" valign="top">
+<!-- BEGIN BIBDETAIL TABLE BORDER -->
+<table lang="en" class="bibDetail">
+<tr  class="bibInfoEntry" ><td>
+<!-- BEGIN INNER BIB TABLE -->
+<table width="100%" cellspacing="3" cellpadding="0">
+<tr><!-- next row for fieldtag=a -->
+
+<td valign="top" width="20%"  class="bibInfoLabel">Author</td>
+<td class="bibInfoData">
+<a href="/search~S3?/aCard%2C+Orson+Scott/acard+orson+scott/-3,-1,0,B/browse">Card, Orson Scott</a>
+
+</td></tr>
+<tr><!-- next row for fieldtag=t -->
+<td valign="top" width="20%"  class="bibInfoLabel">Title</td>
+<td class="bibInfoData">
+<strong>Ender's game [recorded book] / Orson Scott Card</strong></td></tr>
+<tr><!-- next row for fieldtag=p -->
+<td valign="top" width="20%"  class="bibInfoLabel">Imprint</td>
+<td class="bibInfoData">
+
+New York : Audio Renaissance, p2004</td></tr>
+<tr><!-- next row for fieldtag=e -->
+<td valign="top" width="20%"  class="bibInfoLabel">Edition</td>
+<td class="bibInfoData">
+Special 20th anniversary ed., Unabridged ed</td></tr>
+</table>
+<!-- END INNER BIB TABLE -->
+</td></tr>
+</table>
+<!-- END BIBDETAIL TABLE -->
+</td>
+<td width="15%">
+<div class="bibResourceSidebar">
+
+<!-- BEGIN RESOURCE TABLE -->
+<table width="100%"  class="bibResourceTable" cellpadding="2" cellspacing="2" border="0">
+<tr class="bibResourceTableHeader">
+<td class="bibResourceTableHeader"></td></tr>
+<tr class="bibResourceTableEntry"><td class="bibResourceTableEntry">
+<a href="/search~S3?/i1593974744/i1593974744/1%2C1%2C1%2CB/webfrombib0~2022906&FF=i1593974744&1%2C1%2C"><img src="/screens/b-book-details.gif" alt="Book Details"></a></td></tr>
+
+</table>
+<!-- END RESOURCE TABLE -->
+
+</div>
+</td>
+</tr>
+</table>
+</div>
+<!--this is the holdings table-->
+<div class="bibInfoEntry">
+
+<table width="100%">
+<tr>
+<td>
+</td>
+<td>
+<table width="100%" class="bibItems">
+<tr  class="bibItemsHeader">
+<th width="33%"  class="bibItemsHeader">
+LOCATION
+</th>
+<th width="43%"  class="bibItemsHeader">
+CALL NO.
+</th>
+<th width="24%"  class="bibItemsHeader">
+STATUS
+</th>
+</tr>
+
+<tr  class="bibItemsEntry">
+
+<td width="33%" ><!-- field 1 -->&nbsp;WPL Recorded Book Fic 
+</td>
+<td width="43%" ><!-- field C -->&nbsp;<a href="/search~S3?/cCARD/ccard/-3,-1,,E/browse">CARD</a> <!-- field v --><!-- field # -->&nbsp;</td>
+<td width="24%" ><!-- field % -->&nbsp;CHECK SHELVES </td></tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div>
+<table id="bibDisplayContentMore">
+<tr>
+
+<td width=15%>
+</td>
+<td width=70%>
+<!-- BEGIN BIBDETAIL TABLE BORDER -->
+<table lang="en" class="bibDetail">
+<tr  class="bibInfoEntry" ><td>
+<!-- BEGIN INNER BIB TABLE -->
+<table width="100%" cellspacing="3" cellpadding="0">
+<tr><!-- next row for fieldtag=r -->
+<td valign="top" width="20%"  class="bibInfoLabel">Descript</td>
+<td class="bibInfoData">
+9 sound discs (ca. 10.5 hr.) : digital &#59; 4 3/4 in</td></tr>
+<tr><!-- next row for fieldtag=n -->
+
+<td valign="top" width="20%"  class="bibInfoLabel">Note</td>
+<td class="bibInfoData">
+Compact discs</td></tr>
+<tr><!-- next row for fieldtag=n -->
+<td></td>
+<td class="bibInfoData">
+Includes an original postscript written and recorded by the author</td></tr>
+<tr><!-- next row for fieldtag=n -->
+<td></td>
+<td class="bibInfoData">
+Read by Stefan Rudnicki, Harlan Ellison & cast</td></tr>
+<tr><!-- next row for fieldtag=d -->
+
+<td valign="top" width="20%"  class="bibInfoLabel">Subject</td>
+<td class="bibInfoData">
+<a href="/search~S3?/dWiggin%2C+Ender+%28Fictitious+character%29+--+Fiction/dwiggin+ender+fictitious+character+fiction/-3,-1,0,B/browse">Wiggin, Ender (Fictitious character) -- Fiction</a>
+
+</td></tr>
+<tr><!-- next row for fieldtag=d -->
+<td></td>
+<td class="bibInfoData">
+<a href="/search~S3?/dBrothers+and+sisters+--+Fiction/dbrothers+and+sisters+fiction/-3,-1,0,B/browse">Brothers and sisters -- Fiction</a>
+
+</td></tr>
+<tr><!-- next row for fieldtag=d -->
+<td></td>
+<td class="bibInfoData">
+
+<a href="/search~S3?/dGenetic+engineering+--+Fiction/dgenetic+engineering+fiction/-3,-1,0,B/browse">Genetic engineering -- Fiction</a>
+
+</td></tr>
+<tr><!-- next row for fieldtag=d -->
+<td></td>
+<td class="bibInfoData">
+<a href="/search~S3?/dWar+games+--+Fiction/dwar+games+fiction/-3,-1,0,B/browse">War games -- Fiction</a>
+
+</td></tr>
+<tr><!-- next row for fieldtag=d -->
+<td></td>
+<td class="bibInfoData">
+<a href="/search~S3?/dAudiobooks/daudiobooks/-3,-1,0,B/browse">Audiobooks</a>
+
+</td></tr>
+<tr><!-- next row for fieldtag=d -->
+<td></td>
+<td class="bibInfoData">
+<a href="/search~S3?/dScience+fiction/dscience+fiction/-3,-1,0,B/browse">Science fiction</a>
+
+</td></tr>
+<tr><!-- next row for fieldtag=b -->
+<td valign="top" width="20%"  class="bibInfoLabel">Alt Author</td>
+<td class="bibInfoData">
+<a href="/search~S3?/aRudnicki%2C+Stefan%2C+1945-/arudnicki+stefan+1945/-3,-1,0,B/browse">Rudnicki, Stefan, 1945-</a>
+
+</td></tr>
+<tr><!-- next row for fieldtag=b -->
+
+<td></td>
+<td class="bibInfoData">
+<a href="/search~S3?/aEllison%2C+Harlan/aellison+harlan/-3,-1,0,B/browse">Ellison, Harlan</a>
+
+</td></tr>
+<tr><!-- next row for fieldtag=i -->
+<td valign="top" width="20%"  class="bibInfoLabel">ISBN</td>
+<td class="bibInfoData">
+9781593974749 :</td></tr>
+<tr><!-- next row for fieldtag=i -->
+<td valign="top" width="20%"  class="bibInfoLabel">Music #</td>
+<td class="bibInfoData">
+ART 474</td></tr>
+
+</table>
+<!-- END INNER BIB TABLE -->
+</td></tr>
+</table>
+<!-- END BIBDETAIL TABLE -->
+<!-- close bibDisplayBody -->
+</td>
+<td width=15%>
+</td>
+</tr>
+</table>
+</div>
+<br />
+</div>
+<div class="botlogo">
+<br />
+WPL Catalogue and your library account may not be available
+
+<br />
+Mon-Thur 10:00-11:30PM and Fri-Sat 6:00-7:30PM for scheduled maintenance.
+<br />
+</div>
+
+
+</body>
+</html>
+<!--this is customized <screens/bib_display_s3.html>-->
