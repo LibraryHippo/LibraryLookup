@@ -86,7 +86,7 @@ function whichSiteIsThis()
       {
          getIsbn: function()
          {
-            var isbn = document.body.innerHTML.match(/ISBN:([0-9X]+)/)[1];
+            var isbn = document.body.innerHTML.match(/ISBN:([0-9X]+)/i)[1];
             return isbn;
          },
 
@@ -146,7 +146,7 @@ function whichSiteIsThis()
                
                for ( var i = 0; i < isbnHeaderNodeCandidates.length; i++ )
                {
-                  if ( isbnHeaderNodeCandidates[i].innerHTML.match(/isbn/) )
+                  if ( isbnHeaderNodeCandidates[i].innerHTML.match(/isbn/i) )
                   {
                       var isbnNode = isbnHeaderNodeCandidates[i].nextSibling;
                       while ( isbnNode.nodeName != 'DIV' )
