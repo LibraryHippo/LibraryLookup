@@ -1,7 +1,7 @@
 {
   "name": "Library Lookup",
-  "version": "1.0.2010.808",
-  "description": "Use the Library Lookup web app to look for books in local libraries. Icons by http://dryicons.com",
+  "version": "1.0.2010.1117",
+  "description": "Use the Library Lookup web app to look for books in local libraries.",
   "icons": { 
     "16": "searching_eye_left_16.png",
     "48": "icon_48.png",
