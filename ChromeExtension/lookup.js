@@ -210,6 +210,6 @@ if ( knownPage )
    if ( found_isbn )
    {
       console.log('requesting: found_isbn = ' + found_isbn);
-      chrome.extension.sendRequest(request={msg: 'lookup', isbn: found_isbn});
+      chrome.extension.sendMessage({msg: 'lookup', isbn: found_isbn});
    }      
 }
