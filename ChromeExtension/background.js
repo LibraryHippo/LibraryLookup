@@ -9,10 +9,10 @@ chrome.runtime.onMessage.addListener(
             chrome.pageAction.setTitle({tabId: sender.tab.id, title: 'LibraryLookup: searching'});
             chrome.pageAction.show(sender.tab.id);
 
-            var searching_images = ['searching_eye_down_16.png',
-                                    'searching_eye_right_16.png',
-                                    'searching_eye_down_16.png',
-                                    'searching_eye_left_16.png'];
+            var searching_images = ['searching_eye_down_19.png',
+                                    'searching_eye_right_19.png',
+                                    'searching_eye_down_19.png',
+                                    'searching_eye_left_19.png'];
 
             var image_index = 0;
             
@@ -53,7 +53,7 @@ chrome.runtime.onMessage.addListener(
                     {
                         console.log('error: xhr.status = ' + xhr.status);
                         chrome.pageAction.setTitle({tabId: sender.tab.id, title: 'LibraryLookup: Error while searching'});
-                        chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'error_16.png'});
+                        chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'error_19.png'});
                         return;
                     }
 
@@ -64,12 +64,12 @@ chrome.runtime.onMessage.addListener(
                     {
                         chrome.pageAction.setTitle({tabId: sender.tab.id, title: 'LibraryLookup: Found'});
                         chrome.pageAction.setPopup({tabId: sender.tab.id, popup: 'popup.html'});
-                        chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'found_16.png'});
+                        chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'found_19.png'});
                     }
                     else
                     {
                         chrome.pageAction.setTitle({tabId: sender.tab.id, title: 'LibraryLookup: Not found'});
-                        chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'not_found_16.png'});
+                        chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'not_found_19.png'});
                     }
                 }
             };
