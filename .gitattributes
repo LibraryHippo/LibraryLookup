@@ -1,0 +1,11 @@
+*	text=lf
+
+*.bat	text=crlf
+*.cmd	text=crlf
+
+*.gif	binary
+*.ico	binary
+*.jpg	binary
+*.pdn	binary
+*.png	binary
+
