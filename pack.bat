@@ -1,1 +1,1 @@
-"%ProgramFiles%\7-Zip\7z.exe" a ChromeExtension.zip ChromeExtension
+"C:\PortableApps\PortableApps\7-ZipPortable\App\7-Zip64\7z.exe" a ChromeExtension.zip ChromeExtension
