@@ -28,10 +28,11 @@ class BaseWrapper:
         '''Ensures that any attribute defined on a wrapped fetcher is available on the wrapper.'''
         return getattr(self.fetcher, name)
 
+
 class CookieHandler(BaseWrapper):
     '''A fetcher that stores and provides cookies
     '''
-    
+
     def __init__(self, fetcher):
         '''Create a new wrapped fetcher.
 
@@ -49,12 +50,13 @@ class CookieHandler(BaseWrapper):
                                 allow_truncated, follow_redirects, deadline)
         self.cookie_jar.load(response.headers.get('set-cookie', ''))
         return response
-    
+
     def _make_cookie_header(self):
-        cookieHeader = ""
+        cookie_header = ""
         for value in self.cookie_jar.values():
-            cookieHeader += "%s=%s; " % (value.key, value.value)
-        return cookieHeader
+            cookie_header += "%s=%s; " % (value.key, value.value)
+        return cookie_header
+
 
 class RedirectFollower(BaseWrapper):
     '''A fetcher that follows all redirects.
@@ -81,10 +83,12 @@ class RedirectFollower(BaseWrapper):
 
         return response
 
+
 class PayloadEncoder(BaseWrapper):
     '''A fetcher that automatically encodes its payload argument.
     '''
-    def __call__(self, url, payload=None, method='GET', headers={}, allow_truncated=False, follow_redirects=True, deadline=None):
+    def __call__(self, url, payload=None, method='GET',
+                 headers={}, allow_truncated=False, follow_redirects=True, deadline=None):
         '''Fetch, after encoding the payload argument
 
         If payload is not None, method will be set to POST.
@@ -93,6 +97,7 @@ class PayloadEncoder(BaseWrapper):
             method = 'POST'
             payload = urllib.urlencode(payload)
         return self.fetcher(url, payload, method, headers, allow_truncated, follow_redirects, deadline)
+
 
 class Transcriber(BaseWrapper):
     '''A fetcher that maintains a record of all its requests and responses.'''
@@ -104,7 +109,8 @@ class Transcriber(BaseWrapper):
         BaseWrapper.__init__(self, fetcher)
         self. transactions = []
 
-    def __call__(self, url, payload=None, method='GET', headers={}, allow_truncated=False, follow_redirects=True, deadline=None):
+    def __call__(self, url, payload=None, method='GET',
+                 headers={}, allow_truncated=False, follow_redirects=True, deadline=None):
         '''Fetch, recording transactions
 
         Later, transactions may be retrieved from the transactions attribute.
