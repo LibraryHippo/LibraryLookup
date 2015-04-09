@@ -2,6 +2,7 @@
 
 import logging
 
+
 class FindResult:
     def __init__(self, library, url):
         self.library = library
@@ -12,6 +13,7 @@ class FindResult:
 
     def __repr__(self):
         return 'FindResult(' + repr(self.library) + ', ' + self.url + ')'
+
 
 class Catalogue:
     def __init__(self, xisbn):
@@ -40,4 +42,3 @@ class Catalogue:
             if len(items) == items_found_so_far:
                 logging.info('could not find ' + isbn + ' in ' + library.name)
         return items
-

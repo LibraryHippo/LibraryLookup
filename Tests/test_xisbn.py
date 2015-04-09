@@ -4,6 +4,7 @@ import xisbn
 
 from fakes import MyXisbnWebService
 
+
 def test_get_editions__isbn10_no_13s__returns_isbn10_synonyms_and_single_13():
     web_service = MyXisbnWebService()
     web_service['1234567890'] = ['3820967206', '398465451X', '8465416954']
@@ -17,6 +18,7 @@ def test_get_editions__isbn10_no_13s__returns_isbn10_synonyms_and_single_13():
     assert '8465416954' in editions
     assert '1234567890147' in editions
 
+
 def test_get_editions__isbn13_no_10s__returns_isbn13_synonyms_and_single_10():
     web_service = MyXisbnWebService()
     web_service['1212334567890'] = ['3845620967206', '378998465451X', '8461595416954']
@@ -29,5 +31,3 @@ def test_get_editions__isbn13_no_10s__returns_isbn13_synonyms_and_single_10():
     assert '378998465451X' in editions
     assert '8461595416954' in editions
     assert '2334567890' in editions
-
-
