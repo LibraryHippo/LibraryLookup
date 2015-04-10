@@ -15,8 +15,7 @@ def test_find_item__isbn10__makes_good_request():
     w = rwl.Library(opener)
 
     w.find_item('0060515198')
-    assert (opener.last_request['url'] ==
-            'http://www.regionofwaterloo.canlib.ca/uhtbin/cgisirsi/uOtJAQjVct/HEADQUARTR/x/5/0/?searchdata1=0060515198')
+    assert (opener.last_request['url'] == 'http://olco.canlib.ca/client/en_US/rwl/search/results?qu=0060515198')
 
 
 def test_find_item__isbn10_in_library__returns_record():
@@ -24,8 +23,7 @@ def test_find_item__isbn10_in_library__returns_record():
     w = rwl.Library(opener)
 
     record = w.find_item('0060515198')
-    assert (record ==
-            'http://www.regionofwaterloo.canlib.ca/uhtbin/cgisirsi/uOtJAQjVct/HEADQUARTR/x/5/0/?searchdata1=0060515198')
+    assert (record == 'http://olco.canlib.ca/client/en_US/rwl/search/results?qu=0060515198')
 
 
 def test_find_item__isbn10_not_in_library__returns_false():

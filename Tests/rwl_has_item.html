@@ -1,1272 +1,182 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<!-- Copyright (c) 2000 - 2009, SirsiDynix - Defines the head  body of each page. --> 
- 
-<html lang="en"  dir="ltr" xmlns="http://www.w3.org/1999/xhtml"> 
- 
-<head> 
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.5; user-scalable=1;" /> 
- 
- 
-  <title>Item Display
-    - Anansi boys
-  </title> 
- 
- 
-<!-- Set the expiration date to the past so the page will always be reloaded --> 
-  <meta http-equiv="Expires" content="Sun, 1 Jan 1995 08:00:00 CST"/> 
- 
-  <!-- Not the login page --> 
- 
-    <!-- Set the refresh to do an EXIT right before the session times out. This will cause timed out sessions to automatically go back to the login/first page, ready for the next user. - Since there is no way to target the _top frame, cannot do this if any frames are used, else the refresh goes into the main frame. - Also, the URL below has to be a full URL, so cannot do this without using the HTTP_ADDRESS. --> 
- 
-  <meta http-equiv="refresh" content="7140; URL=http://www.regionofwaterloo.canlib.ca/uhtbin/cgisirsi/XyKsW3iIct/HEADQUARTR/153771119/58"/> 
- 
-<script type="text/javascript" src="/Js/prototype.js"></script> 
-<script type="text/javascript" src="/Js/scriptaculous.js"></script> 
-<script type="text/javascript" src="/Js/sirsidynix.js"></script> 
-<script type="text/javascript" src="/Js/datetimepicker.js"></script> 
- 
-<script type="text/javascript" src="/Js/sd-ec-version.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-timer.js"></script> 
-<script type="text/javascript" src="/Js/sd-common.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-events.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-progress.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-stats.js"></script> 
-<script type="text/javascript" src="/Js/getcontent.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-xdoc-loader.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-ajax-loader.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-response-handler.js"></script> 
-<script type="text/javascript" src="/Js/sd-xsl-data.js" ></script> 
-<script type="text/javascript" src="/Js/sd-ec-values.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-conditions.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-region-def.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-specifics.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-engine.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-page-interface.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-xml.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-html-with-in-xml.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-response-handler-for-html.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-tree.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-blink-2.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-on-demand.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-syndetics.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-tabs.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-hit-list-similar-entities.js"></script> 
-<script type="text/javascript" src="/Js/sd-ec-chili-4.js"></script> 
- 
- 
-<link rel="stylesheet" href="/Css/default/default.css" type="text/css" /> 
- 
- 
- 
-</head> 
-<!-- if copies=0 or no holdings allowed, default tab to Catalog Record  --> 
-<!-- Start the body of the document.  WARNING:  No comments are allowed inside of the body element's definition. - assign CSS Class of 'body_style' to tag -  If this is a download search results state (14, 62), then load the results in a new browser window to facilitate printing. -  If this is an Archive image view state (911), then open a new window to display the image in new window. -  To help prevent premature selection of a toolbar button (i.e., before the new toolbar is loaded), clear it when the page is unloaded. --> 
-<body onLoad=""> 
- 
- 
-<noscript> 
-Your browser does not support JavaScript and this application utilizes JavaScript to build content and provide links to additional information. You should either enable JavaScript in your browser settings or use a browser that supports JavaScript in order to take full advantage of this application.
-</noscript> 
-<!--  Copyright (c) 2000 - 2009, SirsiDynix - Custom Symphony Item View Page; State #5 --> 
-<!--  Copyright (c) 1996 - 2005, Sirsi Corporation Form for starting a new session in a new window. --> 
- 
-<!-- By setting the "document.new_session.action" property to the URL for logging into a new session at the particular  page you want, a new window will be opened and a new WebCat session will be started automatically. Remember that many WebCat states are dependent on previous states, so only certain "cgi types" can be opened.
- 
-Also, by setting the "document.new_session.new_gateway_db.value" property to a gateway database name, the new session will use that gateway instead of the user's default gateway. Note that the use of Javascript is required to submit this form. --> 
- 
-<form name="new_session" method="post" action="/uhtbin/cgisirsi/qin9IeBvlh/HEADQUARTR/0/57/49" target="new_session"> 
-	
-		<input type="hidden" name="user_id" value="WEBSERVER"/> 
-		<input type="hidden" name="password" value=""/> 
-	
-	<input type="hidden" name="new_gateway_db" value=""/> 
-</form> 
- 
- 
-<!--  Copyright (c) 2000 - 2008, SirsiDynix - Puts the top-of-page information common to all pages. --> 
-<div id="header_container" class="header_container"> 
-  <h1>Item Display
-    - Anansi boys
-  </h1> 
-      <a class="skipnav" href="#skipnav">Skip navigation</a>  <a name="top"></a> 
-  <div class="branding_container" > 
-      <div class="branding"> 
-            <img border="0" src="/WebCat_Images/English/Other/Miscib/WATE.gif" alt="- Online Catalogue" title="- Online Catalogue"/> 
-      </div> 
-      <div class="branding_subheading"> 
-         <!-- Print the gateway envn title if not blank --> 
-          Region of Waterloo Library
-          - Online Catalogue
-      </div>      
-	</div> 
-  <div class="login_container"> 
-	   <!-- present language choices --> 
-		  <div class="module_language_choices"> 
-<!-- Add the Language options --> 
-  <!-- Suppress an option for the current language --> 
-    <a href="/uhtbin/cgisirsi/hVueD9G400/HEADQUARTR/153771119/111/FRENCH" title="French" target="_top"><img src="/WebCat_Images/English/Other/Miscib/FRENCH.gif" border=0 class="langicon" alt="French Language" title="French"/></a> 
-  <!-- Suppress an option for the current language --> 
-      </div> 
-        <form name="loginform" method="post" action="/uhtbin/cgisirsi/pIj96JM1a1/HEADQUARTR/0/57/49" class="login_form"> 
-<!--  Copyright (c) 2004, Sirsi Corporation - myProfile login or view myFavorites --> 
-<!--  Copyright (c) 1998 - 2003, Sirsi Corporation - Sets the default values for USER_ID, ALT_ID, and PIN prompts. - The USER_ID, ALT_ID, and PIN page variables will be returned. --> 
- 
-<!-- If the user has not logged in, first try to default to the ID based on the IP address - the $UO and $Uf will be set.  If that fails, then default to the IDs in the config file. If the user has already logged in, default to the logged in user's IDs, unless the user is a shared login. --> 
- 
- 
- 
-	  <!-- only user ID is used if both on --> 
-		<div class="user_name"> 
-			<label for="user_id">Library card #</label> 
-			<input class="user_name_input" type="text" name="user_id" id="user_id"  maxlength="20" value=""/> 
-		</div> 
-	
-	 
-		<div class="password"> 
-			<label for="password">PIN</label> 
-			<input class="password_input" type="password" name="password" id="password"  maxlength="20" value=""/> 
-		</div>  
-	
-	 
-	<input type="submit" value=" LOGIN" class="login_button"/> 
- 
-	 
- 
- 
- 
-        </form> 
-	  <!-- login form--> 
-  </div> 
-</div> 
-<!--  Copyright (c) 1996 - 2006, SirsiDynix - Gateway Root Bar. --> 
-<div id="header_menu_container" class="header_menu_container"> 
-  <h2>Navigation Menu</h2> 
-  <ul class="menu"> 
-    <!-- display text with CSS instead --> 
-          <li class="menu_link"><a href="/uhtbin/cgisirsi/MfXj5HyLMF/HEADQUARTR/153771119/38/1/X/BLASTOFF" class="rootbar"> 
-       Search/Home</a></li> 
-          <li class="menu_link"><a href="/uhtbin/cgisirsi/Id8AH7bal9/HEADQUARTR/153771119/1/26/X/BLASTOFF" class="rootbar"> 
-       Find It Fast!</a></li> 
-          <li class="menu_link"><a href="/uhtbin/cgisirsi/DNSPerEPrv/HEADQUARTR/153771119/1/774/X/BLASTOFF" class="rootbar"> 
-       Kids' Library</a></li> 
-          <li class="menu_link"><a href="/uhtbin/cgisirsi/3VbtfcLHPt/HEADQUARTR/153771119/1/1095/X/BLASTOFF" class="rootbar"> 
-       Request Material</a></li> 
-          <li class="menu_link"><a href="/uhtbin/cgisirsi/dFfyAkrVxn/HEADQUARTR/153771119/1/1166/X/BLASTOFF" class="rootbar"> 
-       My Account</a></li> 
-          <li class="menu_link"><a href="/uhtbin/cgisirsi/klhL1MxrCO/HEADQUARTR/153771119/63/1171/X/BLASTOFF" class="rootbar"> 
-       Contact Us</a></li> 
- 
- 
- 
- 
-  </ul> 
-</div> 
- 
- 
- 
-<script language="JavaScript" type="text/javascript"> 
-  setLocalizedValue("CREATE_A_LIST","Create a list before attempting to keep an item");
-</script> 
-<!--  Copyright (c) 2000 - 2009, SirsiDynix - Buttons for Item View page, state #5. --> 
-<div class="secondary_header_menu_container"> 
-  <h2>Contextual Navigation Menu</h2> 
-  <ul class="menu"> 
-    <li class="menu_link"> 
-      <!-- Go back button --><a href="/uhtbin/cgisirsi/kkC6mWgtTi/HEADQUARTR/153771119/2/3" title="Go Back">Go Back</a> 
-    </li> 
-    <!--
-    <li class="menu_link">
-      <a href="/uhtbin/cgisirsi/I9Jb0hRYgM/HEADQUARTR/153771119/2/3" title="Go Back" alt="Go Back">GO BACK</a>
-    </li>
-     --> 
-<li class="menu_link"> 
-  <!-- Help button --> 
-  <script language="javascript" type="text/javascript"> 
-    //<![CDATA[
-    put_help_button('English','Help','full_details');
-    //]]>
-  </script> 
-</li> 
-	
-<li class="menu_link"><a  href="/uhtbin/cgisirsi/QMSqtUN2vA/HEADQUARTR/153771119/49" title="New Search">New Search</a></li> 
- 
-<!-- Backward button --> 
- 
-<!-- Forward button --> 
- 
-<!-- Cross Reference button --> 
- 
-<!-- Text Archive Button --> 
-	
-<!-- View Options Button --> 
-  <li class="menu_link"><a  href="javascript:document.item_view.form_type.value = 'VOPTIONS'; document.item_view.submit()">Change Display</a></li> 
- 
-<!-- Capture Button --> 
-  <li class="menu_link"><a  href="javascript:document.item_view.form_type.value = 'CAPTURE'; document.item_view.submit()">Kept</a></li> 
- 
- 
-<!-- hidden ebook processing --> 
- 
-  <!-- gateway's custom buttons --> 
- 
- 
- 
- 
- 
-  <li class="menu_link"><a  href="javascript:CreateBookmarkLink('','http://www.regionofwaterloo.canlib.ca/uhtbin/cgisirsi/x/0/0/57/5/3?searchdata1=107044{CKEY}&searchfield1=GENERAL^SUBJECT^GENERAL^^&user_id=WEBSERVER')">Bookmark this page</a></li> 
-  <li class="menu_link"><a  href="javascript:show_permalink('http://www.regionofwaterloo.canlib.ca/uhtbin/cgisirsi/x/0/0/57/5/3?searchdata1=107044{CKEY}&searchfield1=GENERAL^SUBJECT^GENERAL^^&user_id=WEBSERVER')">Permalink</a></li> 
- 
-    <li class="menu_link"><a href="/uhtbin/cgisirsi/NoyKMvIK87/HEADQUARTR/153771119/58" title="Logout" target="_top">Logout</a></li> 
-    <li class="menu_link"><a name="skipnav"></a></li> 
-  </ul> 
-</div> 
- 
-<script language="javascript" type="text/javascript"> 
-  SdCommon.setProxifyPrefix('ptp.sh');
- 
-  SdEcValues.setParameter("ordinal"                      ,'1'                                                   );
-  SdEcValues.setParameter('isbn'                         ,'006051518X'               );
-  SdEcValues.setParameter('use-syndetic-enhanced-content','1');
-  SdEcValues.setParameter('syndetics-base-url'           ,'http://www.syndetics.com/index.aspx?'           );
-  SdEcValues.setParameter('syndetics-client-code'        ,'regwaterlool'        );
-  SdEcValues.setParameter('use-chili-enhanced-content'   ,'1'   );
-  SdEcValues.setParameter("language-name"                ,'ENGLISH'                );
-  SdEcValues.setParameter('chilifresh-languages'         ,''         );
-  SdEcValues.setParameter("chilifresh-account"           ,'1808'           );
-  SdEcValues.setParameter("defer-chili-data-load"        , ''       );
-  SdEcValues.setParameter('use-novelist-enhanced-content','0');
-  SdEcValues.setParameter('use-novelist-authors'         ,'0'             );
-  SdEcValues.setParameter('use-novelist-titles'          ,'1'              );
-  SdEcValues.setParameter('use-novelist-related'         ,'1'             );
-  SdEcValues.setParameter("novelist-prof"                ,''             );
-  SdEcValues.setParameter("novelist-pwd"                 ,''            );
-  SdEcValues.setParameter('show-content-regions'         ,''         );
- 
-  SdEcValues.setParameter("down-gif"     ,'/WebCat_Images/English/Other/Miscib/admin-icon-expand.png');
-  SdEcValues.setParameter("up-gif"       ,'/WebCat_Images/English/Other/Miscib/admin-icon-collapse.png');
-  SdEcValues.setVariable ('webcat-url'   ,'/uhtbin/cgisirsi/NRniz8Gcs4/HEADQUARTR'    );
-  SdEcValues.setParameter("session"      ,'153771119'       );
-  SdEcValues.setParameter('isbns'        ,'006051518X');
- 
-  SdEcValues.setParameter("contentcfg-author-bio", '1');
-  SdEcValues.setParameter("contentcfg-review"    , '1'    );
-  SdEcValues.setParameter("contentcfg-blreview"  , '1'  );
-  SdEcValues.setParameter("contentcfg-chreview"  , '1'  );
-  SdEcValues.setParameter("contentcfg-ljreview"  , '1'  );
-  SdEcValues.setParameter("contentcfg-sljreview" , '1' );
-  SdEcValues.setParameter("contentcfg-summary"   , '1'   );
-  SdEcValues.setParameter("contentcfg-toc"       , '1'       );
- 
-  SdEcValues.setParameter("disp-content-author-bio", '1');
-  SdEcValues.setParameter("disp-content-review"    , '1'    );
-  SdEcValues.setParameter("disp-content-blreview"  , '1'  );
-  SdEcValues.setParameter("disp-content-chreview"  , '1'  );
-  SdEcValues.setParameter("disp-content-ljreview"  , '1'  );
-  SdEcValues.setParameter("disp-content-sljreview" , '1' );
-  SdEcValues.setParameter("disp-content-summary"   , '1'   );
-  SdEcValues.setParameter("disp-content-toc"       , '1'       );
- 
-  SdEcValues.setTranslation("Author Notes"                 ,"Author Biography");
-  SdEcValues.setTranslation("Booklist Review"              ,"Booklist Review");
-  SdEcValues.setTranslation("CHOICE Review"                ,"CHOICE Review");
-  SdEcValues.setTranslation("Library Journal Review"       ,"Library Journal Review");
-  SdEcValues.setTranslation("Publishers Weekly Review"     ,"Publishers Weekly Review");
-  SdEcValues.setTranslation("School Library Journal Review","School Library Journal Review");
-  SdEcValues.setTranslation("Table of Contents"            ,"Table of Contents");
-  SdEcValues.setTranslation("Summary"                      ,"Summary");
- 
-  SdEcValues.setTranslation("VIEW_ENRICHMENT","A Look Inside");
-  SdEcValues.setTranslation("to read more see \"A Look Inside\"","to read more see \"{VIEW_ENRICHMENT}\"");
- 
-  SdEcValues.setTranslation("Click a title to expand (see) an article - Click the title again to contract (hide) the article","Click a title to expand (see) an article - Click the title again to contract (hide) the article");
- 
-  SdEcValues.setTranslation("Author Read-alikes"    ,"Author Read-alikes")
-  SdEcValues.setTranslation("Feature Articles"      ,"Feature Articles")
-  SdEcValues.setTranslation("Curricular Connections","Curricular Connections")
-  SdEcValues.setTranslation("Author Biographies"    ,"Author Biographies")
-  SdEcValues.setTranslation("Recommended Reads"     ,"Recommended Reads")
-  SdEcValues.setTranslation("What We're Reading"    ,"What We're Reading")
-  SdEcValues.setTranslation("Award Winners"         ,"Award Winners")
-  SdEcValues.setTranslation("Other Articles"        ,"Other Articles")
- 
-  SdEcValues.setTranslation("Similar Authors","Similar Authors")
-  SdEcValues.setTranslation("Similar Titles" ,"Similar Titles");
-  SdEcValues.setTranslation("Similar Loading","Loading...");
-  SdEcValues.setTranslation("Similar Nothing Found","Nothing similar found");
-  SdEcValues.setTranslation("Collapse Icon"  ,"Collapse Icon");
-  SdEcValues.setTranslation("Expand Icon"    ,"Expand Icon");
-</script> 
- 
- 
- 
-<div class="columns_container"> 
-  <div class="column pct75 details_left_column"> 
-    <form name="item_view" method="post" action="/uhtbin/cgisirsi/p1MblD3Qra/HEADQUARTR/153771119/13"> 
-     <!-- if no library qualifier specified in search --> 
-    <!-- Print any WEBIMAGE tags that should appear before the list of tags --> 
- 
-<!-- begin routine to discover/discern enrichment types for this item (also netLibrary, URL and DMA --> 
- <!-- counter for enr types that builds content in iB/iL --> 
- <!-- counter for enr types that open up a new window --> 
- 
- 
- <!-- show image links for URL or DMA tags (placed with enrichment) --> 
-       	
-       	
-       	
-       	
-       	
-       	
-       	
-       	
-       	
-       	
-       	
-       	
-       	
-       	
-       	
-       	
- 
-<!-- end of disc_enrich.h --> 
-<!-- end routine --> 
-  <!-- Find appropriate call number to display from list of call numbers --> 
-  <input type="hidden" name="first_hit" value="1"/> 
-  <input type="hidden" name="last_hit" value="1"/> 
-    <div class="content_container searchsum_hits"> 
-      <div class="content"> 
-        <p> 
-        <!-- Print the message, if one exists (except for "volume does not exist",
-        "This item has been marked lost" and "This item is assumed lost") --> 
-            record
-            1
-            of
-            1
-            for search
-<!--  Copyright (c) 2000 - 2009, SirsiDynix - e-Library Catalog Keyword search summary --> 
-<!-- Print the search summary --> 
-<strong> 
-    "0060515198"
- 
- 
- 
- 
- 
- 
- 
-</strong> 
-        </p> 
-        <!-- View Options Button --> 
-            <a class="display_options" href="javascript:document.item_view.form_type.value = 'VOPTIONS'; document.item_view.submit()">Change Display</a> 
-      </div> 
-    </div> 
-    <div class="content_container item_details"> 
-      <div class="content"> 
-        <h3>Item Details</h3> 
-        <script language="javascript" type="text/javascript"> 
-          SdEcPageInterface.signalEvent( "top-of-hit-list", {'hit-list-isbn-list' : ['006051518X']} );
-        </script> 
-<!--  Copyright (c)  2008, SirsiDynix - Unicorn Hit Permanent Keep Button  --> 
- 
-<ul class="itemservices"> 
-        <li class="hit_list_keepremove"> 
-        <script language="javascript" type="text/javascript"> 
-          //<![CDATA[
-          put_keepremove_button('107044', 'Keep','/WebCat_Images/English/Other/Miscib','Keep','/uhtbin/cgisirsi/TQeR49Ioe6/HEADQUARTR','153771119','Remove');
-          //]]>
-          </script> 
-        </li> 
- 
- 
-        <li id="fullCover"> 
-        <script language="javascript" type="text/javascript"> 
-          getDetailCover('http://www.syndetics.com/index.aspx?','regwaterlool',
-          '006051518X,9780060515188,0060515198,9780060515195','','',
-          'fullCover','Cover');
-        </script> 
-        </li> 
-     <!-- eLibrary configured with content --> 
-        <li id="rating" class='chili_review'></li> 
-        <li class="hidden"> 
-          <script language="javascript" type="text/javascript"> 
-            SdEcPageInterface.populateContentRegion('rating','/Js/sd-detail-rating.xml',false);
-          </script> 
-        </li> 
- 
-<!-- Only show the HOLD buttons if no E-BOOKs exist --> 
-          <li><a  href="/uhtbin/cgisirsi/FIunRLIbKR/HEADQUARTR/153771119/108"><b>PLACE HOLD</b><br><br></a></li> 
-         <!-- hold link for all copies --> 
-     <!-- hold icon --> 
-		  	  
- 
-<!-- Only show the BUYNOW  buttons if no E-BOOKs exist --> 
-  <!-- optionally show the BUYNOW buttons if no copies available --> 
-     <!-- BUYNOW --> 
-   <!-- BUYNOW only if not available --> 
- <!-- EBOOK --> 
- 
-<!-- only use if LIKESEARCH type is not set to EXACT --> 
-<!--  Copyright (c) 2000 - 2008, SirsiDynix -  Related Search Button - These variables must be defined before including this file: - ENTRY_TYPE - tag entry type character to build the buttons for. - LINK_NAME - name of href link. --> 
- 
- 
- 
- 
- 
-                        <!-- Single term in tag --> 
- 
- 
- 
- 
- 
- 
-   <li> <a class="related" href="/uhtbin/cgisirsi/kQarqY32wN/HEADQUARTR/153771119/18/XAU/XAUTHOR/Gaiman,+Neil.">Find more by this author</a></li> 
- 
- 
-<!--  Copyright (c) 2000 - 2008, SirsiDynix -  Related Search Button - These variables must be defined before including this file: - ENTRY_TYPE - tag entry type character to build the buttons for. - LINK_NAME - name of href link. --> 
- 
- 
- 
- 
- 
-                        <!-- Single term in tag --> 
- 
- 
- 
- 
- 
- 
-                        <!-- Single term in tag --> 
- 
- 
- 
- 
- 
- 
-                        <!-- Single term in tag --> 
- 
- 
- 
- 
- 
- 
-                        <!-- Single term in tag --> 
- 
- 
- 
- 
- 
- 
-                        <!-- Single term in tag --> 
- 
- 
- 
- 
- 
- 
-   <li> <a class="related" href="/uhtbin/cgisirsi/LC0n4FpgLx/HEADQUARTR/153771119/18/XSU/XSUBJECT/Anansi+(Legendary+character)+OR+Fathers+and+sons+OR+Brothers+OR+Humorous+fiction.+OR+Fantasy+fiction.">Find more on these topics</a></li> 
- 
- 
- 
-<!-- Find appropriate call number to display from list of call numbers --> 
- 
- 
- 
-<!-- Print call number browse search--> 
-  <li><a  href="/uhtbin/cgisirsi/L5zMAMYimL/HEADQUARTR/153771119/19/FIC+Gaima/ELMIRA|NO|DEWEY">Nearby items on shelf</a></li> 
-	 
- 
- 
-	 
- 
- 
-</ul> 
- <!-- show tabbed view if suported by browser and the environment is configured to do so -->		
-  <ul id="detail-tabs-container" class="tabs_container pct70" style="float:left; display:inline"> <!-- show tabs for the panel --> 
-    <!--  Build this tab only copies exist --> 
-      <li class="detail_item_information"> 
-          Item Information
-        			
-      </li> 
- 
-    <!-- Build this tab only if any CONTENT1-type content exists --> 
-      <li id="detail-tab-2" class="detail_enrichment"> A Look Inside</li> 
- 
-    <li class="detail_marc_record"> Catalog Record </li> 
- 
-    <!-- Build this tab only if any CONTENT1-type content exists --> 
-      <li id="detail-tab-4" class="related-articles">Related Articles</li> 
- 
-  </ul> <!-- end tabholder span --> 
- <!-- end conditional to show the tabs --> 
- 
-<ul class="tab_panels pct70 detail_page"> 
- 
-  <li id="detail_item_information"> 
-    <h4>Bibligraphic Information</h4> 
- 
-			
-			
-<dl> 
-  <dt class="title_label">Title</dt> 
-  <dd class="title"> 
-            Anansi boys
- 
- 
- 
-  </dd> 
-	 
-  <dt class="author_label">Author</dt> 
-  <dd class="author"> 
-       <!-- Print the author, if one exists --> 
-        Gaiman, Neil.
-  </dd> 
-   <!-- extract requested bib data --> 
-        <dt class="publisher_label">Publisher:</dt> 
-        <dd class="publisher">HarperCollins,</dd> 
-       <!-- Ju data --> 
-     <!-- iteminfo option1 --> 
- 
-	      <dt class="publishing_date_label">Pub date:</dt> 
-	      <dd class="publishing_date">c2005.</dd> 
-	      
-	     <!-- Jv data --> 
-	   <!-- iteminfo option2 --> 
- 
-        <dt class="pages_label">Pages:</dt> 
-        <dd class="pages">336 p. :</dd> 
-       <!-- Jt data --> 
-     <!-- iteminfo option3 --> 
-   <!-- list LT --> 
-     <!-- iteminfo option1 --> 
- 
-     <!-- iteminfo option2 --> 
- 
-     <!-- iteminfo option3 --> 
-   <!-- list LT --> 
-     <!-- iteminfo option1 --> 
- 
-     <!-- iteminfo option2 --> 
- 
-     <!-- iteminfo option3 --> 
-   <!-- list LT --> 
-     <!-- iteminfo option1 --> 
- 
-     <!-- iteminfo option2 --> 
- 
-     <!-- iteminfo option3 --> 
-   <!-- list LT --> 
-     <!-- iteminfo option1 --> 
- 
-     <!-- iteminfo option2 --> 
- 
-     <!-- iteminfo option3 --> 
-   <!-- list LT --> 
-     <!-- iteminfo option1 --> 
- 
-     <!-- iteminfo option2 --> 
- 
-     <!-- iteminfo option3 --> 
-   <!-- list LT --> 
-     <!-- iteminfo option1 --> 
- 
-     <!-- iteminfo option2 --> 
- 
-     <!-- iteminfo option3 --> 
-   <!-- list LT --> 
-     <!-- iteminfo option1 --> 
- 
-     <!-- iteminfo option2 --> 
- 
-     <!-- iteminfo option3 --> 
-   <!-- list LT --> 
-     <!-- iteminfo option1 --> 
- 
-     <!-- iteminfo option2 --> 
- 
-     <!-- iteminfo option3 --> 
-   <!-- list LT --> 
-     <!-- iteminfo option1 --> 
- 
-     <!-- iteminfo option2 --> 
- 
-     <!-- iteminfo option3 --> 
-   <!-- list LT --> 
-     <!-- iteminfo option1 --> 
- 
-     <!-- iteminfo option2 --> 
- 
-     <!-- iteminfo option3 --> 
-   <!-- list LT --> 
-     <!-- iteminfo option1 --> 
- 
-     <!-- iteminfo option2 --> 
- 
-     <!-- iteminfo option3 --> 
-   <!-- list LT --> 
-     <!-- iteminfo option1 --> 
- 
-     <!-- iteminfo option2 --> 
- 
-     <!-- iteminfo option3 --> 
-   <!-- list LT --> 
-     <!-- iteminfo option1 --> 
- 
-     <!-- iteminfo option2 --> 
- 
-     <!-- iteminfo option3 --> 
-   <!-- list LT --> 
-     <!-- iteminfo option1 --> 
- 
-     <!-- iteminfo option2 --> 
- 
-     <!-- iteminfo option3 --> 
-   <!-- list LT --> 
-     <!-- iteminfo option1 --> 
- 
-     <!-- iteminfo option2 --> 
- 
-     <!-- iteminfo option3 --> 
-   <!-- list LT --> 
-   <!-- Print ISBN number, if exists --> 
-    <dt class="isbn_label">ISBN:</dt> 
-    <dd class="isbn">006051518X</dd> 
-  	 
- 
-   <!--list_of_available/holdings --> 
-    <dt class="copy_info_label"> 
-        Item info:
-      	 
-    </dt> 
-    <dd class="copy_info"> 
-       <!-- show if catalog or call-num item view --> 
-                1 copy available at Elmira Branch Library.<br/> 
- </dd> 
-</dl> 
- 
-<ul class="enriched_content"> 
-  <li class="enrichment_container"> 
-  <!-- dynamic content lookup --> 
- 
-   <!-- show following row if enrichment data is available --> 
-    <!-- A Look Inside --> 
- 
- 
-         <a href="http://clcd.odyssi.com/cgi-bin/sirsi/search/r?dbs+child:@term+@isbn+006051518X" target="_blank"><img src="/WebCat_Images/English/Special/Bistro/CLCD.gif" border="0" alt="Childrens Literature Comprehensive Database Review" title="Childrens Literature Comprehensive Database Review"/></a> 
- 
- 
- 
-     <!-- show image links for URL or DMA tags --> 
-      <!-- URL-type tag --> 
- 
-      <!-- URL-type tag --> 
- 
-      <!-- URL-type tag --> 
- 
-      <!-- URL-type tag --> 
- 
-      <!-- URL-type tag --> 
- 
-      <!-- URL-type tag --> 
- 
-      <!-- URL-type tag --> 
- 
-      <!-- URL-type tag --> 
- 
-      <!-- URL-type tag --> 
- 
-      <!-- URL-type tag --> 
- 
-      <!-- URL-type tag --> 
- 
-      <!-- URL-type tag --> 
- 
-      <!-- URL-type tag --> 
- 
-      <!-- URL-type tag --> 
- 
-      <!-- URL-type tag --> 
- 
-      <!-- URL-type tag --> 
- 
-   	
-    </li> 
-   </ul> 
- 
-  <ul class="enrichment_container"> 
-    <li id="detail-item-content" class="enriched_content"></li> 
-    <li> 
-      <script language="javascript" type="text/javascript"> 
-        SdEcPageInterface.populateContentRegion('detail-item-content', '/Js/sd-detail-item-tab.xml', '');
-      </script> 
-    </li> 
-    <!-- container for the expansion of similar authors and titles --> 
-    <ul> 
-      <li id="ncdiv1" class="hidden"> 
-        <ul id="similar1" class="hidden"></ul> 
-      </li> 
-    </ul> 
-    <li id="detail-chili-content" class="chili_iframe"></li> 
-    <li> 
-      <script language="javascript" type="text/javascript"> 
-        SdEcPageInterface.populateContentRegion('detail-chili-content', '/Js/sd-detail-chili.xml', '');
-      </script> 
-    </li> 
-  </ul> 
- 
-<ul> 
- <!-- show if catalog or call-num item view --> 
-    <li> 
-<!-- check for the existence of MARC Holdings data --> 
- 
-    </li> 
-   <!-- show holdings --> 
-      <li> 
-<!--  Copyright (c) 2000 - 2009, SirsiDynix - Holdings and Orders for a Single Item View. --> 
-<h5>Holdings</h5> 
-<table border="0" cellpadding="0" cellspacing="0" id="display_holdings_table" title="The Holdings Table" summary="The Holdings Table contains all of the holdings for this item."> 
-  <caption>Holdings</caption> 
-        <!-- holdings allowed --> 
-        <!-- new library --> 
-        <tr> <!-- Print library header line --> 
-            <th class="holdingsheader" align="left"> 
-                Elmira Branch Library
-            </th> 
-      <th class="holdingsheader" align="center"> 
-	   Copies
-	  </th> 
-	  <th class="holdingsheader" align="center"> 
-	   Material
-	  </th> 
-      <th class="holdingsheader"> 
-	   Location
-	  </th> 
-     </tr> 
-     <!-- new library --> 
-	
-     <tr> 
-         <!-- Number of copies -->  <!-- Start new callnum --> 
-      <td class="holdingslist"> 
-	   FIC Gaima
-	  </td> 
- 
-	  <td class="holdingslist" align="center"> 
-	   1
-	  </td> 
-      <td class="holdingslist" align="center"> 
-	   
-             Book
-      </td> 
-          <td class="holdingslist" align="center"> 
- 	  
-            Adult Novels
- 
-        </td> 
-     </tr> 
- 
-    <!-- Boundwith holdings --> 
- 
-</table> 
-      </li> 
- 
- <!--NoveList Select start--> 
-      <div id="NoveListSelect" class="NoveListSelect"></div> 
-      <script type="text/javascript" id="EIT" src="http://imageserver.ebscohost.com/eit/eitinit.js?auth=profile&profile=s5833317.main.novsel&pwd=dGJyMOPY8Umvp7EA&cfg=Y"></script> 
- <!-- NoveList Select end--> 
- 
-<li> 
-<!--  Copyright (c)  2008, SirsiDynix - Check for additional syndetic content  --> 
- 
- 
- 
- 
- 
- 
- 
-  <!--
-  --> 
- 
-</li> 
-	
-	
-</ul> 
-			
-		
-  </li> 
-    <li id="detail_enrichment" style="display:none"> 
-      <h4>Enriched Content</h4> 
-      <div class="bibinfo"> <!-- displays, author, title, etc on all panels --> 
-          <!-- Print the title, if one exists --> 
-           <strong>Anansi boys</strong> 
-           <br/> 
-          <!-- Print the author, if one exists --> 
-           Gaiman, Neil.
-           <br/> 
-      </div> 	
-<!--  Copyright (c) 2000 - 2007, SirsiDynix - Enrichments for single-item view. --> 
- 
-    <span id="enriched-content" class="enriched-content"></span> 
- 
-    <script language="javascript" type="text/javascript"> 
-      SdEcPageInterface.populateContentRegion('enriched-content', '/Js/sd-enriched-content.xml', true);
-    </script> 
- 
- 
-     <!-- show image links for URL or DMA tags --> 
- 
- 
-         	
- 
- 
-         	
- 
- 
-         	
- 
- 
-         	
- 
- 
-         	
- 
- 
-         	
- 
- 
-         	
- 
- 
-         	
- 
- 
-         	
- 
- 
-         	
- 
- 
-         	
- 
- 
-         	
- 
- 
-         	
- 
- 
-         	
- 
- 
-         	
- 
- 
-         	
- 
-<!-- SIRSI_Include File="syndetics_content.h" --> 
- 
- 
-    </li> 
-    <li id="related-articles" style="display:none"> 
-      <h4>Related Articles</h4> 
-      <div class="bibinfo"> 
-           <strong>Anansi boys</strong> 
-           <br/> 
-           Gaiman, Neil.
-           <br/> 
-      </div> 	
-      <span id="related-content" class="enriched-content"></span> 
-      <script language="javascript" type="text/javascript"> 
-        SdEcPageInterface.populateContentRegion('related-content', '/Js/sd-related-content.xml', true);
-      </script> 
-    </li> 
- 
-  <li id="detail_marc_record" style="display:none;"> 
-    <h4>MARC Record</h4> 
-     <!-- don't show the repeating bib info unless using single-item tabbed view --> 
-      <div class="bibinfo"> <!-- displays, author, title, etc on all panels --> 
-         <!-- Print the title, if one exists --> 
-          <strong>Anansi boys</strong> 
- 
- 
-          <br/> 
-		 
-         <!-- Print the author, if one exists --> 
-          Gaiman, Neil.<br/> 
-      </div> 	
-<a name="marc_data"></a> 
- 
- 
-<!-- The View Unformatted and Regular Views have been separated b/c of an additional column that has to appear for the indicators. The first conditional is to check to show unformatted, then the tables are then constructed using the list code. --> 
- <!-- view formatted --> 
- 
-<!-- Print the tags --> 
-<dl> 
- <!-- Print inline webimage-type tag --> 
-   <!-- Regular tag --> 
- 
-   <dt class="viewmarctags"> 
-     <!-- Regular tag --> 
-    ISBN:
-  </dt> 
-  <dd class="viewmarctags"> 
-    006051518X
-  </dd> 
- 
- <!-- Print inline webimage-type tag --> 
-   <!-- Regular tag --> 
- 
-   <dt class="viewmarctags"> 
-     <!-- Regular tag --> 
-    ISBN:
-  </dt> 
-  <dd class="viewmarctags"> 
-    9780060515188
-  </dd> 
- 
- <!-- Print inline webimage-type tag --> 
-   <!-- Regular tag --> 
- 
-   <dt class="viewmarctags"> 
-     <!-- Regular tag --> 
-    ISBN:
-  </dt> 
-  <dd class="viewmarctags"> 
-    0060515198 (pbk)
-  </dd> 
- 
- <!-- Print inline webimage-type tag --> 
-   <!-- Regular tag --> 
- 
-   <dt class="viewmarctags"> 
-     <!-- Regular tag --> 
-    ISBN:
-  </dt> 
-  <dd class="viewmarctags"> 
-    9780060515195 (pbk)
-  </dd> 
- 
- <!-- Print inline webimage-type tag --> 
-   <!-- Regular tag --> 
- 
-   <dt class="viewmarctags"> 
-     <!-- Regular tag --> 
-    Dewey class number:
-  </dt> 
-  <dd class="viewmarctags"> 
-    FIC
-  </dd> 
- 
- <!-- Print inline webimage-type tag --> 
-   <!-- "Likeable" tag --> 
- 
-  <dt class="viewmarctags"> 
-    Personal Author:
-  </dt> 
-  <dd class="viewmarctags"> 
-                        <!-- Single term in tag --> 
-          <a href="/uhtbin/cgisirsi/cLcMherJTA/HEADQUARTR/153771119/18/X100/XAUTHOR/Gaiman,+Neil.">Gaiman, Neil.</a>      
-  </dd> 
- 
- <!-- Print inline webimage-type tag --> 
-   <!-- "Likeable" tag --> 
- 
-  <dt class="viewmarctags"> 
-    Title:
-  </dt> 
-  <dd class="viewmarctags"> 
-                        <!-- Single term in tag --> 
-          <a href="/uhtbin/cgisirsi/A1WiT5MU6V/HEADQUARTR/153771119/18/X245/XTITLE/Anansi+boys+^2F">Anansi boys / Neil Gaiman. --</a>      
-  </dd> 
- 
- <!-- Print inline webimage-type tag --> 
-   <!-- Regular tag --> 
- 
-   <dt class="viewmarctags"> 
-     <!-- Regular tag --> 
-    Publication info:
-  </dt> 
-  <dd class="viewmarctags"> 
-    New York : HarperCollins, c2005.
-  </dd> 
- 
- <!-- Print inline webimage-type tag --> 
-   <!-- Regular tag --> 
- 
-   <dt class="viewmarctags"> 
-     <!-- Regular tag --> 
-    Physical descrip:
-  </dt> 
-  <dd class="viewmarctags"> 
-    336 p. : ill.
-  </dd> 
- 
- <!-- Print inline webimage-type tag --> 
-   <!-- Regular tag --> 
- 
-   <dt class="viewmarctags"> 
-     <!-- Regular tag --> 
-    General Note:
-  </dt> 
-  <dd class="viewmarctags"> 
-    &quot;William Morrow&quot;.
-  </dd> 
- 
- <!-- Print inline webimage-type tag --> 
-   <!-- Regular tag --> 
- 
-   <dt class="viewmarctags"> 
-     <!-- Regular tag --> 
-    Summary:
-  </dt> 
-  <dd class="viewmarctags"> 
-    Twenty years after the death of Anansi, the trickster god, his sons, who are complete opposites, meet for the first time. One vows to teach the other how to lighten up and have a little fun ... just like dear old dad.
-  </dd> 
- 
- <!-- Print inline webimage-type tag --> 
-   <!-- "Likeable" tag --> 
- 
-  <dt class="viewmarctags"> 
-    Subject term:
-  </dt> 
-  <dd class="viewmarctags"> 
-                        <!-- Single term in tag --> 
-          <a href="/uhtbin/cgisirsi/uXg6eJXxLR/HEADQUARTR/153771119/18/X650/XSUBJECT/Anansi+(Legendary+character)">Anansi (Legendary character)--Fiction.</a>      
-  </dd> 
- 
- <!-- Print inline webimage-type tag --> 
-   <!-- "Likeable" tag --> 
- 
-  <dt class="viewmarctags"> 
-    Subject term:
-  </dt> 
-  <dd class="viewmarctags"> 
-                        <!-- Single term in tag --> 
-          <a href="/uhtbin/cgisirsi/0gaYmDBMl5/HEADQUARTR/153771119/18/X650/XSUBJECT/Fathers+and+sons">Fathers and sons--Fiction.</a>      
-  </dd> 
- 
- <!-- Print inline webimage-type tag --> 
-   <!-- "Likeable" tag --> 
- 
-  <dt class="viewmarctags"> 
-    Subject term:
-  </dt> 
-  <dd class="viewmarctags"> 
-                        <!-- Single term in tag --> 
-          <a href="/uhtbin/cgisirsi/KwAtO2b0V5/HEADQUARTR/153771119/18/X650/XSUBJECT/Brothers">Brothers--Fiction.</a>      
-  </dd> 
- 
- <!-- Print inline webimage-type tag --> 
-   <!-- "Likeable" tag --> 
- 
-  <dt class="viewmarctags"> 
-    Subject term:
-  </dt> 
-  <dd class="viewmarctags"> 
-                        <!-- Single term in tag --> 
-          <a href="/uhtbin/cgisirsi/PDx7LbNy11/HEADQUARTR/153771119/18/X650/XSUBJECT/Humorous+fiction.">Humorous fiction.</a>      
-  </dd> 
- 
- <!-- Print inline webimage-type tag --> 
-   <!-- "Likeable" tag --> 
- 
-  <dt class="viewmarctags"> 
-    Subject term:
-  </dt> 
-  <dd class="viewmarctags"> 
-                        <!-- Single term in tag --> 
-          <a href="/uhtbin/cgisirsi/gIjdc7CrXu/HEADQUARTR/153771119/18/X650/XSUBJECT/Fantasy+fiction.">Fantasy fiction.</a>      
-  </dd> 
- 
-</dl><!--end of bib cell--> 
- 
- <!-- Print any WEBIMAGE tags that should appear after the list of tags --> 
-	
-  <div class="clear_all"></div> 
-    </li> 
-  </ul> <!-- div container for content panels --> 
-        <script language="javascript" type="text/javascript"> 
-          SdEcPageInterface.signalEvent( "end-of-hit-list", {'hit-list-isbn-list' : ['006051518X']} );
-        </script> 
-      </div> 
-    </div> 
-    <input type="hidden" name="form_type" value=""/> 
-    </form> 
-<!--  Copyright (c) 2000 - 2003, Sirsi Corporation - LC Category hidden search form for javascript to work. --> 
-    <form name="lc_search_form" method="post" action="/uhtbin/cgisirsi/qlMGL7I2ws/HEADQUARTR/153771119/5/5/26/1"> 
-      <input type="hidden" name="searchdata1" value=""/> 
-      <input type="hidden" name="search_disp_data1" value=""/> 
-    </form> 
-    <form name="lc_return_form" method="post" action="/uhtbin/cgisirsi/7scTJwtcn9/HEADQUARTR/153771119/5/0/26/0"> 
-      <input type="hidden" name="searchdata1" value=""/> 
-      <input type="hidden" name="sort_by" value=""/> 
-    </form> 
-  </div> 
-  <div class="column pct25 details_right_column"> 
-      <div class="content_container"> 
-        <div class="content"> 
-          <h3>Library Info</h3> 
-<!--  Copyright (c) 2000 - 2006, SirsiDynix - Announcements/Activity - This page file is processed by a  SIRSI_Command for an Si response. --> 
- 
- 
-  <ul class="info_desk"> 
-  
-   
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><script src="/client/assets/d8fc44aa0af920cc/stack/en_US/core.js" type="text/javascript"></script><script src="/client/assets/d8fc44aa0af920cc/stack/en_US/CoreSearchStack.js" type="text/javascript"></script><script src="/client/assets/d8fc44aa0af920cc/stack/en_US/SearchTemplateStack.js" type="text/javascript"></script><script src="/client/assets/d8fc44aa0af920cc/stack/en_US/DetailStack.js" type="text/javascript"></script><script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', "UA-57947942-1"]);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+        </script><meta content="Apache Tapestry Framework (version 5.3.3)" name="generator"/><meta content="chrome=1" http-equiv="X-UA-Compatible"/><link rel="shortcut icon" href="/client/assets/d8fc44aa0af920cc/ctx/favicon.ico" type="image/vnd.mircrosoft.icon" id="favicon"/><script src="/custom/web/web20_WATE.js" type="text/javascript"></script><script src="/client/js/google-preview.js" type="text/javascript"></script><script src="https://encrypted.google.com/books/api.js?hl=en" type="text/javascript"></script><title></title><script type="text/javascript" id="com_sirsi_ent_widgets">
     
-	
-        <li><a href="javascript:open_win('http://www.rwl.library.on.ca/branches.html')">Branches/Hours</a></li> 
-      
-	  <!-- counter test --> 
-    
-   
-    
-	
-        <li><a href="javascript:open_win('http://rwl.library.on.ca/helpalpha.html')">Online Resources</a></li> 
-      
-	  <!-- counter test --> 
-    
-   
-    
-	
-        <li><a href="javascript:open_win('http://www.rwl.library.on.ca/events3.html')">Events</a></li> 
-      
-	  <!-- counter test --> 
-    
-   
-    
-	
-        <li><a href="javascript:open_win('http://www.downloadlibrary.ca')">Digital Audio, Video, E-books</a></li> 
-      
-	  <!-- counter test --> 
-    
-   
-    
-	
-        <li><a href="javascript:open_win('http://rwl.library.on.ca/famlit.html')">Family Literacy</a></li> 
-      
-	  <!-- counter test --> 
-    
-   
-   
-   </ul> 
- 
-   
-        </div> 
-      </div> 
-<!--  Copyright (c) 2000 - 2007, SirsiDynix - Unicorn Other Searches --> 
- 
-<!-- when search field is not blank, assign term to ENGINE_TERM --> 
- 
-  <div class="content_container"> 
-    <div class="content"> 
-        <h3>Continue search in:</h3> 
-        <ul class="info_desk"> 
-          <li><a class="itemservices_link" href="javascript:open_win('http://www.google.com/search?q=0060515198&safe=vss&vss=1&sa=Google+Search')">Google</a></li> 
-      </ul> 
-    </div> 
-  </div> 
-<!--  Copyright (c) 2000 - 2008, SirsiDynix - LC Categories list page. --> 
-<!--  Copyright (c) 2000 - 2009, SirsiDynix - Cross Reference "quick-view" box. This page file is processed by a SIRSI_Command for an So response. --> 
- <!-- if xref list present --> 
-</div> 
-</div> 
- 
-<script type="text/javascript"> 
-var myImage;
-var origImage;
-myImage = document.getElementById("detailsImage");
-if (myImage != null)
-  {
-  origImage = document.createElement("img");
-  origImage.src = myImage.src;
-  if (origImage.height == 1 && origImage.width == 1) 
-    {
-    myImage.height = 1;
-    myImage.width = 1;
-    myImage.src = origImage.src;
-    }
+var com_sirsi_ent_widgets = {
+  "URLS" : {
+    "eRC" : {
+      "emailHoldUrl" : "/client/en_US/rwl/search/detailnonmodal.template.widgetsplatform:emailhold?qu=9780676976328&amp;d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1",
+      "placeHoldUrl" : "/client/en_US/rwl/search/detailnonmodal.template.widgetsplatform:placehold?qu=9780676976328&amp;d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1",
+      "getEResourceUrl" : "/client/en_US/rwl/search/detailnonmodal.template.widgetsplatform:geteresource?qu=9780676976328&amp;d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1",
+      "titleInfoUrl" : "/client/en_US/rwl/search/detailnonmodal.template.widgetsplatform:gettitlesinfo?qu=9780676976328&amp;d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1",
+      "accountsUrl" : "/client/en_US/rwl/search/detailnonmodal.template.widgetsplatform:getaccounts?qu=9780676976328&amp;d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1"
+    },
+    "proxy" : "client/"
   }
-</script> 
- 
-<div class="bottom_buttons"> 
-<!--  Copyright (c) 2000 - 2009, SirsiDynix - Buttons for Item View page, state #5. --> 
-<div class="secondary_header_menu_container"> 
-  <h2>Contextual Navigation Menu</h2> 
-  <ul class="menu"> 
-    <li class="menu_link"> 
-      <!-- Go back button --><a href="/uhtbin/cgisirsi/dgCCPBwB7D/HEADQUARTR/153771119/2/3" title="Go Back">Go Back</a> 
-    </li> 
-    <!--
-    <li class="menu_link">
-      <a href="/uhtbin/cgisirsi/OWcv3FzaFG/HEADQUARTR/153771119/2/3" title="Go Back" alt="Go Back">GO BACK</a>
-    </li>
-     --> 
-<li class="menu_link"> 
-  <!-- Help button --> 
-  <script language="javascript" type="text/javascript"> 
-    //<![CDATA[
-    put_help_button('English','Help','full_details');
-    //]]>
-  </script> 
-</li> 
-	
-<li class="menu_link"><a  href="/uhtbin/cgisirsi/8enFCIsWa9/HEADQUARTR/153771119/49" title="New Search">New Search</a></li> 
- 
-<!-- Backward button --> 
- 
-<!-- Forward button --> 
- 
-<!-- Cross Reference button --> 
- 
-<!-- Text Archive Button --> 
-	
-<!-- View Options Button --> 
-  <li class="menu_link"><a  href="javascript:document.item_view.form_type.value = 'VOPTIONS'; document.item_view.submit()">Change Display</a></li> 
- 
-<!-- Capture Button --> 
-  <li class="menu_link"><a  href="javascript:document.item_view.form_type.value = 'CAPTURE'; document.item_view.submit()">Kept</a></li> 
- 
- 
-<!-- hidden ebook processing --> 
- 
-  <!-- gateway's custom buttons --> 
- 
- 
- 
- 
- 
-  <li class="menu_link"><a  href="javascript:CreateBookmarkLink('','http://www.regionofwaterloo.canlib.ca/uhtbin/cgisirsi/x/0/0/57/5/3?searchdata1=107044{CKEY}&searchfield1=GENERAL^SUBJECT^GENERAL^^&user_id=WEBSERVER')">Bookmark this page</a></li> 
-  <li class="menu_link"><a  href="javascript:show_permalink('http://www.regionofwaterloo.canlib.ca/uhtbin/cgisirsi/x/0/0/57/5/3?searchdata1=107044{CKEY}&searchfield1=GENERAL^SUBJECT^GENERAL^^&user_id=WEBSERVER')">Permalink</a></li> 
- 
-    <li class="menu_link"><a href="/uhtbin/cgisirsi/DyRrvqDH2F/HEADQUARTR/153771119/58" title="Logout" target="_top">Logout</a></li> 
-    <li class="menu_link"><a name="skipnav"></a></li> 
-  </ul> 
-</div> 
-</div> 
-<div class="footer_container"> 
-  <!--  Copyright (c) 1996 - 2009, SirsiDynix - Copyright statement --> 
-  <table border="0" cellpadding="3" cellspacing="0" width="100%" class="footer"> 
-   <tr> 
-    <td align="center" valign="bottom" width="15%" class="footer"> 
-        <img src="/WebCat_Images/English/Other/Miscib/sirsi_button.gif" alt="Powered by: SirsiDynix" border="0"/> 
-    </td> 
-    <td align="center" class="footer" id="requiredCell"><!-- Display the description --> 
-      <div id="feature"> 
-      Region of Waterloo Library<br/> 
-      Your Electronic Library on the Web<br/> 
-      <div id="required"></div> 
-      </div> 
-    </td> 
-    <td align="center" width="15%" class="footer"><a name="bottom" href="#top">Top</a></td> 
-   </tr> 
-  </table> 
-</div> 
- 
-  <script language="JavaScript" type="text/javascript"> 
-    setLocalizedValue("PERMALINK","Permalink");
-    setLocalizedValue("TO_LINK","To link to this item, list, search result or page from an email, your blog or other website, copy and paste the URL below.");
-  </script> 
- 
-</body> 
-</html> 
- 
- 
+};
+
+</script><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/core/default.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/ctx/css/vse/css/Discovery_base.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/ctx/css/format-types.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/app/components/search/suggest.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/core/tapestry-console.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/core/t5-alerts.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/core/tree.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/ctx/css/jquery-ui-1.8.12.custom.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/ctx/css/jquery-selectable.custom.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/ctx/css/vse/open.css"/><link type="text/css" rel="stylesheet" href="/custom/web/WATECustomUpdate060414.css"/></head><body><input value="false" id="fbAvailableHidden" type="hidden"></input><div class="header"><div class="headerWrapper"><div class="header_container" id="header"><div id="mainMenu"><div id="mainMenuContainer"><div id="libInfoContainer"><div class="loginLink"><a shape="rect" tabIndex="1" class="loginLink" onclick="com_sirsi_ent_login.loginFirst();" href="#">Log In</a></div><div class="pipeSeparator">|</div><div class="menuLink"><a shape="rect" tabIndex="2" onclick="com_sirsi_ent_login.loginFirst('http://olco.canlib.ca/client/en_US/rwl/search/account?')" class="loginLink" href="#">My Account</a></div><div class="pipeSeparator">|</div><div class="menuLink"><a tabIndex="3" href="/client/en_US/rwl/search/mylists?">My Lists</a></div><div class="pipeSeparator">|</div><div onclick="event.cancelBubble = true;" class="menuLink" id="libInfoLink"><a shape="rect" href="#">Library Information</a><div onclick="event.cancelBubble = true;" style="display: none;" class="ui-corner-all" id="libraryInfo"><p><strong><a title="Request an item for purchase or interlibrary loan." href="http://rwl.library.on.ca/en/ourcollections/requestitems.asp">Request an Item</a></strong></p>
+<p><a href="http://216.138.208.196/client/help/user-help_en_US/user-help-1-1.htm"><strong>Catalogue Help</strong></a></p>
+<p><strong><a title="Contact us." href="http://rwl.library.on.ca/en/aboutTheLibrary/contactus.asp?_mid_=20097">Contact Us</a></strong></p></div></div></div><div id="languageSelector" class="menuLink"></div><div class="pipeSeparator">|</div><span id="adaModeDiv"><a tabIndex="4" class="ada_link" href="/client/en_US/rwl/search/detailnonmodal.template.header.mainmenu_0.adamode?qu=9780676976328&amp;d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1"><img alt="Click to Render in ADA Mode" title="Accessibility Mode" src="/client/images/ada_mode.png"/></a></span><div title="Security Reminder:" style="display: none;" id="logoutWarning" class="modalBody">Remember to clear the cache and close the browser window.</div></div></div><div id="logo_container" class="logo_container"><span><div class="logoContainer"><p>&nbsp</p>
+<p><a title="Link to the main library website." href="http://www.rwlibrary.ca" target="_blank"><img src="/custom/web/content/WR-fulllogotemp.jpg" alt="" /></a><br><a class="contenttext" href="http://rwl.library.on.ca/en/aboutus/aboutthelibrary.asp"><img src="/custom/web/content/WR-AboutUs.jpg" alt="" /></a><a href="http://rwl.library.on.ca/en/ourcollections/booksmore.asp"><img src="/custom/web/content/WR-OurCollections.png" alt="Our Collections Button" /></a><a href="http://rwl.library.on.ca/en/research/research1.asp"><img src="/custom/web/content/WR-Research.png" alt="Research Button" /></a><a href="http://rwl.library.on.ca/en/kidsTweensTeens/kidstweensandteens.asp"><img src="/custom/web/content/WR-KKT2.png" alt="Kids Tweens Teens Button" /></a><a href="http://rwl.library.on.ca/en/programsevents/programsevents.asp"><img src="/custom/web/content/WR-PandE2.png" alt="Programs and Events" /></a><a href="http://rwl.library.on.ca/en/explore/explore.asp"><img src="/custom/web/content/WR-Explore.png" alt="Explore Button" /></a></p></div></span></div><div class="quicksearchWrapper" id="quicksearchWrapper"><div class="quicksearchBar" id="quicksearchBar"></div></div><div id="searchBoxWrapper"><div id="searchBox"><div id="searchBoxCentered"><div class="basicSearch" id="basicSearch"><div id="searchBoxHomeLink"><a TABINDEX="5" href="/client/en_US/rwl/?"><img alt="Home" title="Home" src="/client/assets/d8fc44aa0af920cc/ctx/images/home.png"/></a></div><div id="searchBoxStyleDiv" style=""><div id="searchBoxesWrapper"><form name="limitForm" class="searchBoxSection" onsubmit="javascript:return Tapestry.waitForPage(event);" action="/client/en_US/rwl/search/detailnonmodal.template.header.searchbox_0.form?qu=9780676976328&amp;d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1" method="post" id="form"><div class="t-invisible"><input value="H4sIAAAAAAAAAK3PvU7DQAwHcFOpUzcQPAGsFwa6wFSpfAiFChGVFTkX0x66nI87pw0Lj8ITIF6iAxvvwAOwMjGQtEjMlbpZ/lv+2a9f0J2fw2kkDHqaDEnQ2BG7Ky7QHguV3qKQmhIWFNRqKuf67vCvtqY0UgT2Bc9dDNDnMFHoUU9JCXqKEp76SnMga3KVYyQ1yJsmajkzZIv9jKTyB+NF73P3/acDWyn0NDsJbEdYksB2+oAzTCy6SZJJMG5yUnuBnRWftvyw4YcNv8k/Buv+cR1YU4xZlZcmRsNu8VYc3X+/fHQAaj+/hIv1TwvMZQytbbQ0K2doq8Z4hGcAgb1lfPMf3y7jTVKt1P0FRZp/syMCAAA=" name="t:formdata" type="hidden"></input></div><label for="searchLimitDropDown" class="hidden">Search Limit</label><select title="Select Search Limit" TABINDEX="6" class="dropDown searchLimitDropDown" onchange="javascript:sboxRstManager.onChange()" id="searchLimitDropDown" name="searchLimitDropDown"><option value="">Search All...</option><optgroup label="----------"><option value="TILS:DIRECT">Search the catalogue</option><option value="TERC_ST_WATERLOO:DIRECT">RWL eResources</option><option value="TROOM_CONTENT:DIRECT">Search this website</option></optgroup></select><img id="searchLimitDropDown_icon" class="t-error-icon t-invisible" alt="" src="/client/assets/d8fc44aa0af920cc/core/spacer.gif"/><select class="hidden" id="roomsRestrictionValues" name="roomsRestrictionValues"><option value="">All Fields</option><option value="false|||TITLE|||Title">Title</option><option value="false|||AUTHOR|||Author">Author</option><option value="false|||SUBJECT|||Subject">Subject</option><option value="false|||SERIES|||Series">Series</option><option value="false|||ISBN|||ISBN">ISBN</option><option value="false|||PREFERRED_CALLNUMBER|||Call Number">Call Number</option></select><img id="roomsRestrictionValues_icon" class="t-error-icon t-invisible" alt="" src="/client/assets/d8fc44aa0af920cc/core/spacer.gif"/></form><div class="hidden" id="rTabIndex">7</div><div class="searchBoxSection t-zone" id="restrictionZone"><form name="selectForm" onsubmit="javascript:return Tapestry.waitForPage(event);" action="/client/en_US/rwl/search/detailnonmodal.template.header.searchbox_0.form_0?qu=9780676976328&amp;d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1" method="post" id="form_0"><div class="t-invisible"><input value="H4sIAAAAAAAAAK2PMU4DMRBFTSSqdCBuQFovBWmgirSEJkRIK2o0tie7Rl6PNZ6Q5TKcAHGJFHTcgQPQUlHgiIYWKe3X0396L5/qcHOtrjIC266qUcCHJcUbchAuBPsUQFB3CA5Z/1KGhvszzZiFvRVP0TElR5uYWU2JWw0JbIdaIO2Yp6m2xBi80QYy6pkpI1iZewzutEFZp8nddvxx8vY9UgcLNbYUhSksoUdRR4sHeIQqQGyrpghjezkkUcd/9HXR10W/z47ZfztumSzm3KxN73MuZ9tXd776en4fKTWkH9Y1KU1nAQAA" name="t:formdata" type="hidden"></input></div><label for="restrictionDropDown" class="hidden">Search Field</label><select title="Select Search Field" class="dropDown restrictionDropDown" onchange="javascript:sboxRstManager.onRestrictionChange(this.value);" id="restrictionDropDown" name="restrictionDropDown"><option value="_PLACEHOLDER_">All Fields</option></select><img id="restrictionDropDown_icon" class="t-error-icon t-invisible" alt="" src="/client/assets/d8fc44aa0af920cc/core/spacer.gif"/></form></div><form name="searchForm" class="searchBoxSection" onsubmit="javascript:return Tapestry.waitForPage(event);" action="/client/en_US/rwl/search/detailnonmodal.template.header.searchbox_0.searchform?qu=9780676976328&amp;d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1" method="post" id="searchForm"><div class="t-invisible"><input value="H4sIAAAAAAAAAK2TvUoDQRDHJwcBMRYiWNhrexE0jR8xiUEQYhAObWVvb7ys7N1edueS2Fj5EjY+gVjpE6Sw8x18ABsLKwvvI4IfIJym252Z/c9vlv/cPEN5uAPbBpnmvWobiQnZVeGB8pjcIAwiyQjtHjIPtZ1XuWp0smoT0z7SgMkYjYaa0r7NIsZ7mGQiNKTPazZXGqVwbZcZtJtuEmSc9gRKb9lBiqOVo3HlafHhzYJSBypchaSV7LIACRY6Z2zAqpKFftUhLUJ/cxQRVPK2x2nbaXA3i3IfasXRGCd2A2GMUOH41ls/fb1+tABG0bAOW8WRpAjEhKgPFwAEs1kon/KfkqliediGVnERnX6H4JRM+YVu/lMiZ5yKfE5ag7XiUv0PtFL/jwJ58wbUi7+dnGMiFSaWavxqKa6CSIUYkrEzD9FPR105L0v3d5e7FlgdmOFSJNX7XgqYbglKDJJAuiVZKN2KuRyhlSF8u74DdE8Vj+IDAAA=" name="t:formdata" type="hidden"></input></div><input class="hidden targetValue" value="" id="targetValue" name="targetValue" type="text"></input><img id="targetValue_icon" class="t-error-icon t-invisible" alt="" src="/client/assets/d8fc44aa0af920cc/core/spacer.gif"/><input class="hidden limitValue" value="" id="limitValue" name="limitValue" type="text"></input><img id="limitValue_icon" class="t-error-icon t-invisible" alt="" src="/client/assets/d8fc44aa0af920cc/core/spacer.gif"/><input class="hidden restrictionValue" value="" id="restrictionValue" name="restrictionValue" type="text"></input><img id="restrictionValue_icon" class="t-error-icon t-invisible" alt="" src="/client/assets/d8fc44aa0af920cc/core/spacer.gif"/><div id="dropDown" class="dropDownHidden"></div><div class="normalSearchBoxDiv" id="searchField"><label for="q" class="hidden">Search For:</label><input title="Search For:" autofocus="false" accessKey="s" maxlength="256" TABINDEX="8" autocomplete="off" size="100" value="9780676976328" id="q" name="q" type="text"></input><img id="q_icon" class="t-error-icon t-invisible" alt="" src="/client/assets/d8fc44aa0af920cc/core/spacer.gif"/></div><div id="buttonsWrapper"><input title="Search" value="Search" TABINDEX="9" class="button" id="searchButton" name="searchButton" type="submit"></input></div></form></div><div id="searchBoxAdvancedLink"><a TABINDEX="10" href="/client/en_US/rwl/search/advanced?">Advanced Search</a></div></div></div></div></div></div></div></div></div><div id="content" xmlns:fb="http://www.facebook.com/2008/fbml"><script type="text/javascript">
+            function spaninator () {
+jQuery('.hotspot:contains("<")').each(function(){
+  var oops = jQuery(this).text();
+  var fixOops = oops.split("<");
+  var fixedOops = fixOops[0]+ " " +fixOops[1];
+  jQuery(this).text(fixedOops);
+});
+jQuery('.hotspot:contains("/span")').each(function(){
+  var oops = jQuery(this).text();
+  var fixOops = oops.split("/span>");
+  var fixedOops = fixOops[0]+ " " +fixOops[1];
+  jQuery(this).text(fixedOops);
+});
+}
+
+        </script><!--
+  ~ Copyright (c) 2011. All rights Reserved
+  --><div id="nm_detail_wrapper" xmlns:fb="http://www.facebook.com/2008/fbml"><div class="detail_main_wrapper hidden" id="detail_main_wrapper0"><div class="detail_main"><input value="9780676976328" type="hidden" id="isbn0" class="isbnValue"></input><div class="detail_buttons"><div><html><!--CustomDropdown component--><!--not adaMode--><div class="customDropdown detail0"><div onclick="$J(this).parent().children('ul').toggle(); event.cancelBubble=true;" class="dropDownButton"><img src="/client/images/blank.gif"/><div>Select an Action</div></div><ul onmouseout="" onmouseover="" style=""><li><a shape="rect" onclick="javascript:holdMeTenderly = 'ent://SD_ILS/0/SD_ILS:1189648'; com_sirsi_ent_login.loginFirst(placeDetailHold)"><img src="/client/images/action-icons/holds.png"/><span>Place Hold(s)</span></a></li><li><a shape="rect" onclick="javascript:Detail.addItemToList('ent://SD_ILS/0/SD_ILS:1189648')"><img src="/client/images/action-icons/mylists.png"/><span>Add to My Lists</span></a></li><li><a shape="rect" onclick="javascript:EmailDialog.openEmailModal(0, false, true)"><img src="/client/images/action-icons/emailSmall.png"/><span>Email</span></a></li><li><a shape="rect" onclick="javascript:Detail.printModal(0)"><img src="/client/images/action-icons/printSmall.png"/><span>Print</span></a></li></ul></div></html></div></div><div class="detail_cover_art_div"><img id="detailCover0" title="Cover image for " alt="Cover image for " class="detail_cover_art" src="http://www.syndetics.com/index.aspx?type=xw12&amp;client=ontlibconsd&amp;upc=&amp;oclc=&amp;isbn=9780676976328/LC.JPG"/></div><div id="detail_biblio0" class="detail_biblio"><div><div class="documentSummaries"><div class="properties"><div class="displayElementWrapper"><div class="displayElementLabel OLC_TITLE_H_label">
+Title.:
+</div> <div class="displayElementText OLC_TITLE_H">The time traveler's wife : a novel / by Audrey Niffenegger. --</div></div></div></div><div class="documentSummaries"><div class="properties"><div class="displayElementWrapper"><div class="displayElementLabel AUTHOR_label">
+Author:
+</div> <div class="displayElementText AUTHOR"><a title="Niffenegger, Audrey." alt="Niffenegger, Audrey." href="/client/en_US/rwl/search/detailnonmodal.detail.mainpanel.osrfielddisplay.newsearch?qu=Niffenegger%2C+Audrey.">Niffenegger, Audrey.</a></div></div></div></div><div class="documentSummaries"><div class="properties"><div class="displayElementWrapper"><div class="displayElementLabel PUBDATE_label">
+Publication Date:
+</div> <div class="displayElementText PUBDATE">2003</div></div></div></div><div class="documentSummaries"><div class="properties"><div class="displayElementWrapper"><div class="displayElementLabel PUBLISHER_label">
+Publisher:
+</div> <div class="displayElementText PUBLISHER">Alfred A. Knopf Canada,</div></div></div></div><div class="documentSummaries"><div class="properties"><div class="displayElementWrapper"><div class="displayElementLabel PHYSICAL_DESC_label">
+Physical Description:
+</div> <div class="displayElementText PHYSICAL_DESC">518 p.</div></div></div></div><div class="documentSummaries"><div class="properties"><div class="displayElementWrapper"><div class="displayElementLabel PREFERRED_CALLNUMBER_label">
+Call number:
+</div> <div class="displayElementText PREFERRED_CALLNUMBER"><a title="FIC Niffe" alt="FIC Niffe" href="/client/en_US/rwl/search/detailnonmodal.detail.mainpanel.osrfielddisplay.newsearch?qu=FIC+Niffe">FIC Niffe</a></div></div></div></div><div class="documentSummaries"><div class="properties"><div class="displayElementWrapper"><div class="displayElementLabel ISBN_label">
+ISBN:
+</div> <div class="displayElementText ISBN">9780676976328</div> <div class="displayElementText ISBN">9780676976335</div></div></div></div><div class="documentSummaries"><div class="properties"><div class="displayElementWrapper"><div class="displayElementLabel SUBJECT_TERM_label">
+Subject Term:
+</div> <div class="displayElementText SUBJECT_TERM"><a title="Time travel -- Fiction." alt="Time travel -- Fiction." href="/client/en_US/rwl/search/detailnonmodal.detail.mainpanel.osrfielddisplay.newsearch?qu=Time+travel+--+Fiction.">Time travel -- Fiction.</a></div> <div class="displayElementText SUBJECT_TERM"><a title="Married people -- Fiction." alt="Married people -- Fiction." href="/client/en_US/rwl/search/detailnonmodal.detail.mainpanel.osrfielddisplay.newsearch?qu=Married+people+--+Fiction.">Married people -- Fiction.</a></div> <div class="displayElementText SUBJECT_TERM"><a title="Domestic fiction." alt="Domestic fiction." href="/client/en_US/rwl/search/detailnonmodal.detail.mainpanel.osrfielddisplay.newsearch?qu=Domestic+fiction.">Domestic fiction.</a></div> <div class="displayElementText SUBJECT_TERM"><a title="Fantasy fiction." alt="Fantasy fiction." href="/client/en_US/rwl/search/detailnonmodal.detail.mainpanel.osrfielddisplay.newsearch?qu=Fantasy+fiction.">Fantasy fiction.</a></div></div></div></div><div class="documentSummaries"><div class="properties"><div class="displayElementWrapper"><div class="displayElementLabel FORMAT_label">
+Format:
+</div> <div id="formatContainer0" class="format_container"><div title="Book" class="formatType"><span style="" class="formatTypeIcon formatTypeIcon-BOOK"></span></div></div></div></div></div><div class="documentSummaries"><div class="properties"><div class="displayElementWrapper"><div class="displayElementLabel BIBSUMMARY_label">
+Summary:
+</div> <div class="displayElementText BIBSUMMARY">Clare and Henry knew each other since she was six years old and he was thirty-six. They married when Clare was twenty-three and Henry thirty-six. Their relationship is put to the test when Henry finds himself misplaced in time.</div></div></div></div><div class="documentSummaries"><div class="properties"><div class="displayElementWrapper"><div class="displayElementLabel LANGUAGE_label">
+Language:
+</div> <div class="displayElementText LANGUAGE">English</div></div></div></div></div><span id="availableHoldsDiv0" class="availableDiv"><span class="availableLabel">Holds: </span><span style="display:inline-block;" name="smallSearchingGif" id="detailTitleHoldsNumber1189648" class="availableNumber"></span></span><br clear="none"/></div><div class="detailActions" id="detailActionsdetail0"><div id="holdButton0" class="holdButton"><input onclick="holdMeTenderly = 'ent://SD_ILS/0/SD_ILS:1189648'; com_sirsi_ent_login.loginFirst(placeDetailHold);" class="button" value="Place Hold" type="button"></input></div><!--
+  ~ Copyright (c) 2013. All rights Reserved
+  --><div class="amazonButton" id="amazonButtonDiv"></div></div></div><div class="clear"></div></div><div class="accordionHolder" id="detail_accordion0"><h3><a shape="rect" href="#"><span class="availableLabel">Available:</span><span id="totalAvailable0" class="totalAvailable">*</span></a></h3><div class="tblHtIE9Fix" id="detailAvailableDiv0"><div class="detailItems"><table class="detailItemTable sortable0 sortable" id="detailItemTable0"><thead><tr><th colspan="1" rowspan="1"><div class="detailItemTable_th">Branch</div></th><th colspan="1" rowspan="1"><div class="detailItemTable_th">Shelf Number</div></th><th colspan="1" rowspan="1"><div class="detailItemTable_th">Material Type</div></th><th colspan="1" rowspan="1"><div class="detailItemTable_th">Location</div></th><th colspan="1" rowspan="1"><div class="detailItemTable_th">Status</div></th></tr></thead><tr class="detailItemsTableRow"><td>
+Ayr Branch
+</td><td>
+FIC Niffe
+</td><td>
+Book
+</td><td>
+Adult Novels
+</td><td colspan="1" rowspan="1"><div id="availabilityDiv36501004464843" class="availabilityDiv" name="availabilityDiv0">Searching...</div></td></tr></table><script type="text/javascript">
+        
+    </script><script type="text/javascript">
+    </script></div></div><h3 class="orders_header" id="orders_header0"><a shape="rect" href="#">On Order</a></h3><div class="detailOnOrderHidden" id="detailOnOrderDiv0"></div><h3><a shape="rect" href="#">More about this title... </a></h3><div><div class="enrichedContentElement"><h3>Summary</h3><p>Audrey Niffenegger's innovative debut,The Time Traveler's Wife, is the story of Clare, a beautiful art student, and Henry, an adventuresome librarian, who have known each other since Clare was six and Henry was thirty-six, and were married when Clare was twenty-three and Henry thirty-one. Impossible but true, because Henry finds himself periodically displaced in time, pulled to moments of emotional gravity from his life, past and future. His disappearances are spontaneous, his experiences unpredictable, alternately harrowing and amusing. The Time Traveler's Wifedepicts the effects of time travel on Henry and Clare's marriage and their passionate love for each other, as the story unfolds from both points of view. Clare and Henry attempt to live normal lives, pursuing familiar goals -- steady jobs, good friends, children of their own. All of this is threatened by something they can neither prevent nor control, making their story intensely moving and entirely unforgettable.</p></div><br clear="none"/><h3>Author Notes</h3><div><p>Audrey Niffenegger (born June 13, 1963 in South Haven, Michigan) is an American writer and artist. She is also a professor in the Interdisciplinary Book Arts MFA Program at the Columbia College Chicago Center for Book and Paper Arts. Niffenegger's debut novel, The Time Traveler's Wife (2003), was a national bestseller. The Time Traveler's Wife is an unconventional love story that centers on a man with a strange genetic disorder that causes him to unpredictably time-travel and his wife, an artist, who has to cope with his frequent and unpredictable absences. The film version, starring Eric Bana and Rachel McAdams, is due for release in August 2009. Her latest fiction novel is entitled, Her Fearful Symmetry. (Bowker Author Biography)</p></div><br clear="none"/><div></div></div><h3><a shape="rect" href="#">Reviews <span id="reviewCount0">3</span></a></h3><div><div class="enrichedContentElement"><h3>Booklist Review</h3><p>On the surface, Henry and Clare Detamble are a normal couple living in Chicago's Lincoln Park neighborhood. Henry works at the Newberry Library and Clare creates abstract paper art, but the cruel reality is that Henry is a prisoner of time. It sweeps him back and forth at its leisure, from the present to the past, with no regard for where he is or what he is doing. It drops him naked and vulnerable into another decade, wearing an age-appropriate face. In fact, it's not unusual for Henry to run into the other Henry and help him out of a jam. Sound unusual? Imagine Clare Detamble's astonishment at seeing Henry dropped stark naked into her parents' meadow when she was only six. Though, of course, until she came of age, Henry was always the perfect gentleman and gave young Clare nothing but his friendship as he dropped in and out of her life. It's no wonder that the film rights to this hip and urban love story have been acquired. --Elsa Gaztambide Copyright 2003 Booklist</p></div><br clear="none"/><div class="enrichedContentElement"><h3>Publisher's Weekly Review</h3><p>This clever and inventive tale works on three levels: as an intriguing science fiction concept, a realistic character study and a touching love story. Henry De Tamble is a Chicago librarian with "Chrono Displacement" disorder; at random times, he suddenly disappears without warning and finds himself in the past or future, usually at a time or place of importance in his life. This leads to some wonderful paradoxes. From his point of view, he first met his wife, Clare, when he was 28 and she was 20. She ran up to him exclaiming that she'd known him all her life. He, however, had never seen her before. But when he reaches his 40s, already married to Clare, he suddenly finds himself time travelling to Clare's childhood and meeting her as a 6-year-old. The book alternates between Henry and Clare's points of view, and so does the narration. Reed ably expresses the longing of the one always left behind, the frustrations of their unusual lifestyle, and above all, her overriding love for Henry. Likewise, Burns evokes the fear of a man who never knows where or when he'll turn up, and his gratitude at having Clare, whose love is his anchor. The expressive, evocative performances of both actors convey the protagonists' intense relationship, their personal quirks and their reminiscences, making this a fascinating audio. Simultaneous release with the MacAdam/Cage hardcover (Forecasts, Aug. 4). (Sept.) Copyright 2005 Reed Business Information.</p></div><br clear="none"/><div class="enrichedContentElement"><h3>Library Journal Review</h3><p>This debut novel tells the compelling love story of artist Clare and her husband, Henry, a librarian at the Newberry Library who has an ailment called Chrono-Displaced Person (CDP), which without his control removes him to the past or the future under stressful circumstances. The clever story is told from the perspectives of Henry and Clare at various times in their lives. Henry's time travels enable him to visit Clare as a little girl and later as an aged widow and explain "how it feels to be living outside of the time constraints most humans are subject to." He seeks out a doctor named Kendrik, who is unable to help him but hopes to find a cure for his daughter, Alba, who has inherited CDP. The lengthy but exciting narrative concludes tragically with Henry's foretold death during one of his time travels but happily shows the timelessness of genuine love. The whole is skillfully written with a blend of distinct characters and heartfelt emotions that hopscotch through time, begging interpretation on many levels. Public libraries should plan on purchasing multiple copies of this highly recommended book.-David A. Beron?, Univ. of New Hampshire, Durham (c) Copyright 2010. Library Journals LLC, a wholly owned subsidiary of Media Source, Inc. No redistribution permitted.</p></div><br clear="none"/><div></div></div><h3><a shape="rect" href="#">Excerpts</a></h3><div><h3>Excerpts</h3>PROLOGUE Clare: It's hard being left behind. I wait for Henry, not knowing where he is, wondering if he's okay. It's hard to be the one who stays. I keep myself busy. Time goes faster that way. I go to sleep alone, and wake up alone. I take walks. I work until I'm tired. I watch the wind play with the trash that's been under the snow all winter. Everything seems simple until you think about it. Why is love intensified by absence? Long ago, men went to sea, and women waited for them, standing on the edge of the water, scanning the horizon for the tiny ship. Now I wait for Henry. He vanishes unwillingly, without warning. I wait for him. Each moment that I wait feels like a year, an eternity. Each moment is as slow and transparent as glass. Through each moment I can see infinite moments lined up, waiting. Why has he gone where I cannot follow? Henry: How does it feel? How does it feel? Sometimes it feels as though your attention has wandered for just an instant. Then, with a start, you realize that the book you were holding, the red plaid cotton shirt with white buttons, the favorite black jeans and the maroon socks with an almost-hole in one heel, the living room, the about-to-whistle tea kettle in the kitchen: all of these have vanished. You are standing, naked as a jaybird, up to your ankles in ice water in a ditch along an unidentified rural route. You wait a minute to see if maybe you will just snap right back to your book, your apartment, et cetera. After about five minutes of swearing and shivering and hoping to hell you can just disappear, you start walking in any direction, which will eventually yield a farmhouse, where you have the option of stealing or explaining. Stealing will sometimes land you in jail, but explaining is more tedious and time consuming and involves lying anyway, and also sometimes results in being hauled off to jail, so what the hell. Sometimes you feel as though you have stood up too quickly even if you are lying in bed half asleep. You hear blood rushing in your head, feel vertiginous falling sensations. Your hands and feet are tingling and then they aren't there at all. You've mislocated yourself again. It only takes an instant, you have just enough time to try to hold on, to flail around (possibly damaging yourself or valuable possessions) and then you are skidding across the forest green carpeted hallway of a Motel 6 in Athens, Ohio, at 4:16 a.m., Monday, August 6, 1981, and hit your head on someone's door, causing this person, a Ms. Tina Schulman from Philadelphia, to open this door and start screaming because there's a naked, carpet-burned man passed out at her feet. You wake up in the County Hospital concussed with a policeman sitting outside your door listening to the Phillies game on a crackly transistor radio. Mercifully, you lapse back into unconsciousness and wake up again hours later in your own bed with your wife leaning over you looking very worried. Sometimes you feel euphoric. Everything is sublime and has an aura, and suddenly you are intensely nauseated and then you are gone. You are throwing up on some suburban geraniums, or your father's tennis shoes, or your very own bathroom floor three days ago, or a wooden sidewalk in Oak Park, Illinois circa 1903, or a tennis court on a fine autumn day in the 1950s, or your own naked feet in a wide variety of times and places. How does it feel? It feels exactly like one of those dreams in which you suddenly realize that you have to take a test you haven't studied for and you aren't wearing any clothes. And you've left your wallet at home. When I am out there, in time, I am inverted, changed into a desperate version of myself. I become a thief, a vagrant, an animal who runs and hides. I startle old women and amaze children. I am a trick, an illusion of the highest order, so incredible that I am actually true. Is there a logic, a rule to all this coming and going, all this dislocation? Is there a way to stay put, to embrace the present with every cell? I don't know. There are clues; as with any disease there are patterns, possibilities. Exhaustion, loud noises, stress, standing up suddenly, flashing light -- any of these can trigger an episode. But: I can be reading the Sunday Times , coffee in hand and Clare dozing beside me on our bed and suddenly I'm in 1976 watching my thirteen-year-old self mow my grandparents' lawn. Some of these episodes last only moments; it's like listening to a car radio that's having trouble holding on to a station. I find myself in crowds, audiences, mobs. Just as often I am alone, in a field, house, car, on a beach, in a grammar school in the middle of the night. I fear finding myself in a prison cell, an elevator full of people, the middle of a highway. I appear from nowhere, naked. How can I explain? I have never been able to carry anything with me. No clothes, no money, no ID. Fortunately I don't wear glasses. I spend most of my sojourns acquiring clothing and trying to hide. It's ironic, really. All my pleasures are homey ones: armchair splendor, the sedate excitements of domesticity. All I ask for are humble delights. A mystery novel in bed, the smell of Clare's long red-gold hair damp from washing, a postcard from a friend on vacation, cream dispersing into coffee, the softness of the skin under Clare's breasts, the symmetry of grocery bags sitting on the kitchen counter waiting to be unpacked. I love meandering through the stacks at the library after the patrons have gone home, lightly touching the spines of the books. These are the things that can pierce me with longing when I am displaced from them by Time's whim. And Clare, always Clare. Clare in the morning, sleepy and crumple-faced. Clare with her arms plunging into the papermaking vat, pulling up the mold and shaking it so, and so, to meld the fibers. Clare reading, with her hair hanging over the back of the chair, massaging balm into her cracked red hands before bed. Clare's low voice is in my ear often. I hate to be where she is not, when she is not. And yet, I am always going, and she cannot follow. Excerpted from The Time Traveler's Wife by Audrey Niffenegger All rights reserved by the original copyright owners. Excerpts are provided for display purposes only and may not be reproduced, reprinted or distributed without the written permission of the publisher.<br clear="none"/><div></div></div><h3 class="google_header" id="google_header0"><a shape="rect" href="#">Google Preview</a></h3><div class="google_preview_wrapper" id="google_wrapper0"></div></div><div id="detail0_htmlWidget"><div id="detail0_hiddenFields" class="hidden"></div></div><input value="ISBN:9780676976328,ISBN:9780676976335" id="google_ids0" type="hidden"></input><div id="chooseListDetailForm" class="hiddenForm"><div>Select a list</div><select id="myListSelectDetail"><option value="0">Temporary List - You must LOGIN and move titles to a named list or they will be lost !!!</option></select><div><input id="myListDefaultCheckboxDetail" type="checkbox"></input><span>Make this your default list.</span></div><input value="Add" class="button" type="button" id="myListsAddButtonDetail"></input></div><div id="addToListResultDivDetail" class="hiddenForm"><div name="searchingGif" class="waiting" id="addToListWaitingDetail"></div><div class="success" id="addToListSuccessDetail"><div class="success_icon">The following items were successfully added.</div><ul id="addToListSuccessListDetail"></ul></div><div class="errors" id="addToListErrorsDetail"><div class="error_icon">There was an error while adding the following items. Please try again.</div><ul id="addToListErrorsListDetail"></ul></div></div><div id="emailForm0" class="hiddenForm hidden tblHtIE9Fix"><div id="emailConfirmation0" class="confirmation"></div><div class="emailConfirmDiv"><button type="submit" style="display:none;" onclick="$J('#emailForm0').dialog('close');" title="OK" value="OK" class="button" id="emailModalClose0">OK</button></div><div id="emailModalForm0"><div class="emailFormElementsContainer"><div class="editField"><span class="fieldLabel"><label for="emailAddress0">Email Address</label>: </span><input type="text" onkeyup="if(EmailDialog.isItEnter(event)){emailDialog0.sendEmail('0');}" maxlength="255" id="emailAddress0"></input></div><div class="editField"><span class="fieldLabel"><label for="emailSubject0">Subject</label>: </span><input value="Title Details:  " type="text" onkeyup="if(EmailDialog.isItEnter(event)){emailDialog0.sendEmail('0');}" maxlength="255" id="emailSubject0"></input></div><div class="hideable"><input value="Send Email" type="button" onclick="emailDialog0.sendEmail('0');" title="Send Email" class="button" id="emailConfirm0"></input></div></div><div class="smsFormElementsContainer"><div class="editField"><span class="fieldLabel"><label for="textItToMeNumber0">
+Phone Number:
+</label></span><input onkeypress="{if (event.keyCode==13){emailDialog0.sendEmail('0')}}" maxlength="40" size="20" class="textItToMeNumber" id="textItToMeNumber0" type="text"></input></div><div class="editField"><span class="fieldLabel"><label for="selectPhoneCarrier">
+Mobile Carrier:
+</label></span><select onkeypress="{if (event.keyCode==13){emailDialog0.sendEmail('0')}}" id="phoneCarrierId0" class="phoneCarrierSelect"><option value=""></option><option value="141">Bell</option><option value="145">Fido</option><option value="1">Koodo</option><option value="140">Rogers</option><option value="144">Telus</option><option value="142">VirginMobile</option><option value="143">Wind</option></select></div><input name="sendSms0" id="sendSms0" type="hidden"></input><br clear="none"/><a id="showChooseItem" onclick="javascript:return Tapestry.waitForPage(event);" class="hidden showChooseItemEventLink0" href="/client/en_US/rwl/search/detailnonmodal.detail.emaildialog:showchooseitem/_SELECT_STRING_PLACEHOLDER_/qu$003d9780676976328$0026d$003dent$00253A$00252F$00252FSD_ILS$00252F0$00252FSD_ILS$00253A1189648$00257E$00257E0$00257E1?qu=9780676976328&amp;d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1">
+Select An Item
+</a><div class="t-zone" effect="none" id="itemZone0"></div><div><div class="hideable hidden multipleSmsMessagesWarning"><div class="warning info">
+Data usage warning: You will receive one text message for each title you selected.
+</div></div><div class="smsCostWarning warning info">
+Standard text messaging rates apply.
+</div><br clear="none"/><div class="clear"> </div><div class="hideable"><button type="submit" onclick="emailDialog0.sendEmail('0');" title="Text it to me" class="button" id="smsConfirm0">
+Text it to me
+</button></div><div class="hideable"><button type="submit" onclick="emailDialog0.sendAndNext('0');" title="Text it to me, and go to next item" class="button" id="smsNext0">
+Text it to me, and go to next item
+</button></div></div></div></div></div><div class="hiddenForm"><a id="printFriendlyLink0" title="A printer friendly version of the selected records on this page" target="_blank" class="printFriendly" href="/client/en_US/rwl/print/direct?qu=9780676976328&amp;d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1&amp;pe=d%3A"></a></div><div id="placeHold"></div></div></div><div class="footer_container" id="footer"><span><div class="logoContainer"><p><a title="Go to the Region of Waterloo website." href="http://www.regionofwaterloo.ca" target="_blank"><img title="logo" src="/custom/web/content/WR-rowlogo.jpg" alt="Region of Waterloo logo" /></a>&nbsp; &nbsp; <span style="font-size: small; color: #000000;">&nbsp; &nbsp;&nbsp;<a title="Go to the Region of Waterloo privacy policy." href="http://rwl.library.on.ca/en/privacy.asp"><span style="color: #000000;">Privacy</span></a> | <a title="Go to the Region of Waterloo Library website sitemap" href="http://rwl.library.on.ca/en/sitemap.asp"><span style="color: #000000;">Site Map</span></a> | <a title="Learn more about the accessibility features of the website." href="http://rwl.library.on.ca/en/accessibility.asp"><span style="color: #000000;">Accessibility</span></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Join the Conversation: &nbsp;</span><a title="Go to the Region of Waterloo Library Facebook page." href="http://www.facebook.com/RegionofWaterlooLibrary" target="_blank"><img title="logo" src="/custom/web/content/1wr - Facebook.gif" alt="Facebook" /></a> <a title="Go to the Region of Waterloo Library Twitter page." href="https://twitter.com/rwlibrary" target="_blank"><img title="logo" src="/custom/web/content/WR - Twitter.gif" alt="Twitter" /></a> <a title="Go to the Region of Waterloo Library Google Page." href="https://plus.google.com/b/105331294754834966549/105331294754834966549/posts" target="_blank"><img title="logo" src="/custom/web/content/WR - Google.png" alt="Google Plus" /></a> <a title="Share your comments and feedback." href="http://rwl.library.on.ca/en/aboutTheLibrary/yourcomments.asp" target="_blank"><img title="logo" src="/custom/web/content/WR - email.gif" alt="Email" /></a></p></div></span><div><div id="copyright">Copyright 2014
+<span class="sdCopyrightLink"><a shape="rect" title="SirsiDynix" href="http://www.sirsidynix.com">SirsiDynix</a></span>
+- Portfolio Version 4.3 (32169)
+</div></div></div><script type="text/javascript">
+            var fbAvailable = false;
+            if(fbAvailable)
+            {
+                window.fbAsyncInit = function() {
+                FB.init({appId: '448816691882309', status: true, cookie: true, logging: false,
+                xfbml: true});
+                };
+                //append a script tag containing the facebook javascript to the page.
+                //doing it here ensures that it won't be loaded before the above function is defined.
+                var e = document.createElement('script'); e.async = true;
+                e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+                document.getElementById('fb-root').appendChild(e);
+            }
+
+            var googlePreviewEnabled = true;
+        </script><script type="text/javascript">Tapestry.onDOMLoaded(function() {
+Tapestry.init({"formEventManager":[{"formId":"form","validate":{"submit":true,"blur":true}},{"formId":"form_0","validate":{"submit":true,"blur":true}},{"formId":"searchForm","validate":{"submit":true,"blur":true}}]});
+window.com_sirsi_ent_page = {searchSession: "qu=9780676976328&d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1",friendlyUrl: "rwl",casLoginEnabled: false,casLogin: "/client/en_US/rwl/search/casrequest/http:$002f$002folco.canlib.ca$002fclient$002fen_US$002frwl$002fsearch$002fredirectafterlogin$003fqu$003d9780676976328$0026d$003dent$00253A$00252F$00252FSD_ILS$00252F0$00252FSD_ILS$00253A1189648$00257E$00257E0$00257E1?qu=9780676976328&d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1",loginIFrameDimensions:{height:225,width:380},localeCode: "en_US"};
+com_sirsi_ent_login.isLoggedIn = false;
+var ajax = new AjaxHandler(null, 'http://olco.canlib.ca/client/en_US/rwl/search/detailnonmodal.template.header.searchbox_0:suggest?qu=9780676976328&d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1', null, sboxLink.handleData, sboxLink.jsContextProvider, true,sboxLink);
+var sbox = new SuggestBox({
+textInputBox: document.getElementById('q'),
+dropDown: document.getElementById('dropDown'),
+closeLinkText : 'Close',
+dataFetch : sboxLink.getData.bind(sboxLink),
+submit : sboxLink.doSubmit.bind(sboxLink),
+bindingObject : sboxLink});
+sboxLink.ajaxHandler = ajax;
+sboxLink.sbox = sbox;
+sboxRstManager.link = '/client/en_US/rwl/search/detailnonmodal.template.header.searchbox_0:updaterestrictionzone?qu=9780676976328&d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1';
+sboxRstManager.rstPlaceholderVal = '_PLACEHOLDER_';
+sboxRstManager.setupExistingValues('','');
+$('restrictionZone').observe(Tapestry.ZONE_UPDATED_EVENT, function() { sboxRstManager.checkRestrictionValues(); });
+$J(function() { setTimeout(function() { $J('#q').focus().select(); }, 10); });
+dropdowndetail0 = new CustomDropdown([
+  "holdMeTenderly = 'ent://SD_ILS/0/SD_ILS:1189648'; com_sirsi_ent_login.loginFirst(placeDetailHold)",
+  "Detail.addItemToList('ent://SD_ILS/0/SD_ILS:1189648')",
+  "EmailDialog.openEmailModal(0, false, true)",
+  "Detail.printModal(0)"
+]);
+ItemHoldManager.init(false, 'ent:\/\/SD_ILS\/0\/SD_ILS:1189648', 'Reserve This Copy');
+parseDetailAvailabilityJSON({
+  "availabilityMessage" : "Unknown",
+  "copies" : [
+    "1189648,1"
+  ],
+  "keys" : [ ],
+  "resultIndex" : 0,
+  "ids" : [
+    "36501004464843"
+  ],
+  "holdCounts" : [
+    "1189648,0"
+  ],
+  "totalAvailable" : 0,
+  "specifier" : "",
+  "strings" : [
+    "Checked Out"
+  ],
+  "holdable" : true,
+  "itemHoldsMessage" : "Unavailable",
+  "orderCount" : 0
+});
+emailDialog0 = new EmailDialog();
+emailDialog0.link = '/client/en_US/rwl/search/detailnonmodal.detail.emaildialog:sendemail?qu=9780676976328&d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1';
+emailDialog0.index = '0';
+noTextableItem = 'The items you have selected cannot be texted';
+setTimeout("spaninator();", 500);('0');
+if(typeof window.customDetailJavaScript == 'function'){customDetailJavaScript(0);}
+Detail.init(false, 'en_US', 'Unknown', 'WATERLOO', 'rwl');
+Detail.initDetail(0, 0, 'qu$003d9780676976328$0026d$003dent$00253A$00252F$00252FSD_ILS$00252F0$00252FSD_ILS$00253A1189648$00257E$00257E0$00257E1', 'Details for  ', '0', 'ent:\/\/SD_ILS\/0\/SD_ILS:1189648','Select a Format', 'No E-book Formats Available', 'Download E-book', true)
+setTimeout(function(){$J('.ordersClick0').click();}, 10);
+var loggedIn = false; defaultList = 0;
+ListStrings.init('Select a list', 'Adding to My Lists...', 'Error, the selected items could not be added to your list.');
+addToListDetailUrlBase = "/client/en_US/rwl/search/detailnonmodal.detail:addtolist/_listID_/_default_/_docID_?qu=9780676976328&d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1";
+createSpinnersForSelector($J('*[name="searchingGif"]'));
+createSpinnersForSelector($J('*[name="smallSearchingGif"]'), smallSpinnerOptions);
+Tapestry.init({"activate":["targetValue"],"linkSelectToZone":[{"url":"/client/en_US/rwl/search/detailnonmodal.template.header.searchbox_0.searchlimitdropdown:change?qu=9780676976328&d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1","selectId":"searchLimitDropDown","zoneId":"restrictionZone"}],"linkZone":[{"linkId":"showChooseItem","url":"/client/en_US/rwl/search/detailnonmodal.detail.emaildialog:showchooseitem/_SELECT_STRING_PLACEHOLDER_/qu$003d9780676976328$0026d$003dent$00253A$00252F$00252FSD_ILS$00252F0$00252FSD_ILS$00253A1189648$00257E$00257E0$00257E1?qu=9780676976328&d=ent%3A%2F%2FSD_ILS%2F0%2FSD_ILS%3A1189648%7E%7E0%7E1","zoneId":"itemZone0"}],"zone":[{"update":"show","element":"restrictionZone","show":"show"},{"update":"highlight","element":"itemZone0","show":"show"}]});
+});
+</script></body></html>

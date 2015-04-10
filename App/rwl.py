@@ -4,7 +4,7 @@ import library
 
 
 def search_url(isbn):
-    return ('http://www.regionofwaterloo.canlib.ca/uhtbin/cgisirsi/uOtJAQjVct/HEADQUARTR/x/5/0/?searchdata1=%(isbn)s'
+    return ('http://olco.canlib.ca/client/en_US/rwl/search/results?qu=%(isbn)s'
             % vars())
 
 
@@ -17,6 +17,6 @@ class Library(library.LibraryBase):
     def find_item(self, isbn):
         url = search_url(isbn)
         response = self.opener(url)
-        if response.content.find('found no matches in the library you searched') == -1:
+        if response.content.find('This search returned no results.') == -1:
             return url
         return None

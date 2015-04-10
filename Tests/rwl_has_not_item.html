@@ -1,479 +1,77 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<!-- Copyright (c) 2000 - 2009, SirsiDynix - Defines the head  body of each page. --> 
- 
-<html lang="en"  dir="ltr" xmlns="http://www.w3.org/1999/xhtml"> 
-<head> 
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.5; user-scalable=1;" /> 
- 
- 
-  <title>If search returns no hits, display browse</title> 
- 
- 
-<!-- Set the expiration date to the past so the page will always be reloaded --> 
-  <meta http-equiv="Expires" content="Sun, 1 Jan 1995 08:00:00 CST"/> 
- 
-  <!-- Not the login page --> 
- 
-    <!-- Set the refresh to do an EXIT right before the session times out. This will cause timed out sessions to automatically go back to the login/first page, ready for the next user. - Since there is no way to target the _top frame, cannot do this if any frames are used, else the refresh goes into the main frame. - Also, the URL below has to be a full URL, so cannot do this without using the HTTP_ADDRESS. --> 
- 
-  <meta http-equiv="refresh" content="7140; URL=http://www.regionofwaterloo.canlib.ca/uhtbin/cgisirsi/S9je66ooVw/HEADQUARTR/153771119/58"/> 
- 
-<script type="text/javascript" src="/Js/prototype.js"></script> 
-<script type="text/javascript" src="/Js/scriptaculous.js"></script> 
-<script type="text/javascript" src="/Js/sirsidynix.js"></script> 
-<script type="text/javascript" src="/Js/datetimepicker.js"></script> 
- 
-<script type="text/javascript" src="/Js/getcontent.js"></script> 
- 
- 
-  <link rel="stylesheet" href="/Css/default/default.css" type="text/css" /> 
- 
- 
-</head> 
-<!-- Start the body of the document.  WARNING:  No comments are allowed inside of the body element's definition. - assign CSS Class of 'body_style' to tag -  If this is a download search results state (14, 62), then load the results in a new browser window to facilitate printing. -  If this is an Archive image view state (911), then open a new window to display the image in new window. -  To help prevent premature selection of a toolbar button (i.e., before the new toolbar is loaded), clear it when the page is unloaded. --> 
-<body onLoad=""> 
- 
- 
-<noscript> 
-Your browser does not support JavaScript and this application utilizes JavaScript to build content and provide links to additional information. You should either enable JavaScript in your browser settings or use a browser that supports JavaScript in order to take full advantage of this application.
-</noscript> 
- 
- 
-<!--  Copyright (c) 2000 - 2009, SirsiDynix -  e-Library Search without finding hits; State #76 --> 
-<!--  This is a page generated from a Browse Item command, and it can handle a response that contains either a list of items to browse through, or an error response saying that no items were found. --> 
-<!--  Copyright (c) 1996 - 2005, Sirsi Corporation Form for starting a new session in a new window. --> 
- 
-<!-- By setting the "document.new_session.action" property to the URL for logging into a new session at the particular  page you want, a new window will be opened and a new WebCat session will be started automatically. Remember that many WebCat states are dependent on previous states, so only certain "cgi types" can be opened.
- 
-Also, by setting the "document.new_session.new_gateway_db.value" property to a gateway database name, the new session will use that gateway instead of the user's default gateway. Note that the use of Javascript is required to submit this form. --> 
- 
-<form name="new_session" method="post" action="/uhtbin/cgisirsi/2kyyNkkq8D/HEADQUARTR/0/57/49" target="new_session"> 
-	
-		<input type="hidden" name="user_id" value="WEBSERVER"/> 
-		<input type="hidden" name="password" value=""/> 
-	
-	<input type="hidden" name="new_gateway_db" value=""/> 
-</form> 
- 
- 
-<!--  Copyright (c) 2000 - 2008, SirsiDynix - Puts the top-of-page information common to all pages. --> 
-<div id="header_container" class="header_container"> 
-<h1>If search returns no hits, display browse</h1> 
-      <a class="skipnav" href="#skipnav">Skip navigation</a>  <a name="top"></a> 
-  <div class="branding_container" > 
-      <div class="branding"> 
-            <img border="0" src="/WebCat_Images/English/Other/Miscib/WATE.gif" alt="- Online Catalogue" title="- Online Catalogue"/> 
-      </div> 
-      <div class="branding_subheading"> 
-         <!-- Print the gateway envn title if not blank --> 
-          Region of Waterloo Library
-          - Online Catalogue
-      </div>      
-	</div> 
-  <div class="login_container"> 
-	   <!-- present language choices --> 
-		  <div class="module_language_choices"> 
-<!-- Add the Language options --> 
-  <!-- Suppress an option for the current language --> 
-    <a href="/uhtbin/cgisirsi/PVBVtDEdvX/HEADQUARTR/153771119/111/FRENCH" title="French" target="_top"><img src="/WebCat_Images/English/Other/Miscib/FRENCH.gif" border=0 class="langicon" alt="French Language" title="French"/></a> 
-  <!-- Suppress an option for the current language --> 
-      </div> 
-        <form name="loginform" method="post" action="/uhtbin/cgisirsi/S5DbgbH26n/HEADQUARTR/0/57/49" class="login_form"> 
-<!--  Copyright (c) 2004, Sirsi Corporation - myProfile login or view myFavorites --> 
-<!--  Copyright (c) 1998 - 2003, Sirsi Corporation - Sets the default values for USER_ID, ALT_ID, and PIN prompts. - The USER_ID, ALT_ID, and PIN page variables will be returned. --> 
- 
-<!-- If the user has not logged in, first try to default to the ID based on the IP address - the $UO and $Uf will be set.  If that fails, then default to the IDs in the config file. If the user has already logged in, default to the logged in user's IDs, unless the user is a shared login. --> 
- 
- 
- 
-	  <!-- only user ID is used if both on --> 
-		<div class="user_name"> 
-			<label for="user_id">Library card #</label> 
-			<input class="user_name_input" type="text" name="user_id" id="user_id"  maxlength="20" value=""/> 
-		</div> 
-	
-	 
-		<div class="password"> 
-			<label for="password">PIN</label> 
-			<input class="password_input" type="password" name="password" id="password"  maxlength="20" value=""/> 
-		</div>  
-	
-	 
-	<input type="submit" value=" LOGIN" class="login_button"/> 
- 
-	 
- 
- 
- 
-        </form> 
-	  <!-- login form--> 
-  </div> 
-</div> 
-<!--  Copyright (c) 1996 - 2006, SirsiDynix - Gateway Root Bar. --> 
-<div id="header_menu_container" class="header_menu_container"> 
-  <h2>Navigation Menu</h2> 
-  <ul class="menu"> 
-    <!-- display text with CSS instead --> 
-          <li class="menu_link"><a href="/uhtbin/cgisirsi/UF3JMHD2yw/HEADQUARTR/153771119/38/1/X/BLASTOFF" class="rootbar"> 
-       Search/Home</a></li> 
-          <li class="menu_link"><a href="/uhtbin/cgisirsi/er0gQnHMdH/HEADQUARTR/153771119/1/26/X/BLASTOFF" class="rootbar"> 
-       Find It Fast!</a></li> 
-          <li class="menu_link"><a href="/uhtbin/cgisirsi/Nexuh7y194/HEADQUARTR/153771119/1/774/X/BLASTOFF" class="rootbar"> 
-       Kids' Library</a></li> 
-          <li class="menu_link"><a href="/uhtbin/cgisirsi/iiTKi9uyb9/HEADQUARTR/153771119/1/1095/X/BLASTOFF" class="rootbar"> 
-       Request Material</a></li> 
-          <li class="menu_link"><a href="/uhtbin/cgisirsi/fjtkiv1LsJ/HEADQUARTR/153771119/1/1166/X/BLASTOFF" class="rootbar"> 
-       My Account</a></li> 
-          <li class="menu_link"><a href="/uhtbin/cgisirsi/JVq5XAoBIb/HEADQUARTR/153771119/63/1171/X/BLASTOFF" class="rootbar"> 
-       Contact Us</a></li> 
- 
- 
- 
- 
-  </ul> 
-</div> 
- 
- 
-<!--  Copyright (c) 2000 - 2003, Sirsi Corporation - Buttons for Search-no-hits page - Identical to Browse list buttons --> 
-<!--  Copyright (c) 2000 - 2008, SirsiDynix - Buttons for Browse List and Term Search page --> 
-<div class="secondary_header_menu_container"> 
-  <h2>Contextual Navigation Menu</h2> 
-  <ul class="menu"> 
-    <li class="menu_link"> 
-      <!-- Go back button --><a href="/uhtbin/cgisirsi/FMKr9dVT9m/HEADQUARTR/153771119/2/7" title="Go Back">Go Back</a> 
-    </li> 
-    <!--
-    <li class="menu_link">
-      <a href="/uhtbin/cgisirsi/qcYDJ47zcF/HEADQUARTR/153771119/2/7" title="Go Back" alt="Go Back">GO BACK</a>
-    </li>
-     --> 
-<li class="menu_link"> 
-  <!-- Help button --> 
-  <script language="javascript" type="text/javascript"> 
-    //<![CDATA[
-    put_help_button('English','Help','browse_list');
-    //]]>
-  </script> 
-</li> 
- 
-  <li class="menu_link"><a href="/uhtbin/cgisirsi/KLCafECPFp/HEADQUARTR/153771119/49" title="New Search">New Search</a></li> 
-	
-	
- 
-  <!-- gateway's custom buttons --> 
- 
-    <li class="menu_link"><a href="/uhtbin/cgisirsi/4uCU5I0qRE/HEADQUARTR/153771119/58" title="Logout" target="_top">Logout</a></li> 
-    <li class="menu_link"><a name="skipnav"></a></li> 
-  </ul> 
-</div> 
-<div class="columns_container"> 
-  <div class="column pct75"> 
-    <div class="content_container browse_list left_column"> 
-      <div class="content"> 
- 
-<table border="0" cellpadding="3" cellspacing="0" align="center"> 
- <tr> 
-	<td class="searchsum_container hitstop"> 
-<!--  Copyright (c) 2000 - 2009, SirsiDynix - e-Library Catalog Keyword search summary --> 
-<!-- Print the search summary --> 
-<strong> 
-    "0321503627"
- 
- 
- 
- 
- 
- 
- 
-</strong> 
-         found no matches in the library you searched.
-       	 
-	</td> 
- </tr> 
- <tr> 
-	<td class="searchsum_container hitstop"> 
-         You may change your search, or select a new search from the closest matches below.
-	</td> 
- </tr> 
- <tr> 
-	<td class="searchsum_container hitstop searchcontent" align="right"> 
-	  <!-- Let the user change the search. --> <!-- Search again, this time with different search terms --> 
-<!--  Copyright (c) 2000 - 2009, SirsiDynix - The "ALL Libraries" form for redoing a failed search. --> 
-<form name="searchform4" method="post" action="/uhtbin/cgisirsi/jXkOdhAdNo/HEADQUARTR/153771119/2/7"> 
-	  <input type="submit" name="new_search" id="new_search" value="Change your search words" class="button">	 
-</form> 
-	</td> 
- </tr> 
-	  <!-- If the search was already against ALL libraries, then is no reason to redo the search with other library options. --> 
-	<tr> 
-	 <td class="searchcontent" align="right"> 
-<!--  Copyright (c) 2000 - 2009, SirsiDynix - The "Select another Library Group" form for redoing a failed search. --> 
-<form name="searchform2" method="post" action="/uhtbin/cgisirsi/rORvLYUIAI/HEADQUARTR/153771119/5/0"> 
-<!--  Copyright (c) 2000 - 2009, SirsiDynix - Hidden search options for redoing a search that resulted in no hits. Contains all options except for "library". --> 
-<input type="hidden" name="pubyear" value=""> 
-<input type="hidden" name="language" value=""> 
-<input type="hidden" name="format" value=""> 
-<input type="hidden" name="item_type" value=""> 
-<input type="hidden" name="location" value=""> 
-<input type="hidden" name="item_1cat" value=""> 
-<input type="hidden" name="item_2cat" value=""> 
-<input type="hidden" name="shadow" value=""> 
-<input type="hidden" name="sort_by" value=""> 
-<input type="hidden" name="relevance" value="off"> 
-<!-- Copyright (c) 2000 - 2009, SirsiDynix - Hidden search term fields for redoing a search that resulted in no hits. --> 
- 
-  <input type="hidden" name="srchfield1" value="^^^^"> 
-  <input type="hidden" name="searchdata1" value="0321503627"> 
-  <input type="hidden" name="searchoper1" value=""> 
- 
- 
- 
- 
- 
- 
- 
-      <select name="library" id="library" > 
-<option value=" "> </option> 
-<option>ALL</option> 
-<option value="BL-EL-SJ^SRCL">Bloomingdale, Elmira and St. Jacobs branch libraries</option> 
-<option value="SC-EL-LI^SRCL">St. Clements, Elmira and Linwood branch libraries</option> 
-<option value="WE-BA_NH^SRCL">Wellesley, Baden and New Hamburg branch libraries</option> 
-</select> 
-  	  <input type="submit" value="Search within a group of libraries" class="button">	 
-</form> 
-   </td> 
-	</tr> 
-	<tr> 
-	 <td class="searchcontent" align="right"> 
-<!--  Copyright (c) 2000 - 2009, SirsiDynix - The "Select another Library" form for redoing a failed search. --> 
-<form name="searchform2" method="post" action="/uhtbin/cgisirsi/YmJaiTUSfH/HEADQUARTR/153771119/5/0"> 
-    <!-- First, specify the search options --> 
-<!--  Copyright (c) 2000 - 2009, SirsiDynix - Hidden search options for redoing a search that resulted in no hits. Contains all options except for "library". --> 
-<input type="hidden" name="pubyear" value=""> 
-<input type="hidden" name="language" value=""> 
-<input type="hidden" name="format" value=""> 
-<input type="hidden" name="item_type" value=""> 
-<input type="hidden" name="location" value=""> 
-<input type="hidden" name="item_1cat" value=""> 
-<input type="hidden" name="item_2cat" value=""> 
-<input type="hidden" name="shadow" value=""> 
-<input type="hidden" name="sort_by" value=""> 
-<input type="hidden" name="relevance" value="off"> 
- 
-    <!-- Define the 8 search fields --> 
-<!-- Copyright (c) 2000 - 2009, SirsiDynix - Hidden search term fields for redoing a search that resulted in no hits. --> 
- 
-  <input type="hidden" name="srchfield1" value="^^^^"> 
-  <input type="hidden" name="searchdata1" value="0321503627"> 
-  <input type="hidden" name="searchoper1" value=""> 
- 
- 
- 
- 
- 
- 
- 
- 
-       <select name="library" id="library" > 
-<option value=" "> </option> 
-<option value="HEADQUARTR^LIBR">Administration</option> 
-<option value="AYR^LIBR">Ayr Branch Library</option> 
-<option value="BADEN^LIBR">Baden Branch Library</option> 
-<option value="BLOOMINGDL^LIBR">Bloomingdale Branch Library</option> 
-<option value="ELMIRA^LIBR">Elmira Branch Library</option> 
-<option value="LINWOOD^LIBR">Linwood Branch Library</option> 
-<option value="NEWDUNDEE^LIBR">New Dundee Branch Library</option> 
-<option value="NEWHAMBURG^LIBR">New Hamburg Branch Library</option> 
-<option value="STCLEMENTS^LIBR">St. Clements Branch Library</option> 
-<option value="STJACOBS^LIBR">St. Jacobs Branch Library</option> 
-<option value="WELLESLEY^LIBR">Wellesley Branch Library</option> 
-</select> 
-    <input type="submit" value="Search within a single library" class="button"> 
-</form> 
-   </td> 
-	</tr> 
-	
-	<tr> 
-	 <td class="searchcontent" align="right"> 
-<!--  Copyright (c) 2000 - 2009, SirsiDynix - The "ALL Libraries" form for redoing a failed search. --> 
-<form name="searchform1" method="post" action="/uhtbin/cgisirsi/4MnSnbVidV/HEADQUARTR/153771119/5/0"> 
-    <!-- First, specify the search options --> 
-<!--  Copyright (c) 2000 - 2009, SirsiDynix - Hidden search options for redoing a search that resulted in no hits. Contains all options except for "library". --> 
-<input type="hidden" name="pubyear" value=""> 
-<input type="hidden" name="language" value=""> 
-<input type="hidden" name="format" value=""> 
-<input type="hidden" name="item_type" value=""> 
-<input type="hidden" name="location" value=""> 
-<input type="hidden" name="item_1cat" value=""> 
-<input type="hidden" name="item_2cat" value=""> 
-<input type="hidden" name="shadow" value=""> 
-<input type="hidden" name="sort_by" value=""> 
-<input type="hidden" name="relevance" value="off"> 
-    <!-- Define the Library option to be ALL --> 
-    <input type="hidden" name="library" value="ALL"> 
-    <!-- Define the 8 search fields --> 
-<!-- Copyright (c) 2000 - 2009, SirsiDynix - Hidden search term fields for redoing a search that resulted in no hits. --> 
- 
-  <input type="hidden" name="srchfield1" value="^^^^"> 
-  <input type="hidden" name="searchdata1" value="0321503627"> 
-  <input type="hidden" name="searchoper1" value=""> 
- 
- 
- 
- 
- 
- 
- 
-   <input type="submit" value="Search ALL libraries" class="button"> 
-</form> 
-	 </td> 
-	</tr> 
-  	  	 
-	 <!-- Display the browse list only if there is one. --> 
-	<tr> 
-	 <td class="searchsummary"> 
-<!--  Copyright (c) 2000 - 2003, Sirsi Corporation - Generates the browse list from the "LB" list in the response. --> 
-<!-- Loop through the hits, printing each --> 
-<div class="searchsummary"> 
-&nbsp;
-</div> 
- 
-<div class="searchsum_container_bottom"> 
-&nbsp;
-</div> 
- 
- 
-	 </td> 
-	</tr> 
-  	 
- </table> 
-</div> 
-</div> 
-</div> 
-  <div class="column pct25 right_column"> 
-<!--  Copyright (c) 2000 - 2007, SirsiDynix - Unicorn Other Searches --> 
- 
-<!-- when search field is not blank, assign term to ENGINE_TERM --> 
- 
-  <div class="content_container"> 
-    <div class="content"> 
-        <h3>Continue search in:</h3> 
-        <ul class="info_desk"> 
-          <li><a class="itemservices_link" href="javascript:open_win('http://www.google.com/search?q=0321503627&safe=vss&vss=1&sa=Google+Search')">Google</a></li> 
-      </ul> 
-    </div> 
-  </div> 
-      <div class="content_container library_info"> 
-        <div class="content"> 
-          <h3>Library Info</h3> 
-<!--  Copyright (c) 2000 - 2006, SirsiDynix - Announcements/Activity - This page file is processed by a  SIRSI_Command for an Si response. --> 
- 
- 
-  <ul class="info_desk"> 
-  
-   
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><script src="/client/assets/d8fc44aa0af920cc/stack/en_US/core.js" type="text/javascript"></script><script src="/client/assets/d8fc44aa0af920cc/stack/en_US/CoreSearchStack.js" type="text/javascript"></script><script src="/client/assets/d8fc44aa0af920cc/stack/en_US/DetailStack.js" type="text/javascript"></script><script src="/client/assets/d8fc44aa0af920cc/stack/en_US/ResultsStack.js" type="text/javascript"></script><script src="/client/assets/d8fc44aa0af920cc/stack/en_US/SearchTemplateStack.js" type="text/javascript"></script><script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', "UA-57947942-1"]);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+        </script><meta content="Apache Tapestry Framework (version 5.3.3)" name="generator"/><meta content="chrome=1" http-equiv="X-UA-Compatible"/><link rel="shortcut icon" href="/client/assets/d8fc44aa0af920cc/ctx/favicon.ico" type="image/vnd.mircrosoft.icon" id="favicon"/><script src="/custom/web/web20_WATE.js" type="text/javascript"></script><script async="true" src="/client/assets/d8fc44aa0af920cc/ctx/js/google-preview.js" type="text/javascript"></script><script async="true" src="https://encrypted.google.com/books/api.js?hl=en" type="text/javascript"></script><title>Search Results for 9780676976318</title><script type="text/javascript" id="com_sirsi_ent_widgets">
     
-	
-        <li><a href="javascript:open_win('http://www.rwl.library.on.ca/branches.html')">Branches/Hours</a></li> 
-      
-	  <!-- counter test --> 
-    
-   
-    
-	
-        <li><a href="javascript:open_win('http://rwl.library.on.ca/helpalpha.html')">Online Resources</a></li> 
-      
-	  <!-- counter test --> 
-    
-   
-    
-	
-        <li><a href="javascript:open_win('http://www.rwl.library.on.ca/events3.html')">Events</a></li> 
-      
-	  <!-- counter test --> 
-    
-   
-    
-	
-        <li><a href="javascript:open_win('http://www.downloadlibrary.ca')">Digital Audio, Video, E-books</a></li> 
-      
-	  <!-- counter test --> 
-    
-   
-    
-	
-        <li><a href="javascript:open_win('http://rwl.library.on.ca/famlit.html')">Family Literacy</a></li> 
-      
-	  <!-- counter test --> 
-    
-   
-   
-   </ul> 
- 
-   
-        </div> 
-      </div> 
-  </div> 
-</div> 
-<div class="bottom_buttons">	
-<!--  Copyright (c) 2000 - 2003, Sirsi Corporation - Buttons for Search-no-hits page - Identical to Browse list buttons --> 
-<!--  Copyright (c) 2000 - 2008, SirsiDynix - Buttons for Browse List and Term Search page --> 
-<div class="secondary_header_menu_container"> 
-  <h2>Contextual Navigation Menu</h2> 
-  <ul class="menu"> 
-    <li class="menu_link"> 
-      <!-- Go back button --><a href="/uhtbin/cgisirsi/CfoqznN4H9/HEADQUARTR/153771119/2/7" title="Go Back">Go Back</a> 
-    </li> 
-    <!--
-    <li class="menu_link">
-      <a href="/uhtbin/cgisirsi/2UW3UE15QH/HEADQUARTR/153771119/2/7" title="Go Back" alt="Go Back">GO BACK</a>
-    </li>
-     --> 
-<li class="menu_link"> 
-  <!-- Help button --> 
-  <script language="javascript" type="text/javascript"> 
-    //<![CDATA[
-    put_help_button('English','Help','browse_list');
-    //]]>
-  </script> 
-</li> 
- 
-  <li class="menu_link"><a href="/uhtbin/cgisirsi/PG4giim36R/HEADQUARTR/153771119/49" title="New Search">New Search</a></li> 
-	
-	
- 
-  <!-- gateway's custom buttons --> 
- 
-    <li class="menu_link"><a href="/uhtbin/cgisirsi/H3jyI2jUOi/HEADQUARTR/153771119/58" title="Logout" target="_top">Logout</a></li> 
-    <li class="menu_link"><a name="skipnav"></a></li> 
-  </ul> 
-</div> 
-</div> 
-<div class="footer_container"> 
-  <!--  Copyright (c) 1996 - 2009, SirsiDynix - Copyright statement --> 
-  <table border="0" cellpadding="3" cellspacing="0" width="100%" class="footer"> 
-   <tr> 
-    <td align="center" valign="bottom" width="15%" class="footer"> 
-        <img src="/WebCat_Images/English/Other/Miscib/sirsi_button.gif" alt="Powered by: SirsiDynix" border="0"/> 
-    </td> 
-    <td align="center" class="footer" id="requiredCell"><!-- Display the description --> 
-      <div id="feature"> 
-      Region of Waterloo Library<br/> 
-      Your Electronic Library on the Web<br/> 
-      <div id="required"></div> 
-      </div> 
-    </td> 
-    <td align="center" width="15%" class="footer"><a name="bottom" href="#top">Top</a></td> 
-   </tr> 
-  </table> 
-</div> 
- 
-  <script language="JavaScript" type="text/javascript"> 
-    setLocalizedValue("PERMALINK","Permalink");
-    setLocalizedValue("TO_LINK","To link to this item, list, search result or page from an email, your blog or other website, copy and paste the URL below.");
-  </script> 
- 
-</body> 
-</html> 
- 
- 
+var com_sirsi_ent_widgets = {
+  "URLS" : {
+    "eRC" : {
+      "emailHoldUrl" : "/client/en_US/rwl/search/results.template.widgetsplatform:emailhold?qu=9780676976318",
+      "placeHoldUrl" : "/client/en_US/rwl/search/results.template.widgetsplatform:placehold?qu=9780676976318",
+      "getEResourceUrl" : "/client/en_US/rwl/search/results.template.widgetsplatform:geteresource?qu=9780676976318",
+      "titleInfoUrl" : "/client/en_US/rwl/search/results.template.widgetsplatform:gettitlesinfo?qu=9780676976318",
+      "accountsUrl" : "/client/en_US/rwl/search/results.template.widgetsplatform:getaccounts?qu=9780676976318"
+    },
+    "proxy" : "client/"
+  }
+};
+
+</script><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/core/default.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/core/tapestry-console.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/core/t5-alerts.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/core/tree.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/ctx/css/jquery-ui-1.8.12.custom.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/ctx/css/jquery-selectable.custom.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/ctx/css/vse/css/Discovery_base.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/ctx/css/format-types.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/app/components/search/suggest.css"/><link type="text/css" rel="stylesheet" href="/client/assets/d8fc44aa0af920cc/ctx/css/vse/open.css"/><link type="text/css" rel="stylesheet" href="/custom/web/WATECustomUpdate060414.css"/></head><body><input value="false" id="fbAvailableHidden" type="hidden"></input><div class="header"><div class="headerWrapper"><div class="header_container" id="header"><div id="mainMenu"><div id="mainMenuContainer"><div id="libInfoContainer"><div class="loginLink"><a shape="rect" tabIndex="6" class="loginLink" onclick="com_sirsi_ent_login.loginFirst();" href="#">Log In</a></div><div class="pipeSeparator">|</div><div class="menuLink"><a shape="rect" tabIndex="7" onclick="com_sirsi_ent_login.loginFirst('http://olco.canlib.ca/client/en_US/rwl/search/account?')" class="loginLink" href="#">My Account</a></div><div class="pipeSeparator">|</div><div class="menuLink"><a tabIndex="8" href="/client/en_US/rwl/search/mylists?">My Lists</a></div><div class="pipeSeparator">|</div><div onclick="event.cancelBubble = true;" class="menuLink" id="libInfoLink"><a shape="rect" href="#">Library Information</a><div onclick="event.cancelBubble = true;" style="display: none;" class="ui-corner-all" id="libraryInfo"><p><strong><a title="Request an item for purchase or interlibrary loan." href="http://rwl.library.on.ca/en/ourcollections/requestitems.asp">Request an Item</a></strong></p>
+<p><a href="http://216.138.208.196/client/help/user-help_en_US/user-help-1-1.htm"><strong>Catalogue Help</strong></a></p>
+<p><strong><a title="Contact us." href="http://rwl.library.on.ca/en/aboutTheLibrary/contactus.asp?_mid_=20097">Contact Us</a></strong></p></div></div></div><div id="languageSelector" class="menuLink"></div><div class="pipeSeparator">|</div><span id="adaModeDiv"><a tabIndex="9" class="ada_link" href="/client/en_US/rwl/search/results.template.header.mainmenu_0.adamode?qu=9780676976318"><img alt="Click to Render in ADA Mode" title="Accessibility Mode" src="/client/images/ada_mode.png"/></a></span><div title="Security Reminder:" style="display: none;" id="logoutWarning" class="modalBody">Remember to clear the cache and close the browser window.</div></div></div><div id="logo_container" class="logo_container"><span><div class="logoContainer"><p>&nbsp</p>
+<p><a title="Link to the main library website." href="http://www.rwlibrary.ca" target="_blank"><img src="/custom/web/content/WR-fulllogotemp.jpg" alt="" /></a><br><a class="contenttext" href="http://rwl.library.on.ca/en/aboutus/aboutthelibrary.asp"><img src="/custom/web/content/WR-AboutUs.jpg" alt="" /></a><a href="http://rwl.library.on.ca/en/ourcollections/booksmore.asp"><img src="/custom/web/content/WR-OurCollections.png" alt="Our Collections Button" /></a><a href="http://rwl.library.on.ca/en/research/research1.asp"><img src="/custom/web/content/WR-Research.png" alt="Research Button" /></a><a href="http://rwl.library.on.ca/en/kidsTweensTeens/kidstweensandteens.asp"><img src="/custom/web/content/WR-KKT2.png" alt="Kids Tweens Teens Button" /></a><a href="http://rwl.library.on.ca/en/programsevents/programsevents.asp"><img src="/custom/web/content/WR-PandE2.png" alt="Programs and Events" /></a><a href="http://rwl.library.on.ca/en/explore/explore.asp"><img src="/custom/web/content/WR-Explore.png" alt="Explore Button" /></a></p></div></span></div><div class="quicksearchWrapper" id="quicksearchWrapper"><div class="quicksearchBar" id="quicksearchBar"></div></div><div id="searchBoxWrapper"><div id="searchBox"><div id="searchBoxCentered"><div class="basicSearch" id="basicSearch"><div id="searchBoxHomeLink"><a TABINDEX="16" href="/client/en_US/rwl/?"><img alt="Home" title="Home" src="/client/assets/d8fc44aa0af920cc/ctx/images/home.png"/></a></div><div id="searchBoxStyleDiv" style=""><div id="searchBoxesWrapper"><form name="limitForm" class="searchBoxSection" onsubmit="javascript:return Tapestry.waitForPage(event);" action="/client/en_US/rwl/search/results.template.header.searchbox_0.form?qu=9780676976318" method="post" id="form"><div class="t-invisible"><input value="H4sIAAAAAAAAAK2PMU7DQBBFh0ip0oHgBNBuKEgDEsIiorIQigVtNF4P9qK1d5kdx6bhKJwAcYkUdNyBA9BSUWAnSNSR0o3+k/6b//oFw+YCzgMh62I8o1BbCadCpbcopArCjFitcera+fHfbU1pJGPnM9dUgWHiOFfoURekBD0F4aeJ0o7JmlSlGEhFaReilitDNjtMSGp/dLscfe6//wxgJ4aRdpWws9dYksBu/IALHFus8nEibKr8rPUCe2t93OunnX7a6bcyINp0wA07TSEkdVqaEIyrlm/Zyf33y8cAoPXNJUQb/MTOlYF7qdHSdS3Q1l35IzwDCBys8Owf363wVhy9YvgLIjWgxAcCAAA=" name="t:formdata" type="hidden"></input></div><label for="searchLimitDropDown" class="hidden">Search Limit</label><select title="Select Search Limit" TABINDEX="17" class="dropDown searchLimitDropDown" onchange="javascript:sboxRstManager.onChange()" id="searchLimitDropDown" name="searchLimitDropDown"><option value="">Search All...</option><optgroup label="----------"><option value="TILS:DIRECT">Search the catalogue</option><option value="TERC_ST_WATERLOO:DIRECT">RWL eResources</option><option value="TROOM_CONTENT:DIRECT">Search this website</option></optgroup></select><img id="searchLimitDropDown_icon" class="t-error-icon t-invisible" alt="" src="/client/assets/d8fc44aa0af920cc/core/spacer.gif"/><select class="hidden" id="roomsRestrictionValues" name="roomsRestrictionValues"><option value="">All Fields</option><option value="false|||TITLE|||Title">Title</option><option value="false|||AUTHOR|||Author">Author</option><option value="false|||SUBJECT|||Subject">Subject</option><option value="false|||SERIES|||Series">Series</option><option value="false|||ISBN|||ISBN">ISBN</option><option value="false|||PREFERRED_CALLNUMBER|||Call Number">Call Number</option></select><img id="roomsRestrictionValues_icon" class="t-error-icon t-invisible" alt="" src="/client/assets/d8fc44aa0af920cc/core/spacer.gif"/></form><div class="hidden" id="rTabIndex">18</div><div class="searchBoxSection t-zone" id="restrictionZone"><form name="selectForm" onsubmit="javascript:return Tapestry.waitForPage(event);" action="/client/en_US/rwl/search/results.template.header.searchbox_0.form_0?qu=9780676976318" method="post" id="form_0"><div class="t-invisible"><input value="H4sIAAAAAAAAAK2PMU4DMRBFTSSqdEHcAFovBWlAQkSKqCKEsqJGY3vYNfLa1sws2VwmJ4i4RIp03IED0FJRYERDi0T7/9d/ett3dbi6VleMQLatlsh9EL4Q7HIAQd0iOCT9U5s0PJxpQhbyVnyKjlJ2aRWZ1DRRoyGDbVEL5O/NeqptIgzeaAOMemZKCFZuPAZ3UqP0+fR+N3473n+O1MFCjW2KQincQoeiJosneIYqQGyqugBjczlkUUe/8POCnxf8vwjM/ipwR8kic92bzjOXs92LO3/82LyOlBryF8e24+VZAQAA" name="t:formdata" type="hidden"></input></div><label for="restrictionDropDown" class="hidden">Search Field</label><select title="Select Search Field" class="dropDown restrictionDropDown" onchange="javascript:sboxRstManager.onRestrictionChange(this.value);" id="restrictionDropDown" name="restrictionDropDown"><option value="_PLACEHOLDER_">All Fields</option></select><img id="restrictionDropDown_icon" class="t-error-icon t-invisible" alt="" src="/client/assets/d8fc44aa0af920cc/core/spacer.gif"/></form></div><form name="searchForm" class="searchBoxSection" onsubmit="javascript:return Tapestry.waitForPage(event);" action="/client/en_US/rwl/search/results.template.header.searchbox_0.searchform?qu=9780676976318" method="post" id="searchForm"><div class="t-invisible"><input value="H4sIAAAAAAAAAKWSv0oDQRDGJwcBMRYiWNhrJxsLY9QgGAVBCCIe2sre3nhZ2bu97M4lsbHyJWx8ArHSJ0hh5zv4ADYWVhbenwj+AeFMt/vNzDe/ge/2BaqDdVizyI3o1o/QJorsJmEYK07Iush9NKwoe3p4usKImwCpz1WC1kBDm4DxmIsuppUYLZmLBhPaoJIe87hF1vZSkQvak6j8RRcpiZeOR7Xn+cd3ByodqAkdkdHqgIdIMNc5531eVzwK6i4ZGQWtYUxQK9aeZGsnAm6XBT40WqC1buKF0lqpo9Gdv3r2dvPkAAzjQRMaJViUDOUYpQeXAATTuVTc9V+vzKo62IJWiWmTXS4FpQd945n9UiioJvMt2Bgsl/DofcJUemUni3Ub0CwxNH4nRDpKE7L9Z0KEDmMdYUSW5ZGg3wG5dl8XHu6vdh1wOjAllEy79/2MLEs7KgxTIUt7LmXpnikQdnKEH98PrtMbH6MDAAA=" name="t:formdata" type="hidden"></input></div><input class="hidden targetValue" value="" id="targetValue" name="targetValue" type="text"></input><img id="targetValue_icon" class="t-error-icon t-invisible" alt="" src="/client/assets/d8fc44aa0af920cc/core/spacer.gif"/><input class="hidden limitValue" value="" id="limitValue" name="limitValue" type="text"></input><img id="limitValue_icon" class="t-error-icon t-invisible" alt="" src="/client/assets/d8fc44aa0af920cc/core/spacer.gif"/><input class="hidden restrictionValue" value="" id="restrictionValue" name="restrictionValue" type="text"></input><img id="restrictionValue_icon" class="t-error-icon t-invisible" alt="" src="/client/assets/d8fc44aa0af920cc/core/spacer.gif"/><div id="dropDown" class="dropDownHidden"></div><div class="normalSearchBoxDiv" id="searchField"><label for="q" class="hidden">Search For:</label><input title="Search For:" autofocus="false" accessKey="s" maxlength="256" TABINDEX="19" autocomplete="off" size="100" value="9780676976318" id="q" name="q" type="text"></input><img id="q_icon" class="t-error-icon t-invisible" alt="" src="/client/assets/d8fc44aa0af920cc/core/spacer.gif"/></div><div id="buttonsWrapper"><input title="Search" value="Search" TABINDEX="20" class="button" id="searchButton" name="searchButton" type="submit"></input></div></form></div><div id="searchBoxAdvancedLink"><a TABINDEX="21" href="/client/en_US/rwl/search/advanced?">Advanced Search</a></div></div></div></div></div></div></div></div></div><div id="content"><div id="no_results_wrapper"><div id="searchResultText">
+This search returned no results.
+</div><div class="didYouMeansWrapper"></div></div></div><div class="footer_container" id="footer"><span><div class="logoContainer"><p><a title="Go to the Region of Waterloo website." href="http://www.regionofwaterloo.ca" target="_blank"><img title="logo" src="/custom/web/content/WR-rowlogo.jpg" alt="Region of Waterloo logo" /></a>&nbsp; &nbsp; <span style="font-size: small; color: #000000;">&nbsp; &nbsp;&nbsp;<a title="Go to the Region of Waterloo privacy policy." href="http://rwl.library.on.ca/en/privacy.asp"><span style="color: #000000;">Privacy</span></a> | <a title="Go to the Region of Waterloo Library website sitemap" href="http://rwl.library.on.ca/en/sitemap.asp"><span style="color: #000000;">Site Map</span></a> | <a title="Learn more about the accessibility features of the website." href="http://rwl.library.on.ca/en/accessibility.asp"><span style="color: #000000;">Accessibility</span></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Join the Conversation: &nbsp;</span><a title="Go to the Region of Waterloo Library Facebook page." href="http://www.facebook.com/RegionofWaterlooLibrary" target="_blank"><img title="logo" src="/custom/web/content/1wr - Facebook.gif" alt="Facebook" /></a> <a title="Go to the Region of Waterloo Library Twitter page." href="https://twitter.com/rwlibrary" target="_blank"><img title="logo" src="/custom/web/content/WR - Twitter.gif" alt="Twitter" /></a> <a title="Go to the Region of Waterloo Library Google Page." href="https://plus.google.com/b/105331294754834966549/105331294754834966549/posts" target="_blank"><img title="logo" src="/custom/web/content/WR - Google.png" alt="Google Plus" /></a> <a title="Share your comments and feedback." href="http://rwl.library.on.ca/en/aboutTheLibrary/yourcomments.asp" target="_blank"><img title="logo" src="/custom/web/content/WR - email.gif" alt="Email" /></a></p></div></span><div><div id="copyright">Copyright 2014
+<span class="sdCopyrightLink"><a shape="rect" title="SirsiDynix" href="http://www.sirsidynix.com">SirsiDynix</a></span>
+- Portfolio Version 4.3 (32169)
+</div></div></div><script type="text/javascript">
+            var fbAvailable = false;
+            if(fbAvailable)
+            {
+                window.fbAsyncInit = function() {
+                FB.init({appId: '448816691882309', status: true, cookie: true, logging: false,
+                xfbml: true});
+                };
+                //append a script tag containing the facebook javascript to the page.
+                //doing it here ensures that it won't be loaded before the above function is defined.
+                var e = document.createElement('script'); e.async = true;
+                e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+                document.getElementById('fb-root').appendChild(e);
+            }
+
+            var googlePreviewEnabled = true;
+        </script><script type="text/javascript">Tapestry.onDOMLoaded(function() {
+Tapestry.init({"formEventManager":[{"formId":"form","validate":{"submit":true,"blur":true}},{"formId":"form_0","validate":{"submit":true,"blur":true}},{"formId":"searchForm","validate":{"submit":true,"blur":true}}]});
+window.com_sirsi_ent_page = {searchSession: "qu=9780676976318",friendlyUrl: "rwl",casLoginEnabled: false,casLogin: "/client/en_US/rwl/search/casrequest/http:$002f$002folco.canlib.ca$002fclient$002fen_US$002frwl$002fsearch$002fredirectafterlogin$003fqu$003d9780676976318?qu=9780676976318",loginIFrameDimensions:{height:225,width:380},localeCode: "en_US"};
+com_sirsi_ent_login.isLoggedIn = false;
+var ajax = new AjaxHandler(null, 'http://olco.canlib.ca/client/en_US/rwl/search/results.template.header.searchbox_0:suggest?qu=9780676976318', null, sboxLink.handleData, sboxLink.jsContextProvider, true,sboxLink);
+var sbox = new SuggestBox({
+textInputBox: document.getElementById('q'),
+dropDown: document.getElementById('dropDown'),
+closeLinkText : 'Close',
+dataFetch : sboxLink.getData.bind(sboxLink),
+submit : sboxLink.doSubmit.bind(sboxLink),
+bindingObject : sboxLink});
+sboxLink.ajaxHandler = ajax;
+sboxLink.sbox = sbox;
+sboxRstManager.link = '/client/en_US/rwl/search/results.template.header.searchbox_0:updaterestrictionzone?qu=9780676976318';
+sboxRstManager.rstPlaceholderVal = '_PLACEHOLDER_';
+sboxRstManager.setupExistingValues('','');
+$('restrictionZone').observe(Tapestry.ZONE_UPDATED_EVENT, function() { sboxRstManager.checkRestrictionValues(); });
+$J(function() { setTimeout(function() { $J('#q').focus().select(); }, 10); });
+createSpinnersForSelector($J('*[name="searchingGif"]'));
+createSpinnersForSelector($J('*[name="smallSearchingGif"]'), smallSpinnerOptions);
+addToListUrlBase = "/client/en_US/rwl/search/results:addtolist/_listID_/_default_/_itemIDs_?qu=9780676976318";
+Tapestry.init({"activate":["targetValue"],"linkSelectToZone":[{"url":"/client/en_US/rwl/search/results.template.header.searchbox_0.searchlimitdropdown:change?qu=9780676976318","selectId":"searchLimitDropDown","zoneId":"restrictionZone"}],"zone":[{"update":"show","element":"restrictionZone","show":"show"}]});
+});
+</script></body></html>
