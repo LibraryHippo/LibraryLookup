@@ -5,8 +5,7 @@ import logging
 from xml.dom.minidom import Document
 
 from google.appengine.api import urlfetch
-from google.appengine.ext import webapp
-from google.appengine.ext.webapp.util import run_wsgi_app
+import webapp2
 
 import catalogue
 import wpl
@@ -68,7 +67,7 @@ def lookup_isbn_html(isbn, libraries):
         return(to_html(found))
 
 
-class FindIsbn(webapp.RequestHandler):
+class FindIsbn(webapp2.RequestHandler):
     def get(self, isbn):
         request_libraries = self.request.get('lib', allow_multiple=True)
         if not request_libraries:
@@ -78,18 +77,10 @@ class FindIsbn(webapp.RequestHandler):
         self.response.out.write(lookup_isbn_html(isbn, [all_libraries[l] for l in request_libraries]))
 
 
-def main(handlers=[]):
-    logging.getLogger().setLevel(logging.DEBUG)
+logging.getLogger().setLevel(logging.DEBUG)
 
-    if not handlers:
-        handlers.extend([
-            ('/isbn/(.*)', FindIsbn),
-            ])
+handlers = [
+    ('/isbn/(.*)', FindIsbn),
+]
 
-    application = webapp.WSGIApplication(
-        handlers,
-        debug=False)
-    run_wsgi_app(application)
-
-if __name__ == '__main__':
-    main()
+application = webapp2.WSGIApplication(handlers, debug=True)
