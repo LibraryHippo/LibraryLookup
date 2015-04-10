@@ -69,7 +69,7 @@ def lookup_isbn_html(isbn, libraries):
 
 class FindIsbn(webapp2.RequestHandler):
     def get(self, isbn):
-        request_libraries = self.request.get('lib', allow_multiple=True)
+        request_libraries = self.request.get_all('lib')
         if not request_libraries:
             request_libraries = ['wpl', 'kpl', 'rwl']
         logging.debug(request_libraries)
