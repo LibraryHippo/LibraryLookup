@@ -36,8 +36,9 @@ chrome.runtime.onMessage.addListener(
             }
             libraries = libraries.split(',');
             
-            var url = 'http://librarylookup.appspot.com/isbn/' + request.isbn + '?lib=';
-            // url = 'http://localhost:8080/isbn/' + request.isbn + '?lib=';
+            var url = 'http://librarylookup-hrd.appspot.com/isbn/' + request.isbn + '?lib=';
+            // var url = 'http://localhost:8080/isbn/' + request.isbn + '?lib=';
+
             url = url + libraries.join('&lib=');
             
             var xhr = new XMLHttpRequest();
