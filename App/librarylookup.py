@@ -38,7 +38,7 @@ def to_xml(find_results):
 
 
 def to_html(find_results):
-    result = ''.join('<li><a href="' + f.url + '">' + f.library.name + '</a></li>\r\n'
+    result = ''.join('<li class="' + f.library.id + '"><a href="' + f.url + '">' + f.library.name + '</a></li>\r\n'
                      for f in find_results)
 
     return '''<html>
