@@ -1,5 +1,17 @@
 var lookupsByPage = new Array();
 
+function getServerHost() {
+    var isDevMode = !('update_url' in chrome.runtime.getManifest());
+    if (isDevMode)
+    {
+        return 'localhost:8080'
+    }
+    else
+    {
+        return 'librarylookup-hrd';
+    }
+}
+
 // Listen for any changes to the URL of any tab.
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) 
@@ -36,10 +48,8 @@ chrome.runtime.onMessage.addListener(
             }
             libraries = libraries.split(',');
             
-            var url = 'http://librarylookup-hrd.appspot.com/isbn/' + request.isbn + '?lib=';
-            // var url = 'http://localhost:8080/isbn/' + request.isbn + '?lib=';
-
-            url = url + libraries.join('&lib=');
+            var host = getServerHost();            
+            var url = 'http://' + host + '/isbn/' + request.isbn + '?lib=' + libraries.join('&lib=');
             
             var xhr = new XMLHttpRequest();
             xhr.open("GET", url, true);
