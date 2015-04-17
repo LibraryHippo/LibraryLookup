@@ -10,7 +10,7 @@ def search_url(isbn):
 class Library(library.LibraryBase):
     def __init__(self, opener):
         self.id = 'kpl'
-        self.name = 'Kitchencher Public Library'
+        self.name = 'Kitchener Public Library'
         self.opener = opener
 
     def find_item(self, isbn):
