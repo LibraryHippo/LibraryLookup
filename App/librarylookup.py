@@ -38,8 +38,13 @@ def to_xml(find_results):
 
 
 def to_html(find_results):
-    result = ''.join('<li class="' + f.library.id + '"><a href="' + f.url + '">' + f.library.name + '</a></li>\r\n'
-                     for f in find_results)
+    result = ''.join('<li style="background-image: url(http://librarylookup-hrd.appspot.com/static/library_icons/' +
+                     f.library.id +
+                     '_64.png)"><a href="' +
+                     f.url +
+                     '">' +
+                     f.library.name +
+                     '</a></li>\r\n' for f in find_results)
 
     return '''<html>
 <body>
