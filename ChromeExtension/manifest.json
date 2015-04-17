@@ -32,7 +32,7 @@
 
     "permissions": [
         "activeTab",
-        "http://librarylookup.appspot.com/",
+        "http://librarylookup-hrd.appspot.com/",
         "http://localhost/"
     ],
 
