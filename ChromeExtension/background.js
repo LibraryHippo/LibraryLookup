@@ -4,11 +4,11 @@ function getServerHost() {
     var isDevMode = !('update_url' in chrome.runtime.getManifest());
     if (isDevMode)
     {
-        return 'localhost:8080'
+        return 'localhost:8080';
     }
     else
     {
-        return 'librarylookup-hrd';
+        return 'librarylookup-hrd.appspot.com';
     }
 }
 
@@ -48,7 +48,7 @@ chrome.runtime.onMessage.addListener(
             }
             libraries = libraries.split(',');
             
-            var host = getServerHost();            
+            var host = getServerHost();
             var url = 'http://' + host + '/isbn/' + request.isbn + '?lib=' + libraries.join('&lib=');
             
             var xhr = new XMLHttpRequest();
