@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import logging
+import json
 
 from xml.dom.minidom import Document
 
@@ -82,10 +83,19 @@ class FindIsbn(webapp2.RequestHandler):
         self.response.out.write(lookup_isbn_html(isbn, [all_libraries[l] for l in request_libraries]))
 
 
+class Libraries(webapp2.RequestHandler):
+    def get(self):
+        libs = {}
+        for (key, lib) in all_libraries.iteritems():
+            libs[key] = {'name': lib.name}
+        self.response.out.write(json.dumps(libs))
+
+
 logging.getLogger().setLevel(logging.DEBUG)
 
 handlers = [
     ('/isbn/(.*)', FindIsbn),
+    ('/libraries', Libraries),
 ]
 
 application = webapp2.WSGIApplication(handlers, debug=True)
