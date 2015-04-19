@@ -39,3 +39,14 @@ class MyXisbnWebService:
 
     def to10(self, isbn13):
         return isbn13[3:]
+
+
+class MyCache:
+    def __init__(self):
+        self.cache = {}
+
+    def get(self, key):
+        return self.cache.get(key, None)
+
+    def set(self, key, value, *args):
+        self.cache[key] = value

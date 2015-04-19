@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import logging
+from gael import memcache
 
 
 class FindResult:
@@ -15,6 +16,12 @@ class FindResult:
         return 'FindResult(' + repr(self.library) + ', ' + self.url + ')'
 
 
+@memcache.memoize(lambda args, kwargs: repr(args), 3600)
+def find(library, isbn):
+    result = library.find_item(isbn)
+    return result or 'NOTFOUND'
+
+
 class Catalogue:
     def __init__(self, xisbn):
         self.xisbn = xisbn
@@ -24,8 +31,8 @@ class Catalogue:
         for library in libraries:
             items_found_so_far = len(items)
             logging.debug('looking for ' + isbn + ' in ' + library.name)
-            url = library.find_item(isbn)
-            if url:
+            url = find(library, isbn)
+            if url != 'NOTFOUND':
                 logging.info('found ' + isbn + ' in ' + library.name)
                 items.append(FindResult(library, url))
             else:
@@ -34,8 +41,8 @@ class Catalogue:
                     if edition == isbn:
                         continue
                     logging.debug('looking for ' + edition + ' in ' + library.name)
-                    url = library.find_item(edition)
-                    if url:
+                    url = find(library, edition)
+                    if url != 'NOTFOUND':
                         logging.info('found ' + edition + ' in ' + library.name)
                         items.append(FindResult(library, url))
                         break
