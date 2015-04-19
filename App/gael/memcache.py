@@ -16,7 +16,7 @@ def memoize(key, seconds_to_keep=600):
     class Memoize():
         def __init__(self, func):
             self.key = key
-            self.seconds_to_keep = 600
+            self.seconds_to_keep = seconds_to_keep
             self.func = func
             self.cache = google.appengine.api.memcache
 

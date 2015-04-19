@@ -14,7 +14,6 @@ import kpl
 import rwl
 import xisbn
 import xisbnwebservice
-from gael import memcache
 
 
 def to_xml(find_results):
@@ -66,7 +65,6 @@ all_libraries = {
     }
 
 
-@memcache.memoize(lambda args, kwargs: repr(args), 3600)
 def lookup_isbn_html(isbn, libraries):
         found = catalogue_service.find_item(isbn, libraries)
 

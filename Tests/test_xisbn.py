@@ -2,7 +2,11 @@
 
 import xisbn
 
-from fakes import MyXisbnWebService
+from fakes import MyXisbnWebService, MyCache
+
+
+def setup_module(module):
+    xisbn.find_editions.cache = MyCache()
 
 
 def test_get_editions__isbn10_no_13s__returns_isbn10_synonyms_and_single_13():

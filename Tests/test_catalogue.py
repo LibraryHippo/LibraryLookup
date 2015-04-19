@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import catalogue
+from fakes import MyCache
 
 
 class MyLibrary:
@@ -28,6 +29,10 @@ class MyXisbn:
         if isbn in self.edition_map:
             return self.edition_map[isbn]
         return [isbn]
+
+
+def setup_module(module):
+    catalogue.find.cache = MyCache()
 
 
 def test_find_item__single_library_item_there__finds_item():
