@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-from google.appengine.api import urlfetch
-
 
 def method_url(method, isbn):
     return 'http://xisbn.worldcat.org/webservices/xid/isbn/%(isbn)s?method=%(method)s&format=csv' % vars()
@@ -22,24 +20,3 @@ class XisbnWebService:
     def to10(self, isbn13):
         response = self.opener(method_url('to10', isbn13)).content
         return response.strip()
-
-if __name__ == '__main__':
-
-    class Opener:
-        def __call__(self, url):
-            class Result:
-                pass
-
-            r = Result()
-            r.content = urllib2.urlopen(url).read()
-            return r
-
-    import urllib2
-    import sys
-    import gael.testing
-    gael.testing.add_appsever_import_paths()
-    gael.testing.initialize_service_apis()
-
-    opener = Opener()
-    x = XisbnWebService(urlfetch.fetch)
-    print x.get_editions(sys.argv[1])
