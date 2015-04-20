@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import functools
 import logging
 import google.appengine.api.memcache
 
@@ -13,18 +14,23 @@ def memoize(key, seconds_to_keep=600):
     key_func(*args, **kwargs), where *args and **kwargs are the
     arguments to the decorated function.
     '''
-    class Memoize():
+    class Memoize(object):
         def __init__(self, func):
             self.key = key
             self.seconds_to_keep = seconds_to_keep
             self.func = func
             self.cache = google.appengine.api.memcache
 
+        def __get__(self, obj, objtype):
+            return functools.partial(self.__call__, obj)
+
         def __call__(self, *args, **kwargs):
             if callable(self.key):
                 key_value = self.key(args, kwargs)
             else:
                 key_value = self.key % kwargs
+
+            key_value = self.func.__name__ + ': ' + key_value
 
             cached_result = self.cache.get(key_value)
             if cached_result is not None:

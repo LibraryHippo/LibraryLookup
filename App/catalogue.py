@@ -17,7 +17,7 @@ class FindResult:
 
 
 @memcache.memoize(lambda args, kwargs: repr(args), 3600)
-def find(library, isbn):
+def find_in_library(library, isbn):
     result = library.find_item(isbn)
     return result or 'NOTFOUND'
 
@@ -31,17 +31,17 @@ class Catalogue:
         for library in libraries:
             items_found_so_far = len(items)
             logging.debug('looking for ' + isbn + ' in ' + library.name)
-            url = find(library, isbn)
+            url = find_in_library(library, isbn)
             if url != 'NOTFOUND':
                 logging.info('found ' + isbn + ' in ' + library.name)
                 items.append(FindResult(library, url))
             else:
-                other_editions = self.xisbn.get_editions(isbn)
+                other_editions = self.xisbn.find_editions(isbn)
                 for edition in other_editions:
                     if edition == isbn:
                         continue
                     logging.debug('looking for ' + edition + ' in ' + library.name)
-                    url = find(library, edition)
+                    url = find_in_library(library, edition)
                     if url != 'NOTFOUND':
                         logging.info('found ' + edition + ' in ' + library.name)
                         items.append(FindResult(library, url))

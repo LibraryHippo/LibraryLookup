@@ -25,14 +25,14 @@ class MyXisbn:
     def __setitem__(self, isbn, alternates):
         self.edition_map[isbn] = [isbn] + alternates
 
-    def get_editions(self, isbn):
+    def find_editions(self, isbn):
         if isbn in self.edition_map:
             return self.edition_map[isbn]
         return [isbn]
 
 
 def setup_module(module):
-    catalogue.find.cache = MyCache()
+    catalogue.find_in_library.cache = MyCache()
 
 
 def test_find_item__single_library_item_there__finds_item():
