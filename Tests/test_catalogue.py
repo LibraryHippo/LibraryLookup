@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import catalogue
-from fakes import MyCache
+import gael.testing
 
 
 class MyLibrary:
@@ -16,6 +16,9 @@ class MyLibrary:
         if isbn in self.holdings:
             return 'http://my.lib/' + isbn
         return None
+
+    def __repr__(self):
+        return self.name
 
 
 class MyXisbn:
@@ -32,7 +35,11 @@ class MyXisbn:
 
 
 def setup_module(module):
-    catalogue.find_in_library.cache = MyCache()
+    gael.testing.setup_memcache()
+
+
+def setup_function(function):
+    gael.testing.flush_memcache()
 
 
 def test_find_item__single_library_item_there__finds_item():

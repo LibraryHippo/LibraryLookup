@@ -1,10 +1,6 @@
 #!/usr/bin/env python
 
 import gael.testing
-gael.testing.add_appsever_import_paths()
-
-from google.appengine.ext import testbed
-
 import xisbn
 
 from fakes import MyXisbnWebService
@@ -14,10 +10,7 @@ my_testbed = None
 
 
 def setup_module():
-    global my_testbed
-    my_testbed = testbed.Testbed()
-    my_testbed.activate()
-    my_testbed.init_memcache_stub()
+    gael.testing.setup_memcache()
 
 
 def test_find_editions__isbn10_no_13s__returns_isbn10_synonyms_and_single_13():
