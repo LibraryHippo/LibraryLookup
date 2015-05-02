@@ -92,19 +92,6 @@ function get_best_isbn(text)
 // block at the bottom of this function.
 function whichSiteIsThis()
 {
-   var allconsuming =
-      {
-         getIsbn: function()
-         {
-             var isbnLinkNode = $x("//div[@class='item-header-body']/a[@class='amazon-link']/@href")[0];
-             if ( isbnLinkNode )
-             {
-                 return get_best_isbn(isbnLinkNode.firstChild.nodeValue);
-             }
-             return null;
-         },
-      }
-
    var amazon =
      {
          getIsbn: function()
@@ -173,11 +160,7 @@ function whichSiteIsThis()
       }
 
    // figure out what site we're looking at
-   if ( location.href.match(/allconsuming/) )
-   {
-      return allconsuming;
-   }
-   else if ( location.href.match(/google/) )
+   if ( location.href.match(/google/) )
    {
       return googleBooks;
    }
