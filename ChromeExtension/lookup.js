@@ -87,19 +87,11 @@ function get_best_isbn(text)
 }
 
 // Figure out which site the source page comes from.
-// To add a new one, make a new block like the "chapters"
+// To add a new one, make a new block like the "amazon"
 // and "amazon" variables below, and extend the "if...else..."
 // block at the bottom of this function.
 function whichSiteIsThis()
 {
-   var chapters =
-      {
-         getIsbn: function()
-         {
-             return get_best_isbn(location.href);
-         },
-      }
-
    var allconsuming =
       {
          getIsbn: function()
@@ -126,14 +118,6 @@ function whichSiteIsThis()
          getIsbn: function()
          {
              return document.body.innerHTML.match(/ISBN:([0-9X]+)/i)[1];
-         },
-      }
-
-   var powells =
-      {
-         getIsbn: function()
-         {
-             return get_best_isbn(location.href);
          },
       }
 
@@ -189,17 +173,9 @@ function whichSiteIsThis()
       }
 
    // figure out what site we're looking at
-   if ( location.href.match(/chapters/) )
-   {
-      return chapters;
-   }
-   else if ( location.href.match(/allconsuming/) )
+   if ( location.href.match(/allconsuming/) )
    {
       return allconsuming;
-   }
-   else if ( location.href.match(/powells/) )
-   {
-      return powells;
    }
    else if ( location.href.match(/google/) )
    {
@@ -215,7 +191,8 @@ function whichSiteIsThis()
    }
    else
    {
-      // Amazon's pretty popular - make it the default
+      // Amazon's our exemplar of a site with the ISBN in the URL,
+      // which we'll use as our default.
       return amazon;
    }
 }
