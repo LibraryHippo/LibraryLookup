@@ -98,11 +98,6 @@ function whichSiteIsThis()
          {
              return get_best_isbn(location.href);
          },
-
-         getOriginalTitle: function()
-         {
-            return $x("//h1")[0];
-         }
       }
 
    var allconsuming =
@@ -116,11 +111,6 @@ function whichSiteIsThis()
              }
              return null;
          },
-
-         getOriginalTitle: function()
-         {
-            return $x("//div[@class='item-header-body']/strong")[0];
-         }
       }
 
    var amazon =
@@ -129,11 +119,6 @@ function whichSiteIsThis()
          {
              return get_best_isbn(location.href);
          },
-
-         getOriginalTitle: function()
-         {
-            return $x("//div[@class='buying']/b[@class='sans']|//div[@class='buying']/b[@class='asinTitle']|//div[@class='buying']//span[@id='btAsinTitle']")[0];
-         }
       }
 
    var librarything =
@@ -142,11 +127,6 @@ function whichSiteIsThis()
          {
              return document.body.innerHTML.match(/ISBN:([0-9X]+)/i)[1];
          },
-
-         getOriginalTitle: function()
-         {
-            return $x("//div[@id='usercover']")[0];
-         }
       }
 
    var powells =
@@ -155,11 +135,6 @@ function whichSiteIsThis()
          {
              return get_best_isbn(location.href);
          },
-
-         getOriginalTitle: function()
-         {
-            return $x("//div[@id='seemore']")[0];
-         }
       }
 
    var googleBooks =
@@ -168,11 +143,6 @@ function whichSiteIsThis()
          {
              return get_best_isbn(location.href);
          },
-
-         getOriginalTitle: function()
-         {
-            return $x("//span[@class='title']")[0];
-         }
       }
 
    var goodReads =
@@ -203,11 +173,6 @@ function whichSiteIsThis()
             }
             return null;
          },
-
-         getOriginalTitle: function()
-         {
-            return $x("//h1[@id='bookPageTitle']")[0];
-         }
       }
 
    // figure out what site we're looking at
