@@ -62,28 +62,20 @@ function get_best_isbn(text)
 {
     var isbnRegex = /\b(\d{9}[0-9xX]|\d{13})\b/g;
 
-    try
+    var possible_matches = text.match(isbnRegex);
+    if ( possible_matches )
     {
-        var possible_matches = text.match(isbnRegex);
+        possible_matches = possible_matches
+            .sort(function(a,b) { return b.length - a.length; }) // prefer ISBN-13 to ISBN-10
+            .filter(is_isbn);
+        
         if ( possible_matches )
         {
-            possible_matches = possible_matches
-                .sort(function(a,b) { return b.length - a.length; }) // prefer ISBN-13 to ISBN-10
-                .filter(is_isbn);
-
-            if ( possible_matches )
-            {
-                return possible_matches[0];
-            }
+            return possible_matches[0];
         }
-
-        return null;
     }
-    catch ( e )
-    {
-        console.log("LibaryLookup: error while finding best ISBN. Assuming this isn't a book page.\nError was:\n" + e);
-        return null;
-    }
+    
+    return null;
 }
 
 var handlers = 
@@ -107,18 +99,11 @@ var handlers =
             
             getIsbn: function()
             {
-                try
+                var isbn_label = $x("//td[@class='metadata_label']/span[text()='ISBN']")[0];
+                if ( isbn_label )
                 {
-                    var isbn_label = $x("//td[@class='metadata_label']/span[text()='ISBN']")[0];
-                    if ( isbn_label )
-                    {
-                        var isbn_value_node = isbn_label.parentNode.nextSibling;
-                        return get_best_isbn(isbn_value_node.innerHTML);
-                    }
-                }
-                catch ( e )
-                {
-                    log.console('error looking for ISBN: ' + e);
+                    var isbn_value_node = isbn_label.parentNode.nextSibling;
+                    return get_best_isbn(isbn_value_node.innerHTML);
                 }
                 return null;
             },
@@ -131,27 +116,20 @@ var handlers =
             
             getIsbn: function()
             {
-                try
-                {
-                    var isbnHeaderNodeCandidates = $x("//div[@class='infoBoxRowTitle']");
+                var isbnHeaderNodeCandidates = $x("//div[@class='infoBoxRowTitle']");
 
-                    for ( var i = 0; i < isbnHeaderNodeCandidates.length; i++ )
+                for ( var i = 0; i < isbnHeaderNodeCandidates.length; i++ )
+                {
+                    if ( isbnHeaderNodeCandidates[i].innerHTML.match(/isbn/i) )
                     {
-                        if ( isbnHeaderNodeCandidates[i].innerHTML.match(/isbn/i) )
+                        var isbnNode = isbnHeaderNodeCandidates[i].nextSibling;
+                        while ( isbnNode.nodeName != 'DIV' )
                         {
-                            var isbnNode = isbnHeaderNodeCandidates[i].nextSibling;
-                            while ( isbnNode.nodeName != 'DIV' )
-                            {
-                                isbnNode = isbnNode.nextSibling;
-                            }
-
-                            return get_best_isbn(isbnNode.innerHTML);
+                            isbnNode = isbnNode.nextSibling;
                         }
+
+                        return get_best_isbn(isbnNode.innerHTML);
                     }
-                }
-                catch ( e )
-                {
-                    log.console('error looking for ISBN: ' + e);
                 }
                 return null;
             },
@@ -174,7 +152,16 @@ var handlers =
     ];
 
 var handler = handlers.filter(function(element) { return element.isApplicable(); })[0];
-var found_isbn = handler.getIsbn();
+var found_isbn;
+try
+{
+    found_isbn = handler.getIsbn();
+}
+catch ( e )
+{
+    log.console('error looking for ISBN: ' + e);
+}
+
 if ( found_isbn )
 {
     console.log('requesting: found_isbn = ' + found_isbn);
