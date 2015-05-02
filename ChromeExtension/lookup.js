@@ -141,7 +141,20 @@ function whichSiteIsThis()
       {
          getIsbn: function()
          {
-             return get_best_isbn(location.href);
+             try
+             {
+                 var isbn_label = $x("//td[@class='metadata_label']/span[text()='ISBN']")[0];
+                 if ( isbn_label )
+                 {
+                     var isbn_value_node = isbn_label.parentNode.nextSibling;
+                     return get_best_isbn(isbn_value_node.innerHTML);
+                 }
+             }
+             catch ( e )
+             {
+               log.console('error looking for ISBN: ' + e);
+             }
+             return null;
          },
       }
 
