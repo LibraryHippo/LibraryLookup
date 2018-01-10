@@ -10,3 +10,4 @@ application that checks the libraries for the presence of certain ISBNs, and
 Currently supports 
 * [Waterloo Public Library](http://www.wpl.ca/)
 * [Kitchener Public Library](http://www.kpl.org/)
+* [OverDrive Download Library](https://downloadlibrary.overdrive.com/)

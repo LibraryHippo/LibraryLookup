@@ -10,6 +10,7 @@ import webapp2
 
 import catalogue
 import wpl
+import dl
 import kpl
 import rwl
 import xisbn
@@ -62,6 +63,7 @@ all_libraries = {
     'wpl': wpl.Library(urlfetch.fetch),
     'kpl': kpl.Library(urlfetch.fetch),
     'rwl': rwl.Library(urlfetch.fetch),
+    'dl': dl.Library(urlfetch.fetch),
     }
 
 
@@ -75,7 +77,7 @@ class FindIsbn(webapp2.RequestHandler):
     def get(self, isbn):
         request_libraries = self.request.get_all('lib')
         if not request_libraries:
-            request_libraries = ['wpl', 'kpl', 'rwl']
+            request_libraries = ['wpl', 'dl', 'kpl', 'rwl']
         logging.debug(request_libraries)
         self.response.headers['Cache-Control'] = 'public; max-age=300;'
         self.response.out.write(lookup_isbn_html(isbn, [all_libraries[l] for l in request_libraries]))
