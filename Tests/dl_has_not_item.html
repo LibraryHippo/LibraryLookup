@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=1">
+        
+
+        
+
+        
+        
+            
+        
+        <title>Search results - downloadLibrary - OverDrive</title>
+
+        <style>
+            img.broken {
+                background-image: url(https://lightning.od-cdn.com/19.1.1-build-1489-master/public/img/loading.gif) !important;
+            }
+
+            a.cdnFailLink {
+                color: #00f;
+            }
+
+            a.cdnFailLink:hover, a.cdnFailLink:focus {
+                color: #00f;
+                text-decoration: underline;
+            }
+
+            .cdnFailContainer {
+                display: none;
+                text-align: center;
+                margin: 15px 20px 0 20px;
+            }
+        </style>
+
+        <link rel="stylesheet" type="text/css" href="https://lightning.od-cdn.com/19.1.1-build-1489-master/public/css/vendor.bundle.min.css" onerror="cdnError(this)" />
+        <link rel="stylesheet" type="text/css" href="https://lightning.od-cdn.com/19.1.1-build-1489-master/public/css/app.bundle.min.css" onerror="cdnError(this)" />
+
+        <link rel='shortcut icon' type='image/x-icon' href='https://lightning.od-cdn.com/19.1.1-build-1489-master/public/img/favicon.ico' />
+
+        
+    <link rel="stylesheet" type="text/css" href="https://lightning.od-cdn.com/19.1.1-build-1489-master/public/css/faceted-media.min.css" />
+
+
+        <link id="highContrastStylesheet" rel="stylesheet" type="text/css" href="https://lightning.od-cdn.com/19.1.1-build-1489-master/public/css/contrast.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="/assets/v2/css/19.1.1/colors.css?primary=%23378292&primaryR=55&primaryG=130&primaryB=146&primaryFontColor=%23fff&secondary=%23649633&secondaryR=100&secondaryG=150&secondaryB=51&secondaryFontColor=%23fff&bannerIsSecondaryColor=false&defaultColor=%23222&v=e374c0fcd7fdac0a7bc9d89120ef134a">
+
+        <script>
+            
+            
+                
+                if (typeof newrelic != 'undefined' && newrelic.setCustomAttribute) {
+                    
+                    newrelic.setCustomAttribute("correlationId", "5088463c7f3e404385ad1b8e1e41a659")
+                    newrelic.setCustomAttribute("group", "fastly")
+                    newrelic.setCustomAttribute("libraryKey", "downloadlibrary")
+                    
+                }
+            
+
+            
+            window.OverDrive = window.OverDrive || {};
+            window.OverDrive.tenant = 145;
+            window.OverDrive.libraryName = "downloadLibrary";
+            window.OverDrive.allFeatures = "";
+            window.OverDrive.libraryConfigurations = {"autocomplete":{"enabled":true},"recommend-to-library":{"enabled":false},"advantage":{"enabled":false},"content-holds":{"enabled":true},"getACard":{"enabled":false},"rtl-preview":{"enabled":true},"backToMainCollectionLink":{"enabled":true},"libbyTout":{"enabled":true},"bannerIsSecondaryColor":{"enabled":false},"lexileScores":{"enabled":true},"atosLevels":{"enabled":true},"gradeLevels":{"enabled":true},"interestLevels":{"enabled":true},"readingHistory":{"enabled":true},"youMayLikeCollection":{"enabled":false},"kindleFooter":{"enabled":false},"kindleNav":{"enabled":false},"kindleLoanFormatLimit":{"enabled":false},"kindleSearchOffer":{"enabled":false},"kindleLoanOffer":{"enabled":false}};
+            window.OverDrive.goback = "";
+            window.OverDrive.mediaItems = {};
+            window.OverDrive.thunderHost = "https://thunder-api-us-nc1.overdrive.com/v2";
+            window.OverDrive.autocompleteHost = "https://autocomplete.api.overdrive.com/v1";
+            window.OverDrive.autocompleteApiKey = "66d3b2fb030e46bba783b1a658705fe3";
+            window.patronSettings = {"auto-checkout-setting":0,"dyslexic":0,"high-contrast":0,"audience-setting":{"all":true,"juvenile":false,"youngadult":false,"generalcontent":false,"adultonly":false}};
+            window.OverDrive.isAuthenticated = true;
+            window.OverDrive.hasLinkedCards = true;
+            window.OverDrive.authType = "library";
+            window.OverDrive.currentRoom = false;
+            window.OverDrive.supportedFormats = [{"id":"ebook-pdf-adobe","name":"PDF eBook","mediaType":"ebook"},{"id":"ebook-epub-adobe","name":"EPUB eBook","mediaType":"ebook"},{"id":"ebook-pdf-open","name":"Open PDF eBook","mediaType":"ebook"},{"id":"ebook-overdrive","name":"OverDrive Read","mediaType":"ebook"},{"id":"ebook-epub-open","name":"Open EPUB eBook","mediaType":"ebook"},{"id":"audiobook-mp3","name":"MP3 audiobook","mediaType":"audiobook"},{"id":"audiobook-overdrive","name":"OverDrive Listen audiobook","mediaType":"audiobook"},{"id":"video-streaming","name":"Streaming video","mediaType":"video"},{"id":"ebook-kobo","name":"Kobo eBook","mediaType":"ebook"}];
+            window.OverDrive.cdn = 'https://lightning.od-cdn.com/19.1.1-build-1489-master';
+            window.OverDrive.features = {"list-view":{"enabled":true,"testable":true},"image-opto-service":{"enabled":true,"testable":true},"image-opto-auto-format":{"enabled":false,"testable":true},"advantage":{"enabled":true,"testable":true},"wishlist-availability":{"enabled":true,"testable":true},"advanced-search":{"enabled":true,"testable":true},"reverse-preview":{},"audience-setting":{"enabled":true,"testable":true},"lending-period-settings":{"enabled":true,"testable":true},"star-ratings":{"enabled":true,"testable":true},"account-ratings":{"enabled":true,"testable":true},"recommend-to-library":{"enabled":true,"testable":true},"autocomplete":{"enabled":true,"testable":true},"diagnostics-endpoint":{"enabled":true,"testable":true},"localization":{"enabled":true,"testable":true},"rooms":{"enabled":true,"testable":true},"patron-title-status":{"enabled":true,"testable":true},"rtl-preview":{"enabled":true,"testable":true},"premium-reviews":{"enabled":true,"testable":true},"redis-cache":{"enabled":true,"_comment":"this feature cannot be testable, and cannot use the featureManager"},"details-recommendations":{"enabled":true,"testable":true},"content-holds":{"enabled":true,"testable":true},"backToMainCollectionLink":{"enabled":true,"testable":true},"libbyTout":{"enabled":true,"testable":true},"libbyAppLink":{"enabled":true,"testable":true,"_comment":"this feature makes the mobile app links point to libby rather than OD app"},"replaceDetailsCarousel":{"enabled":true,"testable":true,"_comment":"LHTNG-1803 - replace the carousel on the details page."},"replaceHoldSuccessModal":{"enabled":true,"testable":true,"_comment":"LHTNG-1802 - replace the hold success modal"},"readingHistory":{"enabled":true,"testable":true,"_comment":"LHTNG-1809"},"youMayLikeCollection":{"enabled":false,"testable":true},"homepageRefactor":{"enabled":true,"testable":true,"_comment":"LHTNG-1800 - Replace Carousels: Home Page"},"atosLevels":{"enabled":true,"testable":true},"lexileScores":{"enabled":true,"testable":true},"gradeLevels":{"enabled":true,"testable":true},"interestLevels":{"enabled":true,"testable":true},"relatedTitlesPageRefactor":{"enabled":true,"testable":true,"_comment":"LHTNG-1938 - You May Also Like/Related Titles Page Refactor"},"bannerIsSecondaryColor":{"enabled":true,"testable":true,"_comment":"this feature makes the banner the secondary color and the toast darker"},"featureCollectionPageRefactor":{"enabled":true,"testable":true,"_comment":"LHTNG-1801 - Replace Carousels: Features Page"},"coffeehouse":{"enabled":true,"testable":true,"_comment":"The entire coffeehouse feature"},"kindleFooter":{"enabled":true,"testable":true,"_comment":"LHTNG-2315 - kindle footer"},"kindleNav":{"enabled":true,"testable":true,"_comment":"LHTNG-2315 - kindle nav promotion"},"kindleLoanFormatLimit":{"enabled":true,"testable":true,"_comment":"LHTNG-2315 - kindle loans format limit"},"kindleSearchOffer":{"enabled":true,"testable":true,"_comment":"LHTNG-2315 - offer to set from search"},"kindleLoanOffer":{"enabled":true,"testable":true,"_comment":"LHTNG-2315 - offer to set from fulfill"},"formatClassPref":{"enabled":true,"testable":true,"_comment":"LHTNG-2323 - Set preferred format classes"},"languagePref":{"enabled":false,"testable":true,"_comment":"LHTNG-2321 - Set preferred languages, NOTE: testable but off until after coffeehouse"},"updatedBorrowProcess":{"enabled":true,"testable":true,"_comment":"LHTNG-2348 - Updates to the borrow process"},"getACard":{"enabled":true,"testable":true,"_comment":"LHTNG-2479 - get a card promotion modal"}};
+            window.OverDrive.languageSelection = "undefined";
+            window.OverDrive.supportArticles = {"ODAppSupport":"1481728-get-help-with-the-overdrive-app","LibbySupport":"2673906","recentUpdates":"2778185","havingTrouble":"1481730-having-trouble","newOverDrive":"2145737","howToReturn":"1481263","howToReturnWindows":"1481265","howToReturnAndroid":"1482571","howToReturnIOS":"1481551","howToReturnChromebook":"1775656","sessionExpiredError":"2847569","readAlongEbook":"1749249","noWindowsPhoneSupport":"2804623","ODAppNoPDFEbook":"1481649","howToRecommend":"1481221","aboutHistory":"2833477","deviceRestrictions":"2373846"};
+            window.OverDrive.showHistoryFeature = true;
+            window.OverDrive.features.isEnabled = function(feature){
+                var feature = window.OverDrive.features[feature];
+                if (!feature) {
+                    return false;
+                }
+                if (feature.enabled) {
+                    return true;
+                }
+                if (window.OverDrive.tenant === 100501 || window.OverDrive.tenant === 800004 || window.OverDrive.tenant === 800005 ||window.OverDrive.allFeatures === '1') {
+                    return feature.testable;
+                }
+            };
+            window.OverDrive.isLocal = false;
+            window.OverDrive.inApp = false;
+
+            
+            window.OverDrive._baseUrl = '';
+
+            
+            window.OverDrive._locale = 'en';
+
+            
+    // Bootstrap frontend media data
+    window.OverDrive.titleCollection = [];
+    
+
+
+            // CDN failure handler
+            
+            var gaEventTriggered = false;
+            function cdnError(elem) {
+                // Need to wait for window.onload to get elements
+                window.onload = function() {
+                    var src = elem.src || elem.href;
+
+                    // Show CDN failure copy
+                    document.getElementById('cdnfail').style.display = 'block';
+
+                    // Hide site containers to not show unstyled/broken elements
+                    var containers = document.getElementsByClassName('js-hideOnCdnError');
+                    for(var x = 0; x < containers.length; x++) {
+                        containers[x].style.display = 'none';
+                    }
+
+                    // Only send 1 event to GA
+                    if (!gaEventTriggered && window.ga) {
+                        window.ga('send', 'event', {
+                            eventCategory: 'CDN',
+                            eventAction: 'Load Failure',
+                            eventLabel: src
+                        });
+
+                        gaEventTriggered = true;
+                    }
+
+                    var requestData = {
+                        level: 'warn',
+                        message: 'A CDN resource has failed to load',
+                        fields: {
+                            src: src
+                        }
+                    }
+
+                    var request = new XMLHttpRequest();
+                    request.open('POST', '/log', true);
+                    request.setRequestHeader('Content-Type', 'application/json');
+                    request.send(JSON.stringify(requestData));
+                };
+            }
+        </script>
+
+        <script src="https://lightning.od-cdn.com/19.1.1-build-1489-master/public/js/bundles/vendor.bundle.min.js" onerror="cdnError(this)"></script>
+
+        
+        
+
+        
+    
+        
+    
+
+    <meta name="twitter:title" property="og:title" content="downloadLibrary"/>
+    <meta name="twitter:description" property="og:description" content="See search results in the downloadLibrary digital collection."/>
+    <meta name="twitter:image" property="og:image" content="https://thunder.cdn.overdrive.com/logos/crushed/1159.png?1"/>
+    <meta property="og:url" content="/search/title?isbn=9781250158078"/>
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:site_name" content="downloadLibrary" />
+    <meta name="twitter:site" content="@OverDriveLibs" />
+    <meta property="og:locale" content="en" />
+
+    </head>
+
+    <body class="body  ">
+        
+            <noscript>
+                <iframe src="//www.googletagmanager.com/ns.html?id=GTM-NRMQ5Q"
+                        height="0"
+                        width="0"
+                        class="GTM">
+                </iframe>
+            </noscript>
+            <script>
+                dataLayer = [{
+                    'libraryId': '145',
+                    'libraryName': 'downloadLibrary',
+                    'environment': '',
+                    'viewId': '104533790',
+                    'propertyId': 'UA-34791607-12',
+                    
+                }];
+
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','GTM-NRMQ5Q');
+
+                
+            </script>
+        
+
+        
+            
+        
+
+        <div id="cdnfail" class="cdnFailContainer">Error loading page.<br/>Try refreshing the page. If that doesn't work, there may be a network issue, and you can use our <a href="/selftest" class="cdnFailLink">self test page</a> to see what's preventing the page from loading.<br/><a href="https://help.overdrive.com/customer/portal/articles/2663201" class="cdnFailLink">Learn more about possible network issues</a> or <a href="https://help.overdrive.com/customer/en/portal/articles/1613698" class="cdnFailLink">contact support</a> for more help.</div>
+
+
+
+        <div class="container js-hideOnCdnError">
+            <input type="hidden" id="csrf" name="_csrf" value="LALnyFPE-7JKlaBiys_shkz9HI0wdJhkCWEE">
+            <div role="dialog" id="sample-dynamic-modal" class="sample-modal reveal-modal large" data-reveal aria-hidden="true" role="dialog">
+    <div class="modal-header">
+        <h2 data-first-focus tabindex="0" class="primary-color modal-title js-first-focus" data-sample-title></h2>
+        <a class="close-reveal-modal" tabindex="0" role="button" aria-label="Close">&#215;</a>
+    </div>
+
+    <div class="modal-container">
+        <iframe id="sample-dynamic-iframe" data-src class="js-last-focus"></iframe>
+    </div>
+</div>
+            
+    <script src="https://lightning.od-cdn.com/19.1.1-build-1489-master/public/js/bundles/faceted-media.app.min.js"></script>
+
+    <script>
+    function showAltLogoMobile() {
+        $('.js-mobileLibraryLogo').hide();
+        $('.js-altLibraryLink').show().css('display', 'inline-block');
+
+        $('.icon-account').addClass('alt-logo');
+    }
+
+    function showAltLogoDesktop() {
+        $('h1#logo-desktop').hide();
+        $('.library-home-alt-link-desktop').removeClass('hideMeImportant');
+    }
+</script><nav>
+    <div class="MobileNav js-mobileNav">
+        <div class="row js-toggleRow">
+            <div class="columns small-12 MobileNav-logoContainer"><a href="/" aria-label="downloadLibrary: OverDrive digital collection">
+                        <img class="MobileNav-libraryLogo js-mobileLibraryLogo" alt="Logo for downloadLibrary" src="https://thunder.cdn.overdrive.com/logos/crushed/1159.png?1"/>
+                    </a>
+                    <a class="MobileNav-altLibraryLink js-altLibraryLink u-hideMe" href="/" tabindex="0">
+                        downloadLibrary
+                    </a>
+            </div>
+        </div>
+        <div class="row js-toggleRow">
+            <div class="columns small-12 MobileNav-searchContainer js-mobileSearchContainer">
+                <span class="MobileNav-searchIconContainer left js-mobileNavSearchIcon">
+                    <i class="icon-search-nav js-doQuickSearch MobileNav-searchIcon"></i>
+                </span>
+                <h2 tabindex="-1" class="offscreen">Search</h2>
+                <form class="js-quickSearchForm js-mobileSearchForm MobileNav-searchForm is-unexpanded" id="search-form-mobile"
+                   autocomplete="off" method="get" action="/search">
+                    <label class="hideMeImportant" for="nav-search-mobile">Search</label>
+
+                    <input type="text" maxlength="100" name="query" id="nav-search-mobile" autocomplete="off"
+                           data-search="nav-search-mobile" placeholder="Search" title="Search"
+                           class="js-quickSearchInput js-mobileSearchInput MobileNav-searchInput" value="" aria-haspopup="true" />
+                </form>
+                <span class="right js-searchControlContainer u-hideMe MobileNav-searchControlContainer">
+                    <i class="icon-clear js-clearMobileSearch MobileNav-clearSearchIcon" tabindex="0" aria-label="Clear search"></i>
+                    <a class="js-doQuickSearch u-allCaps MobileNav-submitSearch" href="javascript:void(0)" tabindex="0">Search</a>
+                </span>
+                <span class="right MobileNav-iconContainer js-mobileNavIconContainer">
+                    <a href="/account/loans" aria-label="Loans" tabindex="0" class="MobileNav-bookshelfLink">
+                        <i class="icon-bookshelf MobileNav-bookshelfIcon" aria-hidden="true"></i>
+                    </a>
+                    <h2 tabindex="-1" class="offscreen">Browse menu</h2>
+                    <a class="js-mobileMenu MobileNav-accountMenu" id="hamburger" aria-expanded="false" href="javascript:void(0)"
+                       aria-label="Browse menu" title="Browse menu" tabindex="0">
+                        <i class="icon-hamburger MobileNav-hamburgerIcon" aria-hidden="true"></i>
+                    </a>
+                </span>
+            </div>
+        </div>
+
+        <div class="js-quickSearchAutocompletionsMobile"></div><div class="MobileNav-advancedSearchContainer js-advancedSearchContainer row u-hideMe js-toggleRow">
+                <a class="MobileNav-advancedSearchText js-advancedSearchLink" id="mobileAdvancedSearch" href="/advanced-search" tabindex="0" aria-live="polite" aria-label="Advanced Search">
+                    <div class="small-12 columns MobileNav-advancedSearch">
+                        Advanced
+                    </div>
+                </a>
+            </div><div class="MobileNav-advantageTout js-advantageTout row js-toggleRow u-hideMe">
+            <div class="columns small-12">
+                <a class="MobileNav-closeAdvantageTout right js-closeAdvantageTout"
+                   href="javascript:void(0)" aria-label="Close" role="button" tabindex="0">&#215;</a>
+                <p class="MobileNav-advantageToutText text-center">
+                    More titles may be available to you. Sign in to see the full collection.
+                </p>
+                <div class="MobileNav-advantageToutSigninContainer text-center">
+                    <a href="/account/sign-in?forward=%2Fsearch%2Ftitle%3Fisbn%3D9781250158078" class="u-allCaps MobileNav-advantageToutSignin" tabindex="0" aria-label="More titles may be available to you. Sign in to see the full collection.">
+                        Sign in
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="nav-container Nav js-nav" aria-hidden="false">
+    <div class="row">
+        <nav class="top-bar unexpanded js-top-bar" data-topbar data-options="mobile_show_parent_link: false">
+            <div class="white-cover"></div>
+
+            <section class="top-bar-section">
+
+                <div class="DesktopNavLinks Nav-topRightLinks">
+                        
+                        
+                        <span class="js-languageSelection Nav-topRightLink">
+                            <a tabindex="0" class="DesktopNavLinks-link DesktopNavLinks-languageDropdown secondary-color-hover" data-dropdown="language-dropdown" aria-controls="language-dropdown" aria-expanded="false" id="language-dropdown-button">
+                                <i class="icon-globe DesktopNavLinks-languageDropdown-globe" aria-hidden="true"></i>
+                                <span class="js-langDisplayText">Language</span>
+                                <i class="icon-down-arrow DesktopNavLinks-languageDropdown-arrow" aria-hidden="true"></i>
+                            </a>
+
+                            <ul class="f-dropdown DesktopNavLinks-languageList" id="language-dropdown" data-dropdown-content  aria-hidden="true" role="list" aria-haspopup="true" tabindex="-1"><li role="listitem" class="DesktopNavLinks-language"><a tabindex="-1" aria-label="English" class="DesktopNavLinks-language js-languageLink " data-code="en">English</a></li>
+                                <li role="listitem" class="DesktopNavLinks-language"><a tabindex="-1" aria-label="Español" class="DesktopNavLinks-language js-languageLink " data-code="es">Español</a></li>
+                                <li role="listitem" class="DesktopNavLinks-language"><a tabindex="-1" aria-label="Français (Canada)" class="DesktopNavLinks-language js-languageLink " data-code="fr-CA">Français (Canada)</a></li>
+                                </ul>
+                        </span><a class="DesktopNavLinks-link Nav-topRightLink DesktopNavLinks-feedback secondary-color-hover" tabindex="0" target="_blank" href="https://www.surveygizmo.com/s3/3319952/OverDrive-feedback">Feedback</a>
+
+                    <a class="DesktopNavLinks-link Nav-topRightLink DesktopNavLinks-previous secondary-color-hover contrast"
+                        tabindex="0"
+                        href="https://help.overdrive.com/customer/portal/articles/2778185" target="_blank">Recent updates
+                    </a>
+
+                    <a target="_blank" href="https://help.overdrive.com?Key=downloadlibrary&Sup=&edge=true" class="DesktopNavLinks-link Nav-topRightLink secondary-color-hover">Help</a></div>
+
+                <div tabindex="-1" class="Nav-logoWrapper--desktop" id="logo-desktop"><a aria-label="downloadLibrary: OverDrive digital collection" href="/">
+                            <img onerror="showAltLogoDesktop();" class="Nav-logo--desktop"  tabindex="-1" aria-hidden="true" alt="Logo for downloadLibrary" src="https://thunder.cdn.overdrive.com/logos/crushed/1159.png?1"/>
+                        </a>
+                </div>
+
+                <a tabindex="-1" class="library-home-alt-link-desktop Nav-logoWrapper--desktop hideMeImportant" href="/"><span class="library-home-alt-text Nav-logo--desktop Nav-altLogo no-logo">downloadLibrary</span></a>
+
+                <h2 class="offscreen" tabindex="-1">Browse options</h2>
+                <ul role="navigation" class="left desktop hide-for-small-only Nav-bottomLeftLinksWrapper">
+                    <li tabindex="-1">
+                        <a tabindex="0" href="/browse" class="main-level" data-action="main-navigation" nav-name="Subjects">
+                            Subjects
+                        </a>
+                    </li><li tabindex="-1" class="Nav-collectionsDropLink">
+                        <a tabindex="0" class="main-level Nav-collectionsLink" data-dropdown="drop-collections" aria-controls="drop-collections" aria-expanded="false" aria-autoclose="false" data-action="main-navigation" nav-name="Collections" role="button">
+                            Collections
+                            &nbsp;
+                            <i class="icon-down-arrow Nav-collectionsDropArrow" tabindex="-1" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+                    <li tabindex="-1">
+                                <a tabindex="0" href="/library/kids" aria-label="" class="main-level" data-action="main-navigation" nav-name="Kids">
+                                    Kids
+                                </a>
+                            </li>
+                        <ul data-equalizer id="drop-collections" class="drop content f-dropdown dynamic Nav-collectionsDropdown" aria-hidden="true" tabindex="-1" aria-autoclose="false">
+                        <div class="large-11 medium-12 columns large-centered medium-centered">
+                            <ul class="large-block-grid-5 medium-block-grid-5"><li>
+                                        <h3 tabindex="-1" class="u-allCaps Nav-collectionsDropHeading">Special</h3>
+                                        <ul><li tabindex="-1">
+                                                        <a tabindex="-1" href="/library/kids" aria-label="" class="featured-collection-item Nav-featuredCollectionItem">
+                                                            Kids
+                                                        </a>
+                                                    </li>
+                                                
+                                            
+                                            
+                                        </ul>
+                                    </li><li>
+                                            <h3 tabindex="-1" class="u-allCaps Nav-collectionsDropHeading">EBOOKS</h3>
+                                            <ul>
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25579" tabindex="-1"><span class="secondary-border-color">Available now</span></a></li>
+                                                    
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25580" tabindex="-1"><span class="secondary-border-color">New eBook additions</span></a></li>
+                                                    
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25581" tabindex="-1"><span class="secondary-border-color">New kids additions</span></a></li>
+                                                    
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25582" tabindex="-1"><span class="secondary-border-color">New teen additions</span></a></li>
+                                                    
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25583" tabindex="-1"><span class="secondary-border-color">Most popular</span></a></li>
+                                                    
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25584" tabindex="-1"><span class="secondary-border-color">Try something different</span></a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    <li>
+                                            <h3 tabindex="-1" class="u-allCaps Nav-collectionsDropHeading">AUDIOBOOKS</h3>
+                                            <ul>
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25585" tabindex="-1"><span class="secondary-border-color">Available now</span></a></li>
+                                                    
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25586" tabindex="-1"><span class="secondary-border-color">New audiobook additions</span></a></li>
+                                                    
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25587" tabindex="-1"><span class="secondary-border-color">New kids additions</span></a></li>
+                                                    
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25588" tabindex="-1"><span class="secondary-border-color">New teen additions</span></a></li>
+                                                    
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25589" tabindex="-1"><span class="secondary-border-color">Most popular</span></a></li>
+                                                    
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25590" tabindex="-1"><span class="secondary-border-color">Try something different</span></a></li>
+                                                    
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/105082" tabindex="-1"><span class="secondary-border-color">Legends and Heroes</span></a></li>
+                                                    
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/103204" tabindex="-1"><span class="secondary-border-color">Once Upon A Time</span></a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    <li>
+                                            <h3 tabindex="-1" class="u-allCaps Nav-collectionsDropHeading">VIDEOS</h3>
+                                            <ul>
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25591" tabindex="-1"><span class="secondary-border-color">Available now</span></a></li>
+                                                    
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25592" tabindex="-1"><span class="secondary-border-color">New video additions</span></a></li>
+                                                    
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25593" tabindex="-1"><span class="secondary-border-color">New kids additions</span></a></li>
+                                                    
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25594" tabindex="-1"><span class="secondary-border-color">Most popular</span></a></li>
+                                                    
+                                                <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/25595" tabindex="-1"><span class="secondary-border-color">Try something different</span></a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    </ul>
+                        </div>
+                    </ul>
+                </ul>
+
+                <!-- Right Nav Section -->
+                <h2 class="offscreen" tabindex="-1">Search and account</h2>
+                <ul role="presentation" class="right desktop hide-for-small-only Nav-bottomRightLinks">
+                    <li class="Nav-searchIconContainer">
+                        <a role="button" href="javascript:void(0)" class="secondary-color-hover js-toggleSearch" aria-label="Search">
+                            <i class="icon-search-nav Nav-searchIcon--desktop secondary-color-hover" aria-hidden="true"></i><span class="Nav-searchText">Search</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/account/loans" class="secondary-color-hover" aria-label="Loans">
+                            <i class="icon-bookshelf Nav-bookshelfIcon--desktop secondary-color-hover" aria-hidden="true"></i>
+                        </a>
+                    </li><li role="presentation" class="account-dropdown has-dropdown Nav-accountLinkWrapper">
+                                <a tabindex="0"
+                                   data-dropdown="dropAccount"
+                                   class="js-account-menu-link Nav-myAccount--desktop"
+                                   aria-controls="dropAccount"
+                                   aria-expanded="false"
+                                   role="button"
+                                   href="#"
+                                   id="account-holder-name">
+                                   My account
+
+                                    <i class="icon-down-arrow Nav-accountDropArrow" aria-hidden="true"></i>
+                                </a>
+
+                                <ul id="dropAccount" data-dropdown-content aria-hidden="true" tabindex="-1" class="f-dropdown content Nav-accountMenuWrapper" aria-label="Account menu">
+                                    <li class="Nav-accountMenuItem"><a class="Nav-accountMenuItemLink" href="/account/loans">Loans</a></li>
+                                    <li class="Nav-accountMenuItem"><a class="Nav-accountMenuItemLink" href="/account/holds">Holds</a></li>
+                                    
+                                    <li class="Nav-accountMenuItem"><a class="Nav-accountMenuItemLink" href="/account/lists/wishlist">Wish list</a></li>
+                                    <li class="Nav-accountMenuItem"><a class="Nav-accountMenuItemLink" href="/account/ratings">Rated titles</a></li>
+                                    
+                                    
+                                    <li class="Nav-accountMenuItem"><a class="Nav-accountMenuItemLink" href="/account/history">History</a></li>
+                                    
+                                    <li class="Nav-accountMenuItem"><a class="Nav-accountMenuItemLink" href="/account/settings">Settings</a></li>
+                                    <li class="Nav-accountDivider"></li>
+                                    <li class="Nav-accountMenuSignOut"><a class="Nav-accountMenuSignOutLink button secondary secondary-background" href="/account/sign-out">Sign out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+            </section>
+        </nav>
+
+        <div class="row">
+            <div class="mobile-nav-wrapper unexpanded">
+                <div class="mobile-nav-menu" data-menu="main">
+                    <ul class="accordion top-nav" data-accordion><li class="accordion-navigation top-nav" data-sub-nav="account-menu">
+                            <a href="#account-menu" role="tab" id="account-heading" aria-controls="account" class="contrast nav-panel-name">My account</a><a href="#account-menu" class="nav-panel-icon" tabindex="-1"><i class="icon-forward-arrow panel-arrow right chevron" aria-hidden="true"></i></a>
+                            <div class="content" role="tabpanel" aria-labelledby="account-heading">
+                                <ul><li><a class="secondary-color-hover" href="/account/loans">Loans</a></li>
+                                        <li><a class="secondary-color-hover" href="/account/holds">Holds</a></li>
+                                        
+                                        <li><a class="secondary-color-hover" href="/account/lists/wishlist">Wish list</a></li>
+                                        <li><a class="secondary-color-hover" href="/account/ratings">Rated titles</a></li>
+                                        
+                                        
+                                        <li><a class="secondary-color-hover" href="/account/history">History</a></li>
+                                        
+                                    
+                                    <li><a class="secondary-color-hover" href="/account/settings">Settings</a></li>
+                                    <li><a class="secondary-color-hover" href="/account/sign-out">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="help-mobile">
+                                <a class="contrast" href="/browse" data-action="main-navigation" nav-name="Subjects">Subjects</a>
+                            </div>
+                        </li><li class="accordion-navigation top-nav" data-sub-nav="featured-collections">
+                                <a href="#featured-collections" role="tab" id="featured-collections-heading" aria-controls="featured-collections" class="contrast nav-panel-name">Collections</a><a href="#featured-collections" class="nav-panel-icon" tabindex="-1"><i class="icon-forward-arrow panel-arrow right chevron" aria-hidden="true" data-action="main-navigation" nav-name="Collections"></i></a>
+
+                                <div id="featured-collections" class="content" role="tabpanel" aria-labelledby="featured-collections-heading">
+
+                                        <hr/>
+                                        
+                                    <ul>
+                                                <li class="nav-heading" tabindex="0">EBOOKS</li>
+
+                                                <li><a href="/collection/25579" class="js-link"><span>Available now</span></a></li>
+                                                    
+                                                <li><a href="/collection/25580" class="js-link"><span>New eBook additions</span></a></li>
+                                                    
+                                                <li><a href="/collection/25581" class="js-link"><span>New kids additions</span></a></li>
+                                                    
+                                                <li><a href="/collection/25582" class="js-link"><span>New teen additions</span></a></li>
+                                                    
+                                                <li><a href="/collection/25583" class="js-link"><span>Most popular</span></a></li>
+                                                    
+                                                <li><a href="/collection/25584" class="js-link"><span>Try something different</span></a></li>
+                                                    
+                                                
+                                            </ul>
+                                        
+
+                                        <hr/>
+                                        
+                                    <ul>
+                                                <li class="nav-heading" tabindex="0">AUDIOBOOKS</li>
+
+                                                <li><a href="/collection/25585" class="js-link"><span>Available now</span></a></li>
+                                                    
+                                                <li><a href="/collection/25586" class="js-link"><span>New audiobook additions</span></a></li>
+                                                    
+                                                <li><a href="/collection/25587" class="js-link"><span>New kids additions</span></a></li>
+                                                    
+                                                <li><a href="/collection/25588" class="js-link"><span>New teen additions</span></a></li>
+                                                    
+                                                <li><a href="/collection/25589" class="js-link"><span>Most popular</span></a></li>
+                                                    
+                                                <li><a href="/collection/25590" class="js-link"><span>Try something different</span></a></li>
+                                                    
+                                                <li><a href="/collection/105082" class="js-link"><span>Legends and Heroes</span></a></li>
+                                                    
+                                                <li><a href="/collection/103204" class="js-link"><span>Once Upon A Time</span></a></li>
+                                                    
+                                                
+                                            </ul>
+                                        
+
+                                        <hr/>
+                                        
+                                    <ul>
+                                                <li class="nav-heading" tabindex="0">VIDEOS</li>
+
+                                                <li><a href="/collection/25591" class="js-link"><span>Available now</span></a></li>
+                                                    
+                                                <li><a href="/collection/25592" class="js-link"><span>New video additions</span></a></li>
+                                                    
+                                                <li><a href="/collection/25593" class="js-link"><span>New kids additions</span></a></li>
+                                                    
+                                                <li><a href="/collection/25594" class="js-link"><span>Most popular</span></a></li>
+                                                    
+                                                <li><a href="/collection/25595" class="js-link"><span>Try something different</span></a></li>
+                                                    
+                                                
+                                            </ul>
+                                        
+
+                                        <hr/>
+                                        
+                                    </div>
+                            </li>
+
+                        <li tabindex="-1">
+                                    <a tabindex="0" href="/library/kids" aria-label="" class="contrast nav-panel-name" data-action="main-navigation" nav-name="Kids">
+                                        Kids
+                                    </a>
+                                </li>
+                            <li>
+                                <div class="help-mobile">
+                                    <a class="text-center contrast" target="_blank" href="https://www.surveygizmo.com/s3/3319952/OverDrive-feedback">
+                                        Feedback
+                                    </a>
+                                </div>
+                            </li>
+
+                        <li>
+                            <div class="help-mobile">
+                                <a class="text-center contrast" target="_blank" href="https://help.overdrive.com?Key=downloadlibrary&Sup=&edge=true">Help</a>
+                            </div>
+                        </li><li class="accordion-navigation top-nav js-languageMobileSelection" data-sub-nav="language-dropdown-mobile">
+                                <a href="#language-nav" role="tab" id="language-accordion-heading" aria-controls="language-dropdown-mobile" class="contrast nav-panel-name" aria-label="Languages"><i class="icon-globe mobile-lang-globe" aria-hidden="true"></i>Language</a><a href="#language-nav" class="nav-panel-icon" tabindex="-1"><i class="icon-forward-arrow panel-arrow right chevron" aria-hidden="true"></i></a>
+                                <div id="language-dropdown-mobile" role="tabpanel" aria-labelledby="language-accordion-heading" class="content">
+                                    <ul><li role="listitem" class="js-languageLink languageLink" data-code="en" tabindex="0" aria-label="English">English</li>
+                                            
+                                        <li role="listitem" class="js-languageLink languageLink" data-code="es" tabindex="0" aria-label="Español">Español</li>
+                                            
+                                        <li role="listitem" class="js-languageLink languageLink" data-code="fr-CA" tabindex="0" aria-label="Français (Canada)">Français (Canada)</li>
+                                            
+                                        </ul>
+                                </div>
+                            </li>
+
+                        <li>
+                            <div class="help-mobile">
+                                <a class="text-center contrast" href="https://help.overdrive.com/customer/portal/articles/2778185" target="_blank">Recent updates</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row js-nav-search-drop js-desktopSearchContainer hideMe">
+        <hr class="Nav-searchSeparator"/>
+        <div class="large-12 columns">
+            <div class="Nav-searchDrop">
+                <div class="search-bar Nav-searchBar">
+                    <form class="js-quickSearchDesktop js-quickSearchForm" id="search-form" method="get" action="/search" autocomplete="off">
+                        <label class="hideMe" id="search-label" for="nav-search">Search</label>
+                        <input tabindex="0" type="text" maxlength="100" name="query" id="nav-search" autocomplete="off"
+                               data-search="nav-search" title="Search" aria-labelledby="search-label"
+                               class="js-quickSearchInput search-input Nav-searchInput" value="" placeholder="Search" />
+
+                        <div class="Nav-searchButtonContainer">
+                            <button tabindex="0" class="js-doQuickSearch fake-button right" aria-label="Submit search.">
+                                <span tabindex="-1" class="desktop-search Nav-searchButton right">
+                                    <i class="icon-search-nav Nav-searchIcon--desktop is-submit secondary-color-hover" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                            <i class="icon-clear js-clearSearch Nav-clearSearch right hideMe"></i>
+                        </div>
+
+                        <div class="js-quickSearchAutocompletionsDesktop"></div><i class="icon-forward-arrow Nav-advancedSearchCaret right"></i>
+                            <a class="js-desktopAdvancedSearch secondary-color-hover help-link-desktop advanced-search-desktop Nav-advancedSearch right" tabindex="0" href="/advanced-search">Advanced</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="toast-placeholder js-toastPlaceholder"></div>
+
+<div class="js-toaster"></div>
+
+    <div class="row Results-heading" id="main">
+        
+            <div class="large-8 large-centered columns">
+                
+                    <h1 class="text-center Results-noResultsHeading" id="noresults" tabindex="0">We couldn&#39;t find any matches for your search.</h1>
+                
+                
+                    
+                        <div style='text-align: center;'>Try checking your spelling, removing filters, or searching for a different term.</div>
+                    
+                
+            </div>
+
+            
+        
+    </div>
+
+    <section id="search">
+        
+    </section>
+
+    <div role="dialog"  id="limited-availability-help" class="reveal-modal small" data-reveal  aria-hidden="true" >
+    <div class="modal-header">
+        <h2 tabindex="0" class="modal-title primary-color u-allCaps js-first-focus">Why is availability limited?</h2>
+        <a class="close-reveal-modal js-last-focus " role="button" id="close-availability" tabindex="0" aria-label="Close">&#215;</a>
+    </div>
+
+    <div  class="modal-container">
+        <p id="availability-label">
+            Availability can change throughout the month based on the library&#39;s budget. You can still place a hold on the title, and your hold will be automatically filled as soon as the title is available again.
+        </p>
+    </div>
+</div>
+
+    <div role="dialog" id="limited-periodical-availability" class="reveal-modal small" data-reveal aria-labelledby="limitedPeriodicalAvailabilityModalTitle" aria-hidden="true">
+    <div class="modal-header">
+        <h1 class="modal-title primary-color u-allCaps" id="limitedPeriodicalAvailabilityModalTitle">Why is availability limited?</h1>
+    </div>
+
+    <div class="modal-container" >
+        <p id="periodical-availability-label" data-first-focus tabindex="0" class="js-first-focus">
+            There are no copies of this edition left to borrow. Please try to borrow this periodical again when a new edition is released.
+        </p>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" role="button" id="close-periodical-availability" tabindex="0" aria-label="Close">&#215;</a>
+</div>
+
+    <div role="dialog" id="recommendation-limit-modal" class="reveal-modal small js-recommendation-limit-modal" data-reveal aria-hidden="true">
+    <div class="modal-header">
+        <h2 tabindex="0" class="modal-title primary-color u-allCaps js-first-focus">Recommendation limit reached</h2>
+        <a class="close-reveal-modal" role="button" id="close-no-return" tabindex="0" aria-label="Close">&#215;</a>
+    </div>
+
+    <div class="modal-container">
+        <p id="recommendation-limit-label">
+            You&#39;ve reached the maximum number of titles you can currently recommend for purchase.<br/>
+        </p>
+
+        <div class="button-container">
+            <button type="button" data-cancel class="button radius margin-small outline u-allCaps js-last-focus">ok</button>
+        </div>
+    </div>
+</div>
+
+
+        </div>
+
+
+        
+            <div class="js-hideOnCdnError">
+                
+
+                <div class="footer-desktop">
+                    <footer>
+    
+    
+    
+    
+    
+    
+
+    
+
+    <div class="row footer" aria-hidden="false" id="footer">
+        <div class="large-2 small-6 columns" tabindex="0" role="list" aria-labelledby="myaccount">
+            
+            <h2 class="footer-heading u-allCaps" id="myaccount" tabindex="-1">My account</h2>
+            <ul>
+                <li><a href="/account/loans">Loans</a></li>
+                
+                <li><a href="/account/holds">Holds</a></li>
+                
+                <li><a href="/account/lists/wishlist">Wish list</a></li>
+                
+                    <li><a href="/account/ratings">Rated titles</a></li>
+                
+                
+                
+                    <li><a href="/account/history">History</a></li>
+                
+                <li><a href="/account/settings">Settings</a></li>
+                <li><a href="/account/sign-out" id="footer-account-sign-out">Sign out</a></li>
+                
+            </ul>
+            
+        </div>
+
+        <div class="large-2 small-6 columns" tabindex="0" aria-labelledby="help" role="list">
+            <h2 class="footer-heading u-allCaps" id="help" tabindex="-1">Support</h2>
+            <div class="footer-links">
+                <ul>
+                    <li role="listitem">
+                        <a target="_blank" href="https://help.overdrive.com/customer/portal/articles/1481730-having-trouble?Key=downloadlibrary&Sup=&edge=true" id="footer-help-troubleshooting">
+                            Help
+                        </a>
+                    </li>
+
+                    
+
+                    <li role="listitem">
+                        <a id="footer-help-support" data-reveal-id="support-choice-modal" href="#">
+                            Get support
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://help.overdrive.com/customer/portal/articles/2778185" id="footer-recent-updates" target="_blank">
+                            Recent updates
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="large-3 small-6 columns" aria-labelledby="stay-connected" role="list" tabindex="0">
+            <h2 class="footer-heading u-allCaps" id="stay-connected" tabindex="-1">Stay connected</h2>
+            
+                <a class="member-libraries-desktop" href="/support/members">Member libraries</a>
+            
+            
+                <a target="_blank" id="footer-help-support" href="https://www.surveygizmo.com/s3/3319952/OverDrive-feedback">
+                    Share feedback
+                </a>
+            
+            
+                <p class="social-links-container">
+                
+                
+                
+                
+                </p>
+            
+        </div>
+        
+
+        
+        <div class="large-2 columns js-languageSelectionFooter" aria-labelledby="language" tabindex="0" role="list">
+            <h2 class="footer-heading" id="language" tabindex="-1">Language</h2>
+            <ul>
+                
+                    <li role="listitem"><a class="js-languageLink" data-code="en" tabindex="0">English</a></li>
+                
+                    <li role="listitem"><a class="js-languageLink" data-code="es" tabindex="0">Español</a></li>
+                
+                    <li role="listitem"><a class="js-languageLink" data-code="fr-CA" tabindex="0">Français (Canada)</a></li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="large-3 small-6 columns">
+            <div class="footer-right right">
+                <div class="PoweredBy">
+                    <span class="PoweredBy-text PoweredBy-text--prefix">powered by</span>
+                    <span><a aria-label="Powered by OverDrive" target="_blank" id="footer-overdrive" href="http://company.overdrive.com/libraries/"><i class="PoweredBy-logo icon-overdrive" title="Powered by OverDrive" aria-hidden="true"></i></a></span>
+                    <span class="PoweredBy-text PoweredBy-text--suffix"></span>
+                </div>
+                <span class="Footer-getApp">Get the app</span>
+                <span><a aria-label="Google Play Store" target="_blank" class="footer-store-google" href="https://goo.gl/y7lLcg"><i class="icon-android" title="Google Play Store" aria-hidden="true"></i></a></span>
+                <span><a aria-label="Apple App Store" target="_blank" class="footer-store-apple" href="https://goo.gl/h01AeT"><i class="icon-apple" title="Apple App Store" aria-hidden="true"></i></a></span>
+                <span><a aria-label="Windows Store" target="_blank" class="footer-store-windows" href="https://goo.gl/RjxS9K"><i class="icon-windows" title="Windows Store" aria-hidden="true"></i></a></span>
+                
+            </div>
+        </div>
+
+        <hr class="dark"/>
+
+        <div class="large-12 columns" role="list" aria-labelledby="copyright" tabindex="0">
+            <p class="copyright" id="copyright">
+                © 2018 OverDrive, Inc. All Rights Reserved.
+                <a target="_blank" role="listitem" href="https://company.cdn.overdrive.com/policies/privacy-policy.htm?">Privacy Policy</a>
+                &middot;
+                <a target="_blank" role="listitem" href="https://company.cdn.overdrive.com/policies/copyright.htm?">Important Notice about Copyrighted Materials</a>
+                
+            </p>
+        </div>
+
+        <!-- Support Choice Modal -->
+<div id="support-choice-modal" class="support-choice-modal reveal-modal medium" data-reveal aria-hidden="true" role="dialog">
+    <div class="modal-header">
+        <h2 class="modal-title primary-color js-first-focus" id="cancel-hold-modal-title" tabindex="0">Support</h2>
+        <a class="close-reveal-modal" aria-label="Close" role="button" tabindex="0">&#215;</a>
+    </div>
+
+    <div class="modal-container" aria-describedby="cancel-label" data-equalizer="support_text" data-equalizer-mq="large-12">
+        <div class="row">
+            <div class="large-6 small-12 columns text-center support-choice-separator">
+                <div class="row">
+                    <div class="small-12 columns" data-equalizer-watch="support_text">
+                        <p class="bold support-choice-label">
+                            Looking for help? We have getting started guides, videos, how-to articles, troubleshooting tips, and more on OverDrive Help.
+                        </p>
+                    </div>
+
+                    <div class="small-12 columns">
+                        <a href="https://help.overdrive.com/customer/portal/articles/2145737?Key=downloadlibrary&Sup=&edge=true"
+                            target="_blank" class="button margin-small radius secondary support-choice-button u-allCaps">
+                            Visit help site
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="large-6 small-12 columns">
+                <div class="row">
+                    <div class="small-12 columns text-center" data-equalizer-watch="support_text">
+                        <p class="bold support-choice-label">
+                            Can&#39;t find an answer on OverDrive Help, or need more assistance?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="small-12 columns text-center">
+                
+                        <a class="button margin-small radius secondary support-choice-button u-allCaps js-last-focus" tabindex="0"
+                            href="/support/members">
+                            Contact support
+                        </a>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+</footer>
+
+                </div>
+
+                <div class="footer-mobile">
+                    <footer>
+    <div class="row footer mobile" aria-hidden="false" id="footer">
+        <ul class="no-margin">
+            
+            
+        </ul>
+        <ul class="accordion footer-accordion" data-accordion>
+            
+                <li class="accordion-navigation">
+                    <a href="#panel-my-account" class="u-allCaps">My account <i class="icon-forward-arrow right chevron" aria-hidden="true"></i></a>
+                    <div id="panel-my-account" class="content">
+                        <ul>
+                            <li><a href="/account/loans">Loans</a></li>
+                            
+                            <li><a href="/account/holds">Holds</a></li>
+                            
+                            <li><a href="/account/lists/wishlist">Wish list</a></li>
+                            
+                                <li><a href="/account/ratings">Rated titles</a></li>
+                            
+                            
+                            
+                                <li><a href="/account/history">History</a></li>
+                            
+                            <li><a href="/account/settings">Settings</a></li>
+                            <li><a href="/account/sign-out" id="footer-account-sign-out">Sign out</a></li>
+                        </ul>
+                    </div>
+                </li>
+            
+
+            <li class="accordion-navigation">
+                <a href="#panel-help" class="u-allCaps">Support <i class="icon-forward-arrow right chevron" aria-hidden="true"></i></a>
+                <div id="panel-help" class="content">
+                    <ul>
+                        <li role="listitem">
+                            <a target="_blank" href="https://help.overdrive.com/customer/portal/articles/1481730-having-trouble?Key=downloadlibrary&Sup=&edge=true" id="footer-help-troubleshooting">
+                                Help
+                            </a>
+                        </li>
+
+                        
+
+                        <li role="listitem">
+                            <a id="footer-help-support" data-reveal-id="support-choice-modal" href="#">
+                                Get support
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="accordion-navigation">
+                <a href="#panel-stay-connected" class="u-allCaps">Stay connected <i class="icon-forward-arrow right chevron" aria-hidden="true"></i></a>
+                <div id="panel-stay-connected" class="content">
+                    <ul>
+                        <li role="listitem">
+                            
+                                <a href="/support/members">
+                                    Member libraries
+                                </a>
+                            
+                        </li>
+
+                        
+                            <li role="listitem">
+                                <a target="_blank" id="footer-help-support" href="https://www.surveygizmo.com/s3/3319952/OverDrive-feedback">
+                                    Share feedback
+                                </a>
+                            </li>
+                        
+
+                        
+
+                        
+
+                        
+
+                        
+                    </ul>
+                </div>
+            </li>
+
+            
+            <li class="accordion-navigation js-languageMobileSelectionFooter">
+                <a href="#panel-language"><i class="icon-globe mobile-lang-globe" aria-hidden="true"></i>Language <i class="icon-forward-arrow right chevron" aria-hidden="true"></i></a>
+                <div id="panel-language" class="content">
+                    <ul>
+                        
+                            
+                                <li role="listitem" class="js-languageLink languageLink" data-code="en">English</li>
+                            
+                        
+                            
+                                <li role="listitem" class="js-languageLink languageLink" data-code="es">Español</li>
+                            
+                        
+                            
+                                <li role="listitem" class="js-languageLink languageLink" data-code="fr-CA">Français (Canada)</li>
+                            
+                        
+                    </ul>
+                </div>
+            </li>
+            
+        </ul>
+        <ul class="no-margin">
+            <li class="mobile-footer-sign-in">
+                <a class="u-allCaps" href="https://help.overdrive.com/customer/portal/articles/2778185" target="_blank">Recent updates</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="small-12 columns footer-mobile-element">
+        <div class="footer-right text-center" style="margin-bottom: 1em;">
+            <div class="PoweredBy">
+                <span class="PoweredBy-text PoweredBy-text--prefix">powered by</span>
+                <a aria-label="Powered by OverDrive" target="_blank" id="footer-overdrive" href="http://company.overdrive.com/libraries/"><i class="PoweredBy-logo icon-overdrive" title="Powered by OverDrive" aria-hidden="true"></i></a>
+                <span class="PoweredBy-text PoweredBy-text--suffix"></span>
+            </div>
+            <span class="Footer-getApp">Get the app</span>
+            <div class="Footer-iconContainer">
+                <a aria-label="Google Play Store" target="_blank" class="Footer-icon footer-store-google" href="https://goo.gl/y7lLcg">
+                    <i class="icon-android" title="Google Play Store" aria-hidden="true"></i>
+                </a>
+                <a aria-label="Apple App Store" target="_blank" class="Footer-icon footer-store-apple" href="https://goo.gl/h01AeT">
+                    <i class="icon-apple" title="Apple App Store" aria-hidden="true"></i>
+                </a>
+                <a aria-label="Windows Store" target="_blank" class="Footer-icon footer-store-windows" href="https://goo.gl/RjxS9K">
+                    <i class="icon-windows" title="Windows Store" aria-hidden="true"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="small-12 columns footer-mobile-element text-center" role="list" aria-labelledby="copyright" tabindex="0">
+        <p class="copyright" id="copyright">
+            © 2018 OverDrive, Inc. All Rights Reserved.
+            <br/>
+            <a target="_blank" role="listitem" href="https://company.cdn.overdrive.com/policies/privacy-policy.htm?">Privacy Policy</a>
+            &middot;
+            <a target="_blank" role="listitem" href="https://company.cdn.overdrive.com/policies/copyright.htm?">Important Notice about Copyrighted Materials</a>
+            
+        </p>
+    </div>
+
+    <!-- Support Choice Modal -->
+<div id="support-choice-modal" class="support-choice-modal reveal-modal medium" data-reveal aria-hidden="true" role="dialog">
+    <div class="modal-header">
+        <h2 class="modal-title primary-color js-first-focus" id="cancel-hold-modal-title" tabindex="0">Support</h2>
+        <a class="close-reveal-modal" aria-label="Close" role="button" tabindex="0">&#215;</a>
+    </div>
+
+    <div class="modal-container" aria-describedby="cancel-label" data-equalizer="support_text" data-equalizer-mq="large-12">
+        <div class="row">
+            <div class="large-6 small-12 columns text-center support-choice-separator">
+                <div class="row">
+                    <div class="small-12 columns" data-equalizer-watch="support_text">
+                        <p class="bold support-choice-label">
+                            Looking for help? We have getting started guides, videos, how-to articles, troubleshooting tips, and more on OverDrive Help.
+                        </p>
+                    </div>
+
+                    <div class="small-12 columns">
+                        <a href="https://help.overdrive.com/customer/portal/articles/2145737?Key=downloadlibrary&Sup=&edge=true"
+                            target="_blank" class="button margin-small radius secondary support-choice-button u-allCaps">
+                            Visit help site
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="large-6 small-12 columns">
+                <div class="row">
+                    <div class="small-12 columns text-center" data-equalizer-watch="support_text">
+                        <p class="bold support-choice-label">
+                            Can&#39;t find an answer on OverDrive Help, or need more assistance?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="small-12 columns text-center">
+                
+                        <a class="button margin-small radius secondary support-choice-button u-allCaps js-last-focus" tabindex="0"
+                            href="/support/members">
+                            Contact support
+                        </a>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</footer>
+
+                </div>
+
+                <!-- authenticate Modal -->
+<div id="authenticate-modal" class="authenticate-modal reveal-modal small" data-reveal aria-hidden="true" role="dialog">
+    <div class="modal-header">
+        <h2 tabindex="0" class="modal-title primary-color js-first-focus" >Session expired</h2>
+        <a class="close-reveal-modal " role="button"  aria-label="Close" tabindex="0">&#215;</a>
+    </div>
+
+    <div class="modal-container" aria-describedby="authenticate-label">
+        <p class="modal-body" id="authenticate-label " data-first-focus >
+            Your session has expired. Please sign in again so you can continue to borrow titles and access your Loans, Wish list, and Holds pages.
+        </p>
+
+        <p class="modal-body">
+            If you're still having trouble, <a target="_blank" href="https://help.overdrive.com/customer/portal/articles/2847569">follow these steps to sign in.</a>
+        </p>
+
+        <div class="button-container">
+            <a href="/account/card/invalid" role="button" class="js-reauthenticate button margin-small radius secondary u-allCaps" aria-label="Sign in">
+                Sign in
+            </a>
+            <button type="button" data-cancel class="button radius margin-small outline gray cancel u-allCaps js-last-focus">Cancel</button>
+        </div>
+    </div>
+</div>
+
+                <!-- Link Card Modal -->
+<div role="dialog" id="link-card-modal" class="link-card-modal reveal-modal small" data-reveal  aria-hidden="true" >
+    <div class="modal-header">
+        <h2 class="modal-title primary-color u-allCaps js-first-focus" id="link-card-modal-title" tabindex="0">Add a card</h2>
+        <a class="close-reveal-modal" aria-label="Close" role="button" tabindex="0">&#215;</a>
+    </div>
+
+    <div class="modal-container">
+        <div class="row">
+            <div class="description small-12 columns">
+                <p data-first-focus class="js-first-focus">
+                    Add a library card to your account to borrow titles, place holds, and add titles to your wish list.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="category small-12 small-centered  columns">
+                <p class="text"><span class="question">Have a card?</span> Add it now to start borrowing from the collection.</p>
+                <div class="button-container">
+                    <a href="/account/initiate-card-link" class="button margin-small radius secondary u-allCaps js-last-focus">Add a card</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+                <!-- Link Card Modal...psyche! -->
+<div role="dialog" id="card-error-modal" class="js-card-error-modal reveal-modal small" data-reveal  aria-hidden="true" >
+    <div class="modal-header">
+        <h2 tabindex="0" class="modal-title primary-color u-allCaps js-first-focus">Card error</h2>
+        <a class="close-reveal-modal"  aria-label="Close" role="button" tabindex="0">&#215;</a>
+    </div>
+
+    <div class="modal-container">
+        <p >
+            The library card you previously added can&#39;t be used to complete this action. Please add your card again, or add a different card. If you receive an error message, please contact your library for help. 
+        </p>
+
+        <div class="button-container">
+            <a href="/account/initiate-card-link" id="add-card-button" class="button margin-small radius secondary u-allCaps" data-forward>Add a card</a>
+
+            
+                <a href="/support/members" class="button margin-small radius secondary support-choice-button u-allCaps">
+                    Contact support
+                </a>
+            
+
+            <button type="button" data-cancel class="button radius margin-small outline gray cancel u-allCaps js-last-focus" id="cancel-button">Cancel</button>
+        </div>
+    </div>
+
+
+</div>
+
+                <!--
+    data-id="title" = The title of the media
+    data-id="cover-image" = The src of the cover image to display
+    data-media-id="" = Set this to the id of the media to hold
+-->
+<div role="dialog" id="now-available-modal" class="reveal-modal small" data-reveal aria-labelledby="now-available-modal-title" aria-hidden="true">
+    <div class="modal-header text-center">
+        <h1 class="modal-title primary-color" id="now-available-modal-title">Good news!</h1>
+    </div>
+
+    <div class="modal-container">
+        <div class="medium-12 medium-centered columns text-center title-text js-first-focus" data-first-focus tabindex="0">
+            <b><span data-id="title"></span></b> is currently available.
+        </div>
+
+        <div class="large-6 large-centered medium-7 medium-centered small-8 small-centered columns img-container">
+            <img data-id="cover-image" src="" alt="Cover image"/>
+        </div>
+
+        <div class="now-available-button-container">
+            <div class="row">
+                <div class="medium-8 medium-centered columns">
+                    
+    
+        <div class="borrowButton below-600-full-width action-button js-action-button-container">
+            <a data-action="borrow" data-title=""
+               data-artwork="https://lightning.od-cdn.com/19.1.1-build-1489-master/public/img/no-cover_en_US.jpg" 
+                data-type="" data-media-id=""
+               data-formats="&quot;&quot;" data-type-name=""
+               role="button" class="button radius-left big disabled lending-options secondary below-600-full-width "
+               id="submit-borrow" href="javascript:void(0)"  tabindex="0">
+                 <span class="borrow-main-text"></span><br/>
+                 <span class="borrow-sub-text"></span>
+            </a>
+
+            <button data-lending-period-dropdown data-media-id="" 
+                    aria-label="Select lending period." aria-controls="lending-period-options-" aria-expanded="false" role="button"
+                    class="button dropdown lending-period-dropdown LendingPeriods-lendingPeriodButton js-lending-period-dropdown-button secondary radius-right disabled no-sample">
+            </button>
+
+            <ul  data-lending-ul  data-media-id="" role="menu" id="lending-period-options-"
+                class="LendingPeriods-lendingPeriodList f-dropdown  js-lending-period-list" aria-hidden="false" aria-haspopup="true" ></ul>
+
+            <input data-lending-period-input id="lending-period-" type="hidden" value="0">
+        </div>
+    
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-8 medium-centered columns">
+                    <a type="button" data-cancel class="button big radius margin-small cancel u-allCaps" tabindex="0">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" href="javascript:void(0)" role="button" aria-label="Close" tabindex="0">&#215;</a>
+</div>
+                <!--
+    data-id="title" = The title of the media
+    data-id="cover-image" = The src of the cover image to display
+    data-media-id="" = Set this to the id of the media to hold
+-->
+<div role="dialog" id="now-unavailable-modal" class="reveal-modal small" data-reveal aria-labelledby="now-unavailable-modal-title" aria-hidden="true">
+    <div class="modal-header text-center">
+        <h1 class="modal-title primary-color" id="now-unavailable-modal-title">We&#39;re sorry!</h1>
+    </div>
+
+    <div class="modal-container">
+        <div class="medium-12 medium-centered columns text-center title-text js-first-focus" data-first-focus tabindex="0">
+            <b><span data-id="title"></span></b> is not currently available. You can place a hold on it instead and get an email when it's available for you.
+        </div>
+
+        <div class="large-6 large-centered medium-7 medium-centered small-8 small-centered columns img-container">
+            <img data-id="cover-image" src="" alt="Cover image"/>
+        </div>
+
+        <div class="now-unavailable-button-container">
+            <div class="row">
+                <div class="medium-8 medium-centered columns">
+                    
+    <a data-action="hold"
+       
+       data-title=""
+       data-type=""
+       data-media-id=""
+       data-formats="&quot;&quot;"
+       data-type-name=""
+            
+                data-prerelease-date=""
+            
+       data-artwork="https://lightning.od-cdn.com/19.1.1-build-1489-master/public/img/no-cover_en_US.jpg"
+       role="button"
+       href="javascript:void(0)"
+       tabindex="0"
+       id="submit-hold"
+            
+       class="button place-a-hold radius big margin-small disabled secondary below-600-full-width action-button Button-holdButton js-action-button js- no-sample">
+       <span class="u-allCaps">Place a hold</span>
+    </a>
+
+    <input data-lending-period-input id="lending-period-" type="hidden" value="14">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-8 medium-centered columns">
+                    <a type="button" data-cancel class="button big radius margin-small cancel u-allCaps" tabindex="0">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" href="javascript:void(0)" role="button" aria-label="Close" tabindex="0">&#215;</a>
+</div>
+            </div>
+        
+
+        <script src="https://lightning.od-cdn.com/19.1.1-build-1489-master/public/js/translations/en.js" onerror="cdnError(this)"></script>
+        <script>
+        	var dynamicTranslations = "";
+        	for (var key in dynamicTranslations) {
+        		window.OverDrive.translations[key] = dynamicTranslations[key];
+        	};
+
+        </script>
+        <script src="https://lightning.od-cdn.com/19.1.1-build-1489-master/public/js/bundles/app.bundle.min.js" onerror="cdnError(this)"></script>
+
+        <script>
+            Foundation.global.namespace = '';
+            // Run foundation js dependencies
+            $(document).foundation({
+                abide: {
+                    live_validate: false,
+                    focus_on_invalid : false,
+                    validate_on_blur : false,
+                    patterns: {
+                        email: /^([a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)$/
+                    },
+                    equalizer: {
+                        equalize_on_stack: true
+                    }
+                }
+            });
+
+            // Set csrf header for all jQuery ajax requests
+            $.ajaxSetup({
+                headers: {'csrf-token': $('#csrf').val() || OverDrive._csrf}
+            });
+
+            
+    window.collectionId = Number();
+    if("" == null || "" == "") {
+        $('#noresults').focus();
+    }
+
+    var query = getQueryParams(window.location.search);
+    var sortByElem = $('.js-searchSortByOptions');
+
+    if(query.sortBy) {
+        sortByElem.val(query.sortBy);
+    }
+
+    sortByElem.on('change', function() {
+        replaceQueryParam('sortBy', $(this).val());
+    });
+
+    isListViewEnabled = true;
+
+    
+        $('.view-as-grid, .view-as-list').css('display', 'inline-block');
+    
+
+    
+
+
+            function closeNav(e) {
+                var desktopContainer = $(".drop.content.open");
+                var mobileContainer = $('.mobile-nav-menu[data-menu]');
+
+                //Close Desktop
+                if (!desktopContainer.is(e.target) && desktopContainer.has(e.target).length === 0 && !$(e.target).is('[aria-expanded],[aria-haspopup]')){
+                    $(document).foundation('dropdown', 'close', $('.drop.content.open'));
+                    $('li[data-dropdown]').attr('aria-expanded', 'false');
+                }
+
+                //Close mobile
+                if (!mobileContainer.is(e.target) && mobileContainer.has(e.target).length === 0){
+                    if ($('.mobile-nav-wrapper').hasClass('expanded')) {
+                        $('.mobile-nav-menu[data-menu]').toggle();
+                        $('.mobile-nav-wrapper').removeClass('expanded').addClass('unexpanded');
+                        $('.top-bar').removeClass('expanded').addClass('unexpanded');
+                        toaster._stickToast();
+                    }
+                }
+            }
+
+            //Hide nav when clicked outside of it
+            $(document).on("click tap", function(e){
+                closeNav(e);
+            });
+
+            //Fix for issue with dropdown not closing upon clicking parent link
+            $('li[data-dropdown]').on( "tap", function(e){
+                $('li[data-dropdown]').attr('aria-expanded', 'false');
+                e.stopImmediatePropagation();
+                e.preventDefault();
+            });
+
+            $(document).ready(function(e) {
+                var URL = window.location.search.slice(1);
+                var errorMessage = 'errorMessage';
+                var successMessage = 'successMessage';
+                var error = false;
+                var success = false;
+
+                if(URL.indexOf('errorMessage') > -1) {
+                    error = true;
+                } else if (URL.indexOf('successMessage') > -1) {
+                    success = true;
+                }
+
+                if(error || success) {
+                    if (URL.indexOf('&') > -1) {
+                        URL = URL.split('&');
+                        _.each(URL, function (URLee) {
+                            if (URLee.indexOf(errorMessage) > -1) {
+                                errorMessage = URLee.slice(errorMessage.length += 1);
+                            } else if (URLee.indexOf(successMessage) > -1) {
+                                successMessage = URLee.slice(successMessage.length += 1);
+                            }
+                        });
+                    } else {
+                        if(error) {
+                            errorMessage = URL.slice(errorMessage.length += 1);
+                        } else {
+                            successMessage = URL.slice(successMessage.length += 1);
+                        }
+                    }
+                }
+
+                if (success) {
+                    var copy = window.html('toastSuccess');
+                    var html = '<strong>' + copy + '</strong> ' + decodeURIComponent(successMessage);
+
+                    toaster.push(html, 'message');
+                }
+
+                var cookies = ("cookie" in document && (document.cookie.length > 0 ||
+                (document.cookie = "test").indexOf.call(document.cookie, "test") > -1));
+
+                // If no cookie support: warn the user with a toast
+                if (!cookies) {
+                    toaster.push('<strong>Error!</strong>' + html('toasts.cookiesMustBeEnabled',
+                        {link1: '<a href="https://help.overdrive.com/customer/portal/articles/1481652-how-to-enable-cookies-on-your-computer?Key=downloadlibrary&Sup=">how to enable cookies on a computer</a>',
+                         link2: '<a href="https://help.overdrive.com/customer/portal/articles/1481678-how-to-enable-cookies-on-your-mobile-device?Key=downloadlibrary&Sup=">how to enable cookies on a mobile device</a>'}), 'error');
+                }
+
+                
+
+                var $desktopAccountButton = $('#account-holder-name');
+                var $mobileAccountButton = $('li.account-dropdown-mobile a i.icon-account');
+
+                
+            });
+
+            var systemMsgArr = [];
+            
+
+            var euCookieSetting = Cookies.get('eu-notify-setting');
+            if(euCookieSetting != undefined && euCookieSetting != 1) {
+                if($('.js-toastMessage').length == 0) {
+                    systemMsgArr.push({
+                        message: 'This site uses cookies. <a id="eu-notify-setting-toast" onclick="getCookieExplanation()">Learn more about cookies.</a>',
+                        toasterType: 'system',
+                        id: 'eu-notify-toast'
+                    });
+                }
+            }
+            toaster.bulkSystemMsgPush(systemMsgArr);
+
+            
+
+            $('img').one('error', function() {
+                this.src = 'https://lightning.od-cdn.com/19.1.1-build-1489-master/public/img/no-cover_en_US.jpg';
+            });
+
+            //Set body attributes for tracking authentication and available linked cards.
+            if (true && true) {
+                $('body').attr({'authenticated': true, 'no-linked-cards': false});
+            } else if (true && !true) {
+                $('body').attr({'authenticated': false, 'no-linked-cards': true});
+            } else {
+                $('body').attr({'authenticated': false, 'no-linked-cards': false});
+            }
+
+            //Add loading gif here to be used in javascript. Needs the swig cdn parameters for caching
+            var primaryActionLoadingGif = '<img src="https://lightning.od-cdn.com/19.1.1-build-1489-master/public/img/loading.gif">';
+            if(Cookies.get('high-contrast-setting') == 1) {
+                primaryActionLoadingGif = '<img src="https://lightning.od-cdn.com/19.1.1-build-1489-master/public/img/loading-contrast.gif">';
+            }
+        </script>
+        
+    <script src="https://lightning.od-cdn.com/19.1.1-build-1489-master/public/js/bundles/rtl_success_modal.bundle.min.js"></script>
+    
+    <script src="https://lightning.od-cdn.com/19.1.1-build-1489-master/public/js/bundles/search.bundle.min.js"></script>
+
+
+        
+    </body>
+</html>
