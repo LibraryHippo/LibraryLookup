@@ -1,15 +1,13 @@
-import sys
-import flake8.main
-
-sys.argv = ['check', '--max-line-length=120', '--exclude=BeautifulSoup.py,authomatic', '.']
+import os
+import flake8.main.cli
 
 
-def test_syntax():
+def test_style():
     try:
-        flake8.main.main()
+        flake8.main.cli.main([os.path.join(os.path.dirname(__file__), '..')])
     except SystemExit, e:
         assert e.code is False
 
 
 if __name__ == '__main__':
-    flake8.main.main()
+    flake8.main.cli.main()
