@@ -2,3 +2,4 @@
 *.bak
 /ChromeExtension.zip
 /.vscode/
+/.pytest_cache
