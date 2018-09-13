@@ -1,54 +1,48 @@
 #!/usr/bin/env python
 
-from fakes import MyOpener
 import xisbnwebservice
+import urllib2
 
 
-def test_get_editions__10digits__makes_good_request():
-    opener = MyOpener('')
-    x = xisbnwebservice.XisbnWebService(opener)
-    x.get_editions('0812550706')
-
-    assert ('http://xisbn.worldcat.org/webservices/xid/isbn/0812550706?method=getEditions&format=csv'
-            == opener.last_request['url'])
+class ContentHolder:
+    def __init__(self, content):
+        self.content = content
 
 
 def test_get_editions__10digits__returns_list_of_editions():
-    opener = MyOpener('''0812550706
-1593974744
-0808586165''')
+    def opener(url): return ContentHolder(urllib2.urlopen(url).read())
     x = xisbnwebservice.XisbnWebService(opener)
-    editions = x.get_editions('0812550706')
-    assert ['0812550706', '1593974744', '0808586165'] == editions
-
-
-def test_to13__10digits__makes_good_request():
-    opener = MyOpener('')
-    x = xisbnwebservice.XisbnWebService(opener)
-    x.to13('0596002815')
-
-    assert ('http://xisbn.worldcat.org/webservices/xid/isbn/0596002815?method=to13&format=csv'
-            == opener.last_request['url'])
-
-
-def test_to13__10digits__finds_good_alternate():
-    opener = MyOpener('9780596002817\r\n')
-    x = xisbnwebservice.XisbnWebService(opener)
-    result = x.to13('0596002815')
-    assert '9780596002817' == result
-
-
-def test_to10__13digits__makes_good_request():
-    opener = MyOpener('')
-    x = xisbnwebservice.XisbnWebService(opener)
-    x.to10('0596002815')
-
-    last_url = opener.last_request['url']
-    assert 'http://xisbn.worldcat.org/webservices/xid/isbn/0596002815?method=to10&format=csv' == last_url
-
-
-def test_to10__13digits__finds_good_alternate():
-    opener = MyOpener('0596002815\r\n')
-    x = xisbnwebservice.XisbnWebService(opener)
-    result = x.to10('9780596002817')
-    assert '0596002815' == result
+    editions = x.get_editions('0316229296')
+    assert set([
+        u'0316229296',
+        u'031622930X',
+        u'0356504883',
+        u'0356508196',
+        u'1478900830',
+        u'147895616X',
+        u'2290144231',
+        u'3426521784',
+        u'6050946590',
+        u'6068673669',
+        u'8592795230',
+        u'9634191063',
+        u'9780316229296',
+        u'9780316229302',
+        u'9780356504889',
+        u'9780356508191',
+        u'9781478900832',
+        u'9781478956167',
+        u'9782290144237',
+        u'9783426521786',
+        u'9786050946598',
+        u'9786068673660',
+        u'9788075775603',
+        u'9788379246984',
+        u'9788466661690',
+        u'9788490697313',
+        u'9788592795238',
+        u'9789024580439',
+        u'9789634191063',
+        u'9789896418465',
+        u'9789949853298',
+    ]).issubset(editions)
