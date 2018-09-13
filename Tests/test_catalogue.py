@@ -44,24 +44,25 @@ def setup_function(function):
 
 def test_find_item__single_library_item_there__finds_item():
     x = MyXisbn()
-    l = MyLibrary()
-    l.has('1234516591')
+    library = MyLibrary()
+    library.has('1234516591')
 
     c = catalogue.Catalogue(x)
 
-    found_items = c.find_item('1234516591', [l])
+    found_items = c.find_item('1234516591', [library])
 
-    assert catalogue.FindResult(l, 'http://my.lib/1234516591') in found_items
+    assert catalogue.FindResult(
+        library, 'http://my.lib/1234516591') in found_items
 
 
 def test_find_item__single_library_item_not_there__does_not_find_item():
     x = MyXisbn()
-    l = MyLibrary()
-    l.has('1234516591')
+    library = MyLibrary()
+    library.has('1234516591')
 
     c = catalogue.Catalogue(x)
 
-    found_items = c.find_item('3234514591', [l])
+    found_items = c.find_item('3234514591', [library])
 
     assert found_items == []
 
@@ -70,29 +71,31 @@ def test_find_item__single_library_other_edition_there__finds_item():
     x = MyXisbn()
     x['1234516591'] = ['1234516592']
 
-    l = MyLibrary()
-    l.has('1234516592')
+    library = MyLibrary()
+    library.has('1234516592')
 
     c = catalogue.Catalogue(x)
 
-    found_items = c.find_item('1234516591', [l])
+    found_items = c.find_item('1234516591', [library])
 
-    assert catalogue.FindResult(l, 'http://my.lib/1234516592') in found_items
+    assert catalogue.FindResult(
+        library, 'http://my.lib/1234516592') in found_items
 
 
 def test_find_item__single_library_two_editions_there__finds_original():
     x = MyXisbn()
     x['1234516591'] = ['1234516592']
 
-    l = MyLibrary()
-    l.has('1234516591')
-    l.has('1234516592')
+    library = MyLibrary()
+    library.has('1234516591')
+    library.has('1234516592')
 
     c = catalogue.Catalogue(x)
 
-    found_items = c.find_item('1234516592', [l])
+    found_items = c.find_item('1234516592', [library])
 
-    assert [catalogue.FindResult(l, 'http://my.lib/1234516592')] == found_items
+    assert [catalogue.FindResult(
+        library, 'http://my.lib/1234516592')] == found_items
 
 
 def test_find_item__two_libraries_item_in_both__finds_both():

@@ -54,6 +54,7 @@ def to_html(find_results):
 </body>
 </html>'''
 
+
 xisbn_web_service = xisbnwebservice.XisbnWebService(urlfetch.fetch)
 xisbn_service = xisbn.Xisbn(xisbn_web_service)
 
@@ -64,13 +65,13 @@ all_libraries = {
     'kpl': kpl.Library(urlfetch.fetch),
     'rwl': rwl.Library(urlfetch.fetch),
     'dl': dl.Library(urlfetch.fetch),
-    }
+}
 
 
 def lookup_isbn_html(isbn, libraries):
-        found = catalogue_service.find_item(isbn, libraries)
+    found = catalogue_service.find_item(isbn, libraries)
 
-        return(to_html(found))
+    return(to_html(found))
 
 
 class FindIsbn(webapp2.RequestHandler):
@@ -80,7 +81,8 @@ class FindIsbn(webapp2.RequestHandler):
             request_libraries = ['wpl', 'dl', 'kpl', 'rwl']
         logging.debug(request_libraries)
         self.response.headers['Cache-Control'] = 'public; max-age=300;'
-        self.response.out.write(lookup_isbn_html(isbn, [all_libraries[l] for l in request_libraries]))
+        self.response.out.write(lookup_isbn_html(
+            isbn, [all_libraries[l] for l in request_libraries]))
 
 
 class Libraries(webapp2.RequestHandler):

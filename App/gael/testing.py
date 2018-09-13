@@ -7,10 +7,11 @@ def add_appsever_import_paths():
         if extra_path not in sys.path:
             sys.path = [extra_path] + sys.path
 
+
 add_appsever_import_paths()
 
-import google.appengine.ext.testbed
-import google.appengine.api.memcache
+import google.appengine.ext.testbed  # noqa402
+import google.appengine.api.memcache  # noqa402
 
 
 def setup_memcache():

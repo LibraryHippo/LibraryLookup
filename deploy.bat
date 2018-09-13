@@ -4,7 +4,7 @@ call check_python.bat
 
 IF %ERRORLEVEL% NEQ 0 GOTO FLAKE_ERRORS
 
-appcfg update App
+gcloud app deploy --quiet App
 
 GOTO END
 
