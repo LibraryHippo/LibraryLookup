@@ -15,7 +15,7 @@ def test_find_item__isbn13__makes_good_request():
 
     w.find_item('9781250158079')
     assert (opener.last_request['url'] ==
-            'https://downloadlibrary.overdrive.com/search/title?isbn=9781250158079')
+            'https://downloadlibrary.overdrive.com/search/title?mediaType=ebook&isbn=9781250158079')
 
 
 def test_find_item__isbn13_in_library__returns_record():
@@ -23,7 +23,7 @@ def test_find_item__isbn13_in_library__returns_record():
     w = dl.Library(opener)
 
     record = w.find_item('9781250158079')
-    assert record == 'https://downloadlibrary.overdrive.com/search/title?isbn=9781250158079'
+    assert record == 'https://downloadlibrary.overdrive.com/search/title?mediaType=ebook&isbn=9781250158079'
 
 
 def test_find_item__isbn13_not_in_library__returns_false():

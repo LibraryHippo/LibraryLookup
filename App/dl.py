@@ -4,7 +4,7 @@ import library
 
 
 def search_url(isbn):
-    return 'https://downloadlibrary.overdrive.com/search/title?isbn=%(isbn)s' % vars()
+    return 'https://downloadlibrary.overdrive.com/search/title?mediaType=ebook&isbn=%(isbn)s' % vars()
 
 
 class Library(library.LibraryBase):
